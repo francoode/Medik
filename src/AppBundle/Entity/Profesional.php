@@ -36,9 +36,8 @@ class Profesional
     private $apellido;
 
     /**
-     * @var \DateTime
      *
-     * @ORM\Column(name="fecha_nacimiento", type="datetime")
+     * @ORM\Column(name="fecha_nacimiento", type="date")
      */
     private $fechaNacimiento;
 
@@ -151,7 +150,6 @@ class Profesional
     /**
      * Set fechaNacimiento
      *
-     * @param \DateTime $fechaNacimiento
      * @return Profesional
      */
     public function setFechaNacimiento($fechaNacimiento)
@@ -164,7 +162,6 @@ class Profesional
     /**
      * Get fechaNacimiento
      *
-     * @return \DateTime
      */
     public function getFechaNacimiento()
     {
