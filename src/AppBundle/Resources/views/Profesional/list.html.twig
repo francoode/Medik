@@ -1,0 +1,56 @@
+{% extends 'front.html.twig' %}
+
+{%  block body %}
+
+    <div class="container">
+    <div class="row">
+    <a href="{{ path('profesionales_new') }}">Agregar Profesional</a>
+    <table class="table" width="60%">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Apellido</th>
+                <th>Fecha Nacimiento</th>
+                <th>Dni</th>
+                <th>Email</th>
+                <th>Usuario</th>
+                <th>Password</th>
+                <th>Activo</th>
+                <th>Creado</th>
+                <th>Actualizado</th>
+                <th>Acciones</th>
+
+            </tr>
+        </thead>
+        <tbody>
+    {%  for pro in prof %}
+            <tr>
+                <td>{{ pro.id }}</td>
+                <td>{{ pro.nombre }}</td>
+                <td>{{ pro.apellido }}</td>
+                <td>{{ pro.fechaNacimiento|date("d/m/Y") }}</td>
+                <td>{{ pro.dni }}</td>
+                <td>{{ pro.email }}</td>
+                <td>{{ pro.usuario }}</td>
+                <td>{{ pro.password }}</td>
+                <td>{{ pro.activo }}</td>
+                <td>{{ pro.creado|date("d/m/Y") }}</td>
+                <td>{{ pro.actualizado|date("d/m/Y") }}</td>
+                <td>
+                    <a href="{{ path('profesional_edit', {'id':pro.id}) }}">Edit</a>
+                    <a href="{{ path('profesional_delete',{'id':pro.id}) }}">Delete</a>
+                </td>
+
+            </tr>
+    {% endfor %}
+        </tbody>
+    </table>
+
+
+        </div>
+    </div>
+
+
+
+{% endblock body %}

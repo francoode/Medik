@@ -1,0 +1,56 @@
+{% extends 'front.html.twig' %}
+
+{%  block body %}
+
+    <div class ="panel-body">
+    <div class="container">
+        <div class="row">
+            <a href="{{ path('profesionales_new') }}">Agregar Profesional</a>
+            <table class="table table-striped" style="width: 90%" >
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Email</th>
+                    <th>Usuario</th>
+                    <th>Password</th>
+                    <th>Creado</th>
+                    <th>Actualizado</th>
+                    <th>Obra Social</th>
+                    <th>Acciones</th>
+
+                </tr>
+                </thead>
+                <tbody>
+                {%  for pa in p %}
+                    <tr>
+                        <td>{{ pa.id }}</td>
+                        <td>{{ pa.nombre }}</td>
+                        <td>{{ pa.apellido }}</td>
+                        <td>{{ pa.fechaNacimiento|date("d/m/Y") }}</td>
+                        <td>{{ pa.email }}</td>
+                        <td>{{ pa.usuario }}</td>
+                        <td>{{ pa.password }}</td>
+                        <td>{{ pa.fechaRegistro|date("d/m/Y") }}</td>
+                        <td>{{ pa.fechaActualizado|date("d/m/Y") }}</td>
+                        <td>{{ pa.obraSocial }}</td>
+                        <td>
+                            <a href="{{ path('paciente_edit', {'id':pa.id}) }}">Edit</a>
+                            <a href="{{ path('paciente_delete', {'id':pa.id}) }}">Delete</a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+
+
+        </div>
+    </div>
+    </div>
+
+
+
+{% endblock body %}

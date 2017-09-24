@@ -1,0 +1,38 @@
+app:
+    resource: '@AppBundle/Controller/'
+    type: annotation
+
+prefesionales_listar:
+    path: /profesionales/listar
+    defaults:
+     _controller: 'AppBundle:Profesional:listar'
+
+profesionales_new:
+    path: /profesionales/new
+    defaults:
+     _controller: 'AppBundle:Profesional:add'
+
+profesionales_create:
+    path: /profesionales/create
+    defaults:
+     _controller: 'AppBundle:Profesional:create'
+    methods: POST
+
+profesional_delete:
+    path: /profesional/delete/{id}
+    defaults:
+     _controller: 'AppBundle:Profesional:delete'
+
+profesional_edit:
+    path: /profesional/edit/{id}
+    defaults:
+      _controller: 'AppBundle:Profesional:edit'
+
+
+profesional_update:
+    path: /profesional/update/{id}
+    defaults:
+      _controller: 'AppBundle:Profesional:update'
+      methods: [POST, PUT]
+
+

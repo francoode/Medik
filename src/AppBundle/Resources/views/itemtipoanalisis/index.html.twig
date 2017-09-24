@@ -1,0 +1,41 @@
+{% extends 'front.html.twig' %}
+
+{%  block body %}
+    <h1>Itemtipoanalises list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre</th>
+                <th>Valorreferencia</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for itemTipoAnalisi in itemTipoAnalises %}
+            <tr>
+                <td><a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">{{ itemTipoAnalisi.id }}</a></td>
+                <td>{{ itemTipoAnalisi.nombre }}</td>
+                <td>{{ itemTipoAnalisi.valorReferencia }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('itemtipoanalisis_edit', { 'id': itemTipoAnalisi.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('itemtipoanalisis_new') }}">Create a new itemTipoAnalisi</a>
+        </li>
+    </ul>
+{% endblock %}
