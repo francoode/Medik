@@ -328,4 +328,9 @@ class Profesional
     {
         return $this->actualizado;
     }
+
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
 }

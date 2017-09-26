@@ -29,7 +29,7 @@ class Analisis
     private $paciente;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Paciente")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Profesional")
      * @ORM\JoinColumn(name="profesional_id", referencedColumnName="id")
      */
     private $profesional;

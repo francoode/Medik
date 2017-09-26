@@ -1,0 +1,43 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Analises list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Fechacreado</th>
+                <th>Fechaentrega</th>
+                <th>Estado</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for analisi in analises %}
+            <tr>
+                <td><a href="{{ path('analisis_show', { 'id': analisi.id }) }}">{{ analisi.id }}</a></td>
+                <td>{% if analisi.fechaCreado %}{{ analisi.fechaCreado|date('Y-m-d') }}{% endif %}</td>
+                <td>{% if analisi.fechaEntrega %}{{ analisi.fechaEntrega|date('Y-m-d') }}{% endif %}</td>
+                <td>{{ analisi.estado }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('analisis_show', { 'id': analisi.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('analisis_edit', { 'id': analisi.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('analisis_new') }}">Create a new analisi</a>
+        </li>
+    </ul>
+{% endblock %}
