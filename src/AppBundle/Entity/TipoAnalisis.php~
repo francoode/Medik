@@ -35,10 +35,7 @@ class TipoAnalisis
      * @ORM\Column(name="metodo", type="string", length=50)
      */
     private $metodo;
-    /**
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ItemTipoAnalisis", mappedBy="tipoAnalisis")
-     */
-    private $itemTipoAnalisis;
+
 
     /**
      * Get id
@@ -100,5 +97,12 @@ class TipoAnalisis
     {
         return $this->nombre;
 
+    }
+  
+
+
+    public function __toString()
+    {
+     return $this->getNombre();
     }
 }

@@ -13,7 +13,13 @@ class ItemTipoAnalisisType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('tipoAnalisis')->add('nombre')->add('valorReferencia');
+        $builder->add('tipoAnalisis', 'entity', array(
+            'class' => 'AppBundle:TipoAnalisis',
+            'choice_label' => 'nombre',
+            'choice_value' => 'id'
+        ))
+            ->add('nombre')
+            ->add('valorReferencia');
     }
     
     /**

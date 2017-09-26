@@ -13,7 +13,8 @@ class TipoAnalisisType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre')->add('metodo');
+        $builder->add('nombre')
+                ->add('metodo');
     }
     
     /**

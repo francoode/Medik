@@ -141,4 +141,8 @@ class TipoAnalisis
     {
         return $this->itemTipoAnalisis;
     }
+    public function __toString()
+    {
+        return $this->getNombre();
+    }
 }

@@ -26,7 +26,7 @@ class ItemTipoAnalisisController extends Controller
 
         $itemTipoAnalises = $em->getRepository('AppBundle:ItemTipoAnalisis')->findAll();
 
-        return $this->render('itemtipoanalisis/index.html.twig', array(
+        return $this->render('AppBundle:itemtipoanalisis:index.html.twig', array(
             'itemTipoAnalises' => $itemTipoAnalises,
         ));
     }
@@ -45,13 +45,14 @@ class ItemTipoAnalisisController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
             $em->persist($itemTipoAnalisi);
             $em->flush();
 
             return $this->redirectToRoute('itemtipoanalisis_show', array('id' => $itemTipoAnalisi->getId()));
         }
 
-        return $this->render('itemtipoanalisis/new.html.twig', array(
+        return $this->render('AppBundle:itemtipoanalisis:new.html.twig', array(
             'itemTipoAnalisi' => $itemTipoAnalisi,
             'form' => $form->createView(),
         ));
@@ -67,7 +68,7 @@ class ItemTipoAnalisisController extends Controller
     {
         $deleteForm = $this->createDeleteForm($itemTipoAnalisi);
 
-        return $this->render('itemtipoanalisis/show.html.twig', array(
+        return $this->render('AppBundle:itemtipoanalisis:show.html.twig', array(
             'itemTipoAnalisi' => $itemTipoAnalisi,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +92,7 @@ class ItemTipoAnalisisController extends Controller
             return $this->redirectToRoute('itemtipoanalisis_edit', array('id' => $itemTipoAnalisi->getId()));
         }
 
-        return $this->render('itemtipoanalisis/edit.html.twig', array(
+        return $this->render('AppBundle:itemtipoanalisis:edit.html.twig', array(
             'itemTipoAnalisi' => $itemTipoAnalisi,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

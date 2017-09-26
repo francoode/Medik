@@ -3,7 +3,6 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
-use Doctrine\ORM\Mapping\OneToMany;
 use AppBundle\Entity\TipoAnalisis;
 
 /**
@@ -24,7 +23,8 @@ class ItemTipoAnalisis
     private $id;
 
     /**
-     * @ORM\Column(name="tipoanalisis_id", type="integer")
+     * @var int
+     * @ORM\Column(name="tipoanalisis_id")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis")
      */
     private $tipoAnalisis;
@@ -104,26 +104,11 @@ class ItemTipoAnalisis
     }
 
 
-    /**
-     * Set tipoAnalisis
-     *
-     * @param \AppBundle\Entity\TipoAnalisis $tipoAnalisis
-     * @return ItemTipoAnalisis
-     */
-    public function setTipoAnalisis(\AppBundle\Entity\TipoAnalisis $tipoAnalisis = null)
-    {
-        $this->tipoAnalisis = $tipoAnalisis;
+   
 
-        return $this;
-    }
+   
 
-    /**
-     * Get tipoAnalisis
-     *
-     * @return \AppBundle\Entity\TipoAnalisis 
-     */
-    public function getTipoAnalisis()
-    {
-        return $this->tipoAnalisis;
-    }
+   
+
+
 }

@@ -24,8 +24,9 @@ class ItemTipoAnalisis
     private $id;
 
     /**
-     * @ORM\Column(name="tipoanalisis_id", type="integer")
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis")
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis", inversedBy = "itemTipoAnalisis" )
+     * @ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")
      */
     private $tipoAnalisis;
 
