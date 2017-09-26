@@ -1,6 +1,6 @@
-{% extends 'front.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{%  block body %}
+{% block body %}
     <h1>Itemtipoanalisi</h1>
 
     <table>
@@ -8,6 +8,10 @@
             <tr>
                 <th>Id</th>
                 <td>{{ itemTipoAnalisi.id }}</td>
+            </tr>
+            <tr>
+                <th>Tipoanalisis</th>
+                <td>{{ itemTipoAnalisi.tipoAnalisis }}</td>
             </tr>
             <tr>
                 <th>Nombre</th>

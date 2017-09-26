@@ -1,12 +1,13 @@
-{% extends 'front.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{%  block body %}
+{% block body %}
     <h1>Itemtipoanalises list</h1>
 
     <table>
         <thead>
             <tr>
                 <th>Id</th>
+                <th>Tipoanalisis</th>
                 <th>Nombre</th>
                 <th>Valorreferencia</th>
                 <th>Actions</th>
@@ -16,6 +17,7 @@
         {% for itemTipoAnalisi in itemTipoAnalises %}
             <tr>
                 <td><a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">{{ itemTipoAnalisi.id }}</a></td>
+                <td>{{ itemTipoAnalisi.tipoAnalisis }}</td>
                 <td>{{ itemTipoAnalisi.nombre }}</td>
                 <td>{{ itemTipoAnalisi.valorReferencia }}</td>
                 <td>

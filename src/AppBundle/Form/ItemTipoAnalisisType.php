@@ -5,8 +5,6 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
-use Symfony\Bridge\Doctrine\Form\Type\EntityType;
-use AppBundle\Entity\TipoAnalisis;
 
 class ItemTipoAnalisisType extends AbstractType
 {
@@ -15,11 +13,7 @@ class ItemTipoAnalisisType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('nombre')
-            ->add('valorReferencia')
-            ->add('tipoAnalisis', EntityType::class, array(
-                'class' => 'AppBundle:TipoAnalisis',
-                'choice_label' => 'Tipo analisis'));
+        $builder->add('tipoAnalisis')->add('nombre')->add('valorReferencia');
     }
     
     /**
