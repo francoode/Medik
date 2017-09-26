@@ -24,6 +24,7 @@ class ItemTipoAnalisis
     private $id;
 
     /**
+     * @ORM\Column(name="tipoanalisis_id", type="integer")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis")
      */
     private $tipoAnalisis;
@@ -41,6 +42,7 @@ class ItemTipoAnalisis
      * @ORM\Column(name="ValorReferencia", type="float")
      */
     private $valorReferencia;
+
 
 
     /**

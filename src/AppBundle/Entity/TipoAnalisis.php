@@ -35,12 +35,15 @@ class TipoAnalisis
      * @ORM\Column(name="metodo", type="string", length=50)
      */
     private $metodo;
-
+    /**
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ItemTipoAnalisis", mappedBy="tipoAnalisis")
+     */
+    private $itemTipoAnalisis;
 
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -63,7 +66,7 @@ class TipoAnalisis
     /**
      * Get nombre
      *
-     * @return string 
+     * @return string
      */
     public function getNombre()
     {
@@ -86,7 +89,7 @@ class TipoAnalisis
     /**
      * Get metodo
      *
-     * @return string 
+     * @return string
      */
     public function getMetodo()
     {
@@ -97,5 +100,45 @@ class TipoAnalisis
     {
         return $this->nombre;
 
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->itemTipoAnalisis = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add itemTipoAnalisis
+     *
+     * @param \AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis
+     * @return TipoAnalisis
+     */
+    public function addItemTipoAnalisi(\AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis)
+    {
+        $this->itemTipoAnalisis[] = $itemTipoAnalisis;
+
+        return $this;
+    }
+
+    /**
+     * Remove itemTipoAnalisis
+     *
+     * @param \AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis
+     */
+    public function removeItemTipoAnalisi(\AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis)
+    {
+        $this->itemTipoAnalisis->removeElement($itemTipoAnalisis);
+    }
+
+    /**
+     * Get itemTipoAnalisis
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getItemTipoAnalisis()
+    {
+        return $this->itemTipoAnalisis;
     }
 }

@@ -24,6 +24,7 @@ class ItemTipoAnalisis
     private $id;
 
     /**
+     * @ORM\Column(name="tipoanalisis_id", type="integer")
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis")
      */
     private $tipoAnalisis;
@@ -41,6 +42,7 @@ class ItemTipoAnalisis
      * @ORM\Column(name="ValorReferencia", type="float")
      */
     private $valorReferencia;
+
 
 
     /**
@@ -100,8 +102,28 @@ class ItemTipoAnalisis
     {
         return $this->valorReferencia;
     }
-    
 
 
+    /**
+     * Set tipoAnalisis
+     *
+     * @param \AppBundle\Entity\TipoAnalisis $tipoAnalisis
+     * @return ItemTipoAnalisis
+     */
+    public function setTipoAnalisis(\AppBundle\Entity\TipoAnalisis $tipoAnalisis = null)
+    {
+        $this->tipoAnalisis = $tipoAnalisis;
 
+        return $this;
+    }
+
+    /**
+     * Get tipoAnalisis
+     *
+     * @return \AppBundle\Entity\TipoAnalisis 
+     */
+    public function getTipoAnalisis()
+    {
+        return $this->tipoAnalisis;
+    }
 }
