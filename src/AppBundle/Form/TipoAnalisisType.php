@@ -2,9 +2,11 @@
 
 namespace AppBundle\Form;
 
+use AppBundle\Entity\TipoAnalisis;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+
 
 class TipoAnalisisType extends AbstractType
 {
@@ -23,7 +25,7 @@ class TipoAnalisisType extends AbstractType
     public function configureOptions(OptionsResolver $resolver)
     {
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\TipoAnalisis'
+            'data_class' => TipoAnalisis::class
         ));
     }
 

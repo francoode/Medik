@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Analisis;
+use AppBundle\Entity\TipoAnalisis;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -40,6 +41,13 @@ class AnalisisController extends Controller
     public function newAction(Request $request)
     {
         $analisi = new Analisis();
+
+        $em = $this->getDoctrine()->getManager();
+        $tipoA = $em->getRepository('AppBundle:TipoAnalisis')->find(1);
+
+        $analisi->addTipoAnalisi($tipoA);
+
+
         $form = $this->createForm('AppBundle\Form\AnalisisType', $analisi);
         $form->handleRequest($request);
 

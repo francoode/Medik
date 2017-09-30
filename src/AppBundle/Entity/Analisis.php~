@@ -29,7 +29,7 @@ class Analisis
     private $paciente;
 
     /**
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Paciente")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\Profesional")
      * @ORM\JoinColumn(name="profesional_id", referencedColumnName="id")
      */
     private $profesional;
@@ -54,6 +54,15 @@ class Analisis
      * @ORM\Column(name="estado", type="string", length=40)
      */
     private $estado;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="TipoAnalisis")
+     * @ORM\JoinTable(name="analisis_tipoanalisis",
+     *          joinColumns={@ORM\JoinColumn(name="analisis_id", referencedColumnName="id")},
+     *          inverseJoinColumns={@ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")}
+     *          )
+     */
+    private $tipoAnalisis;
 
 
     /**
@@ -113,5 +122,74 @@ class Analisis
     public function getEstado()
     {
         return $this->estado;
+    }
+
+    /**
+     * Set fechaCreado
+     *
+     * @param \DateTime $fechaCreado
+     * @return Analisis
+     */
+    public function setFechaCreado($fechaCreado)
+    {
+        $this->fechaCreado = $fechaCreado;
+
+        return $this;
+    }
+
+    /**
+     * Get fechaCreado
+     *
+     * @return \DateTime 
+     */
+    public function getFechaCreado()
+    {
+        return $this->fechaCreado;
+    }
+
+    /**
+     * Set paciente
+     *
+     * @param \AppBundle\Entity\Paciente $paciente
+     * @return Analisis
+     */
+    public function setPaciente(\AppBundle\Entity\Paciente $paciente = null)
+    {
+        $this->paciente = $paciente;
+
+        return $this;
+    }
+
+    /**
+     * Get paciente
+     *
+     * @return \AppBundle\Entity\Paciente 
+     */
+    public function getPaciente()
+    {
+        return $this->paciente;
+    }
+
+    /**
+     * Set profesional
+     *
+     * @param \AppBundle\Entity\Paciente $profesional
+     * @return Analisis
+     */
+    public function setProfesional(\AppBundle\Entity\Paciente $profesional = null)
+    {
+        $this->profesional = $profesional;
+
+        return $this;
+    }
+
+    /**
+     * Get profesional
+     *
+     * @return \AppBundle\Entity\Paciente 
+     */
+    public function getProfesional()
+    {
+        return $this->profesional;
     }
 }

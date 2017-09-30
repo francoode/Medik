@@ -55,6 +55,15 @@ class Analisis
      */
     private $estado;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="TipoAnalisis")
+     * @ORM\JoinTable(name="analisis_tipoanalisis",
+     *          joinColumns={@ORM\JoinColumn(name="analisis_id", referencedColumnName="id")},
+     *          inverseJoinColumns={@ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")}
+     *          )
+     */
+    private $tipoAnalisis;
+
 
     /**
      * Get id
@@ -182,5 +191,45 @@ class Analisis
     public function getProfesional()
     {
         return $this->profesional;
+    }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->tipoAnalisis = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add tipoAnalisis
+     *
+     * @param \AppBundle\Entity\TipoAnalisis $tipoAnalisis
+     * @return Analisis
+     */
+    public function addTipoAnalisi(\AppBundle\Entity\TipoAnalisis $tipoAnalisis)
+    {
+        $this->tipoAnalisis[] = $tipoAnalisis;
+
+        return $this;
+    }
+
+    /**
+     * Remove tipoAnalisis
+     *
+     * @param \AppBundle\Entity\TipoAnalisis $tipoAnalisis
+     */
+    public function removeTipoAnalisi(\AppBundle\Entity\TipoAnalisis $tipoAnalisis)
+    {
+        $this->tipoAnalisis->removeElement($tipoAnalisis);
+    }
+
+    /**
+     * Get tipoAnalisis
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getTipoAnalisis()
+    {
+        return $this->tipoAnalisis;
     }
 }
