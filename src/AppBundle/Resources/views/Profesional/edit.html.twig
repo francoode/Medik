@@ -1,18 +1,164 @@
 {% extends 'front.html.twig' %}
 
 {%  block body %}
-    <div class="form_row">
+
+    <div class="form">
         {{ form_start(form) }}
 
-        <div class="form-group">
-            {{ form_label(form.usuario) }}
-            {{ form_widget(form.usuario, {'attr' : {'class' : 'form-control',
-                'placeholder' : ' Usuario'}}) }}
-            {{ form_errors(form.usuario) }}
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.usuario, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.usuario, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.usuario) }}
+                </div>
+            </div>
         </div>
+
+        <br>
+
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.password, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.password, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.password) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.nombre, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.nombre, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.nombre) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.apellido, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.apellido, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.apellido) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.fechaNacimiento, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.fechaNacimiento, {'attr' : {'class' : ''}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.fechaNacimiento) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.dni, 'DNI', {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.dni, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.dni) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.email, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.email, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.email) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.activo, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.activo, {'attr' : {'class' : 'checkbox'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.activo) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-4">
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
+                </div>
+                <div class="col-md-8">
+                </div>
+            </div>
+        </div>
+
+
+
 
 
         {{ form_end(form) }}
     </div>
+
 
 {% endblock body %}

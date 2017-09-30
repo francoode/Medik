@@ -2,9 +2,8 @@
 
 {%  block body %}
 
-    <div class="form">
+    <div class="form" >
         {{ form_start(form) }}
-
 
         <div class="row">
             <div class="form-group">
@@ -13,7 +12,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.usuario, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.usuario, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.usuario) }}
@@ -23,6 +22,7 @@
 
         <br>
 
+
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
@@ -30,7 +30,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.password, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.password, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.password) }}
@@ -47,10 +47,27 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.nombre, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.nombre, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.nombre) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.apellido, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.apellido, {'attr' : {'disabled':'disabled'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.apellido) }}
                 </div>
             </div>
         </div>
@@ -61,14 +78,31 @@
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
-                    {{ form_label(form.apellido, null, {
+                    {{ form_label(form.fechaNacimiento, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.apellido, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.fechaNacimiento, {'attr' : {'disabled' : 'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
-                    {{ form_errors(form.apellido) }}
+                    {{ form_errors(form.fechaNacimiento) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.dni, 'DNI', {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.dni, {'attr' : {'disabled':'disabled'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.dni) }}
                 </div>
             </div>
         </div>
@@ -82,44 +116,10 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.email, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.email, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.email) }}
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(form.fechaNacimiento, null, {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(form.fechaNacimiento, {'attr' : {'class' : ''}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(form.fechaNacimiento) }}
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(form.obraSocial, null, {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(form.obraSocial, {'attr' : {'class' : 'form-control col-10'}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(form.obraSocial) }}
                 </div>
             </div>
         </div>
@@ -133,7 +133,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.activo, {'attr' : {'class' : 'check-box'}}) }}
+                    {{ form_widget(form.activo, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.activo) }}
@@ -146,7 +146,7 @@
                 <div class=" col-md-4">
                 </div>
                 <div class="col-md-4">
-                    {{ form_widget(form.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
+                    {{ form_widget(form.save, {'attr' : {'hidden' : 'hidden'}}) }}
                 </div>
                 <div class="col-md-8">
                 </div>
@@ -154,12 +154,34 @@
         </div>
 
 
-
-
-
         {{ form_end(form) }}
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1"></div>
+            <div class=" col-md-2">
+                <a href="{{ path('prefesionales_listar') }}" class="btn btn-info" role="button">Volver</a>
+
+            </div>
+
+        </div>
     </div>
 
 
+{% endblock body %}
 
+
+{% block javascripts %}
+    {{ parent() }}
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#appbundle_profesional_fechaNacimiento').prop('readonly', true);
+
+
+        });
+    </script>
 {% endblock %}
+

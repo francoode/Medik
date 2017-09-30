@@ -176,7 +176,7 @@ class Analisis
      * @param \AppBundle\Entity\Paciente $profesional
      * @return Analisis
      */
-    public function setProfesional(\AppBundle\Entity\Paciente $profesional = null)
+    public function setProfesional(\AppBundle\Entity\Profesional $profesional = null)
     {
         $this->profesional = $profesional;
 

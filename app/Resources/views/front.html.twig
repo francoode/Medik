@@ -26,8 +26,8 @@
 <!-- WRAPPER -->
 <div id="wrapper">
     <!-- NAVBAR -->
-    {#<nav class="navbar navbar-default navbar-fixed-top">
-        <div class="brand">
+    <nav class="navbar navbar-default navbar-fixed-top" style="height: 70px;">
+        <div class="brand" style="height: 70px;">
             <a href="index.html"><img src="app/Resources/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
@@ -68,15 +68,15 @@
                 </ul>
             </div>
         </div>
-    </nav>#}
+    </nav>
     <!-- END NAVBAR -->
     <!-- LEFT SIDEBAR -->
-    <div id="sidebar-nav" class="sidebar" style="padding-top: 0px;"> {#ESTO VA EN 80 PADDING TOp#}
+    <div id="sidebar-nav" class="sidebar" style="padding-top: 80px;"> {#ESTO VA EN 80 PADDING TOp#}
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
                     <li>
-                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Profesionales</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Profesionales</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages" class="collapse ">
                             <ul class="nav">
                                 <li><a href="{{ path('prefesionales_listar') }}" class="">Listar</a></li>
@@ -86,7 +86,7 @@
                     </li>
 
                     <li>
-                        <a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Pacientes</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Pacientes</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages2" class="collapse ">
                             <ul class="nav">
                                 <li><a href="{{ path('paciente_list') }}" class="">Listar</a></li>
@@ -96,11 +96,21 @@
                     </li>
 
                     <li>
-                        <a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="lnr lnr-file-empty"></i> <span>Tipo analisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <a href="#subPages3" data-toggle="collapse" class="collapsed"><i class="fa fa-thermometer-empty"></i> <span>Tipo Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages3" class="collapse ">
                             <ul class="nav">
                                 <li><a href="{{ path('tipoanalisis_index') }}" class="">Listar</a></li>
                                 <li><a href="{{ path('tipoanalisis_new') }}" class="">Nuevo</a></li>
+                            </ul>
+                        </div>
+                    </li>
+
+                    <li>
+                        <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <div id="subPages4" class="collapse ">
+                            <ul class="nav">
+                                <li><a href="{{ path('analisis_index') }}" class="">Listar</a></li>
+                                <li><a href="{{ path('analisis_new') }}" class="">Nuevo</a></li>
                             </ul>
                         </div>
                     </li>
@@ -129,7 +139,7 @@
     <!-- END LEFT SIDEBAR -->
     <!-- MAIN -->
 
-    <div class="main" style="padding-top: 0px;">     {#ESTO ACA VA EN 80, ES PARA LA NAVBAR DE ARRIBA QUE ESTA COMENTADA#}
+    <div class="main" style="padding-top: 80px;">     {#ESTO ACA VA EN 80, ES PARA LA NAVBAR DE ARRIBA QUE ESTA COMENTADA#}
         <!-- MAIN CONTENT -->
         <div class="main-content">
             {% block body %}

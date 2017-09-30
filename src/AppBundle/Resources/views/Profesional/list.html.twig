@@ -5,7 +5,7 @@
     <div class="container">
     <div class="row">
     <a href="{{ path('profesionales_new') }}">Agregar Profesional</a>
-    <table class="table" width="60%">
+    <table class="table" style="width: 90%;">
         <thead>
             <tr>
                 <th>Id</th>
@@ -15,11 +15,11 @@
                 <th>Dni</th>
                 <th>Email</th>
                 <th>Usuario</th>
-                <th>Password</th>
+
                 <th>Activo</th>
-                <th>Creado</th>
-                <th>Actualizado</th>
+
                 <th>Acciones</th>
+
 
             </tr>
         </thead>
@@ -33,13 +33,13 @@
                 <td>{{ pro.dni }}</td>
                 <td>{{ pro.email }}</td>
                 <td>{{ pro.usuario }}</td>
-                <td>{{ pro.password }}</td>
+
                 <td>{{ pro.activo }}</td>
-                <td>{{ pro.creado|date("d/m/Y") }}</td>
-                <td>{{ pro.actualizado|date("d/m/Y") }}</td>
+
                 <td>
-                    <a href="{{ path('profesional_edit', {'id':pro.id}) }}">Edit</a>
-                    <a href="{{ path('profesional_delete',{'id':pro.id}) }}">Delete</a>
+                    <a href="{{ path('profesional_edit', {'id':pro.id}) }}"><i class="fa fa-pencil"></i> </a>
+                    <a href="{{ path('profesional_delete',{'id':pro.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a href="{{ path('profesional_show',{'id':pro.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 </td>
 
             </tr>

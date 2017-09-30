@@ -26,7 +26,7 @@ class TipoAnalisisController extends Controller
 
         $tipoAnalises = $em->getRepository('AppBundle:TipoAnalisis')->findAll();
 
-        return $this->render('tipoanalisis/index.html.twig', array(
+        return $this->render('AppBundle:tipoanalisis:index.html.twig', array(
             'tipoAnalises' => $tipoAnalises,
         ));
     }
@@ -51,7 +51,7 @@ class TipoAnalisisController extends Controller
             return $this->redirectToRoute('tipoanalisis_show', array('id' => $tipoAnalisi->getId()));
         }
 
-        return $this->render('tipoanalisis/new.html.twig', array(
+        return $this->render('AppBundle:tipoanalisis:new.html.twig', array(
             'tipoAnalisi' => $tipoAnalisi,
             'form' => $form->createView(),
         ));
@@ -67,7 +67,7 @@ class TipoAnalisisController extends Controller
     {
         $deleteForm = $this->createDeleteForm($tipoAnalisi);
 
-        return $this->render('tipoanalisis/show.html.twig', array(
+        return $this->render('AppBundle:tipoanalisis:show.html.twig', array(
             'tipoAnalisi' => $tipoAnalisi,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -91,7 +91,7 @@ class TipoAnalisisController extends Controller
             return $this->redirectToRoute('tipoanalisis_edit', array('id' => $tipoAnalisi->getId()));
         }
 
-        return $this->render('tipoanalisis/edit.html.twig', array(
+        return $this->render('AppBundle:tipoanalisis:edit.html.twig', array(
             'tipoAnalisi' => $tipoAnalisi,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

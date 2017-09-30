@@ -20,7 +20,8 @@ class PacienteType extends AbstractType
             ->add('email')
             ->add('fechaNacimiento')
             ->add('obraSocial')
-            ->add('activo');
+            ->add('activo')
+        ->add('save','submit',array('label' => 'Guardar'));
     }
 
 

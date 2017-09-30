@@ -27,28 +27,27 @@ class AnalisisController extends Controller
 
         $analises = $em->getRepository('AppBundle:Analisis')->findAll();
 
-        return $this->render('analisis/index.html.twig', array(
+        return $this->render('AppBundle:analisis:index.html.twig', array(
             'analises' => $analises,
         ));
     }
+
+
 
     /**
      * Creates a new analisi entity.
      *
      * @Route("/new", name="analisis_new")
-     * @Method({"GET", "POST"})
      */
     public function newAction(Request $request)
     {
         $analisi = new Analisis();
 
-        $em = $this->getDoctrine()->getManager();
-        $tipoA = $em->getRepository('AppBundle:TipoAnalisis')->find(1);
 
-        $analisi->addTipoAnalisi($tipoA);
-
-
-        $form = $this->createForm('AppBundle\Form\AnalisisType', $analisi);
+        $form = $this->createForm('AppBundle\Form\AnalisisType', $analisi, array(
+            'action' => $this->generateUrl('analisis_new'),
+            'method' => 'POST',
+            ));
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
@@ -59,7 +58,7 @@ class AnalisisController extends Controller
             return $this->redirectToRoute('analisis_show', array('id' => $analisi->getId()));
         }
 
-        return $this->render('analisis/new.html.twig', array(
+        return $this->render('AppBundle:analisis:new.html.twig', array(
             'analisi' => $analisi,
             'form' => $form->createView(),
         ));
@@ -75,7 +74,7 @@ class AnalisisController extends Controller
     {
         $deleteForm = $this->createDeleteForm($analisi);
 
-        return $this->render('analisis/show.html.twig', array(
+        return $this->render('AppBundle:analisis:show.html.twig', array(
             'analisi' => $analisi,
             'delete_form' => $deleteForm->createView(),
         ));
@@ -99,7 +98,7 @@ class AnalisisController extends Controller
             return $this->redirectToRoute('analisis_edit', array('id' => $analisi->getId()));
         }
 
-        return $this->render('analisis/edit.html.twig', array(
+        return $this->render('AppBundle:analisis:edit.html.twig', array(
             'analisi' => $analisi,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),

@@ -87,6 +87,24 @@ class ProfesionalController extends Controller
 
     }
 
+    /**
+     * @Route("profesional/s/{id}", name="profesional_show")
+     */
+    public function showAction(Profesional $prof)
+    {
+
+        if(!$prof)
+        {
+            throw $this->createNotFoundException('No se encontró el profesional');
+        }
+
+        $form = $this->createForm(new ProfesionalType(), $prof);
+
+        return $this->render('AppBundle:Profesional:show.html.twig', array('prof' => $prof,
+            'form' => $form->createView()));
+
+    }
+
     public function updateAction($id, Request $request)
     {
 

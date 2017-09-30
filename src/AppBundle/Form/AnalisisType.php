@@ -5,11 +5,13 @@ namespace AppBundle\Form;
 
 use AppBundle\AppBundle;
 use AppBundle\Entity\TipoAnalisis;
+use function Sodium\add;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class AnalisisType extends AbstractType
 {
@@ -21,18 +23,23 @@ class AnalisisType extends AbstractType
         $builder->add('fechaCreado')
             ->add('fechaEntrega')
             ->add('estado')
-            ->add('paciente')
-            ->add('profesional')
+            ->add('paciente', EntityType::class, array(
+                'class' => 'AppBundle:Paciente'))
+            ->add('profesional', EntityType::class, array(
+                'class' => 'AppBundle:Profesional'
+            ))
             ->add('tipoAnalisis',CollectionType::class, array(
                     'entry_type'   => EntityType::class,
                     'allow_add'    => true,
-                    'allow_delete' => false,
+                    'allow_delete' => true,
+                    'by_reference' => false,
                     'entry_options'=> array(
-                        'class' => 'AppBundle:TipoAnalisis'
+                        'class' => 'AppBundle:TipoAnalisis',
+
                     ),
                 )
-            );
-
+            )
+            ->add('Guardar', SubmitType::class);
 
 
     }

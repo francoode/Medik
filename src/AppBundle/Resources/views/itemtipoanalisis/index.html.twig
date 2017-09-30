@@ -1,46 +1,43 @@
-{% extends 'front.html.twig' %}
+{% extends 'base.html.twig' %}
 
-{%  block body %}
+{% block body %}
+    <h1>Itemtipoanalises list</h1>
 
-    <div class="container">
-        <div class="row">
-            <a href="{{ path('profesionales_new') }}">Agregar Profesional</a>
-            <table class="table" width="60%">
-                <thead>
-                <tr>
-                    <th>Id</th>
-                    <th>Tipoanalisis</th>
-                    <th>Nombre</th>
-                    <th>Valorreferencia</th>
-                    <th>Actions</th>
-                </tr>
-                </thead>
-                <tbody>
-                {% for itemTipoAnalisi in itemTipoAnalises %}
-                    <tr>
-                        <td><a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">{{ itemTipoAnalisi.id }}</a></td>
-                        <td>{{ itemTipoAnalisi.tipoAnalisis }}</td>
-                        <td>{{ itemTipoAnalisi.nombre }}</td>
-                        <td>{{ itemTipoAnalisi.valorReferencia }}</td>
-                        <td>
-                            <ul>
-                                <li>
-                                    <a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">show</a>
-                                </li>
-                                <li>
-                                    <a href="{{ path('itemtipoanalisis_edit', { 'id': itemTipoAnalisi.id }) }}">edit</a>
-                                </li>
-                            </ul>
-                        </td>
-                    </tr>
-                {% endfor %}
-                </tbody>
-            </table>
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Tipoanalisis</th>
+                <th>Nombre</th>
+                <th>Valorreferencia</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for itemTipoAnalisi in itemTipoAnalises %}
+            <tr>
+                <td><a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">{{ itemTipoAnalisi.id }}</a></td>
+                <td>{{ itemTipoAnalisi.tipoAnalisis }}</td>
+                <td>{{ itemTipoAnalisi.nombre }}</td>
+                <td>{{ itemTipoAnalisi.valorReferencia }}</td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('itemtipoanalisis_edit', { 'id': itemTipoAnalisi.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
 
-
-        </div>
-    </div>
-
-
-
-{% endblock body %}
+    <ul>
+        <li>
+            <a href="{{ path('itemtipoanalisis_new') }}">Create a new itemTipoAnalisi</a>
+        </li>
+    </ul>
+{% endblock %}
