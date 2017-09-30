@@ -1,41 +1,35 @@
-{% extends 'base.html.twig' %}
+{% extends 'front.html.twig' %}
+
 
 {% block body %}
-    <h1>Analises list</h1>
+    <h2 class="text-info">Listado Análisis</h2>
 
     <table class="table table-striped" style="width: 90%" >
         <thead>
         <tr>
             <th>Id</th>
-            <th>Nombre</th>
-            <th>Apellido</th>
-            <th>Fecha Nacimiento</th>
-            <th>Email</th>
-            <th>Usuario</th>
-            <th>Password</th>
-            <th>Creado</th>
-            <th>Actualizado</th>
-            <th>Obra Social</th>
+            <th>Nombre Paciente</th>
+            <th>Nombre Profesional</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Entregado</th>
+            <th>Estado</th>
             <th>Acciones</th>
 
         </tr>
         </thead>
         <tbody>
-        {%  for pa in p %}
+        {%  for analisess in analises %}
             <tr>
-                <td>{{ pa.id }}</td>
-                <td>{{ pa.nombre }}</td>
-                <td>{{ pa.apellido }}</td>
-                <td>{{ pa.fechaNacimiento|date("d/m/Y") }}</td>
-                <td>{{ pa.email }}</td>
-                <td>{{ pa.usuario }}</td>
-                <td>{{ pa.password }}</td>
-                <td>{{ pa.fechaRegistro|date("d/m/Y") }}</td>
-                <td>{{ pa.fechaActualizado|date("d/m/Y") }}</td>
-                <td>{{ pa.obraSocial }}</td>
+                <td>{{ analisess.id }}</td>
+                <td>{{ analisess.paciente }}</td>
+                <td>{{ analisess.profesional }}</td>
+                <td>{{ analisess.fechaCreado|date("d/m/Y") }}</td>
+                <td>{{ analisess.fechaEntrega|date("d/m/Y") }}</td>
+                <td>{{ analisess.estado }}</td>
                 <td>
-                    <a href="{{ path('paciente_edit', {'id':pa.id}) }}">Edit</a>
-                    <a href="{{ path('paciente_delete', {'id':pa.id}) }}">Delete</a>
+                    <a href="{{ path('analisis_edit', {'id':analisess.id}) }}"><i class="fa fa-pencil"></i> </a>
+                    <a href="{{ path('analisis_delete',{'id':analisess.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a href="{{ path('analisis_show',{'id':analisess.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 </td>
 
             </tr>
@@ -43,9 +37,5 @@
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('analisis_new') }}">Create a new analisi</a>
-        </li>
-    </ul>
+
 {% endblock %}
