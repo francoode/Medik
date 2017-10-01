@@ -52,6 +52,31 @@ class AnalisisController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
+
+            $collTipoAnalisis = $request->request->get('appbundle_analisis');
+            $collTipoAnalisis = $collTipoAnalisis['tipoAnalisis'];
+
+           $items = [];
+            foreach ($collTipoAnalisis as $col)
+            {
+                $itemsCol = $em->getRepository('AppBundle:ItemTipoAnalisis')->findBy(array(
+                    'tipoAnalisis' => $col[0]));
+                if(!is_null($itemsCol))
+                {
+                    foreach ($itemsCol as $ic)
+                    {
+                        $items[] = $ic;
+                    }
+                }
+            }
+
+            foreach ($items as $it)
+            {
+            $analisi->addItemTipoAnalisi($it);
+            }
+
+
+
             $em->persist($analisi);
             $em->flush();
 
@@ -94,6 +119,8 @@ class AnalisisController extends Controller
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {
             $this->getDoctrine()->getManager()->flush();
+
+
 
             return $this->redirectToRoute('analisis_edit', array('id' => $analisi->getId()));
         }

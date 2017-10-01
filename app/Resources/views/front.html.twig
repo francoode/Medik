@@ -114,6 +114,35 @@
                             </ul>
                         </div>
                     </li>
+
+                    <li>
+                        <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                        <div id="subPages5" class="collapse ">
+                            <ul class="nav">
+                                <li>    <a href="#subPages51" data-toggle="collapse" class="collapsed"> <span>Tipo Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
+                                <div id="subPages51" class="collapse ">
+                                    <ul class="nav">
+                                        <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_index') }}" class="">Listar</a></li>
+                                        <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_new') }}" class="">Nuevo</a></li>
+                                    </ul>
+                                </div>
+                                </li>
+
+                                <li>    <a href="#subPages52" data-toggle="collapse" class="collapsed"> <span>Items Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
+                                    <div id="subPages52" class="collapse ">
+                                        <ul class="nav">
+                                            <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_index') }}" class="">Listar</a></li>
+                                            <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_new') }}" class="">Nuevo</a></li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+
+
+
+
                     {#<li><a href="index.html" class="active"><i class="lnr lnr-home"></i> <span>Dashboard</span></a></li>
                     <li><a href="elements.html" class=""><i class="lnr lnr-code"></i> <span>Elements</span></a></li>
                     <li><a href="charts.html" class=""><i class="lnr lnr-chart-bars"></i> <span>Charts</span></a></li>
