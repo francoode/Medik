@@ -1,40 +1,29 @@
-{% extends 'base.html.twig' %}
+{% extends 'front.html.twig' %}
 
-{% block body %}
-    <h2 class="text-info">Ver Análisis</h2>
+{%  block body %}
+    <h2 class="text-info">Ver Profesional</h2>
 
-    <table>
-        <tbody>
-            <tr>
-                <th>Id</th>
-                <td>{{ analisi.id }}</td>
-            </tr>
-            <tr>
-                <th>Fechacreado</th>
-                <td>{% if analisi.fechaCreado %}{{ analisi.fechaCreado|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Fechaentrega</th>
-                <td>{% if analisi.fechaEntrega %}{{ analisi.fechaEntrega|date('Y-m-d') }}{% endif %}</td>
-            </tr>
-            <tr>
-                <th>Estado</th>
-                <td>{{ analisi.estado }}</td>
-            </tr>
-        </tbody>
-    </table>
+    <div class="form" >
 
-    <ul>
-        <li>
-            <a href="{{ path('analisis_index') }}">Back to the list</a>
-        </li>
-        <li>
-            <a href="{{ path('analisis_edit', { 'id': analisi.id }) }}">Edit</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
-{% endblock %}
+        <div class="form-group">
+            Paciente:<br>
+            Nombre: {{ analisi.paciente }} Apellido: {{ analisi.paciente.apellido }}
+            Profesional: <br>
+            Nombre: {{ analisi.profesional }} Apellido: {{ analisi.profesional.apellido }} <br>
+            Estado: {{ analisi.estado }} <br>
+            Tipo de analisis: <br>
+            {% for ta in analisi.tipoAnalisis %}
+            {{ ta.nombre }} <br>
+                {% for item in allitem %}
+                    {% if item.tipoAnalisis.nombre == ta.nombre %}
+                        {{ item.nombre }}<br>
+                    {% endif %}
+                {% endfor %}
+            {% endfor %}
+
+        </div>
+
+    </div>
+
+
+{% endblock body %}

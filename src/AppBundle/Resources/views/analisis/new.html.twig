@@ -4,9 +4,100 @@
     <h2 class="text-info">Nuevo Análisis</h2>
 
     {{ form_start(form) }}
-    <ul id="email-fields-list"
-        data-prototype="{{ form_widget(form.tipoAnalisis.vars.prototype)|e }}">
-    </ul>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.paciente, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.paciente, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.paciente) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.profesional, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.profesional, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.profesional) }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.estado, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.estado, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.estado) }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.fechaEntrega, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.fechaEntrega, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.fechaEntrega) }}
+            </div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.fechaCreado, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.fechaCreado, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.fechaCreado) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.tipoAnalisis, 'Tipo Análisis', {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                <ul id="email-fields-list"
+
+                    data-prototype="{{ form_widget(form.tipoAnalisis.vars.prototype)|e }}">
+                </ul>
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.tipoAnalisis) }}
+            </div>
+        </div>
+    </div>
+
+
+
+
     {{ form_end(form) }}
 
     <a href="#" id="add-another-email">Add another email</a>
@@ -39,7 +130,7 @@
             emailCount++;
 
             // create a new list element and add it to the list
-            var newLi = jQuery('<li></li>').html(newWidget);
+            var newLi = jQuery('<li style=" list-style: none;"></li>').html(newWidget);
             newLi.appendTo(emailList);
         });
     })

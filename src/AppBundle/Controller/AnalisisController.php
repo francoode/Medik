@@ -97,11 +97,16 @@ class AnalisisController extends Controller
      */
     public function showAction(Analisis $analisi)
     {
-        $deleteForm = $this->createDeleteForm($analisi);
+       /* $deleteForm = $this->createDeleteForm($analisi);*/
+
+        /*$form = $this->createForm('AppBundle\Form\AnalisisType', $analisi);*/
+        $em = $this->getDoctrine()->getManager();
+        $allItem = $em->getRepository('AppBundle:ItemTipoAnalisis')->findAll() ;
 
         return $this->render('AppBundle:analisis:show.html.twig', array(
             'analisi' => $analisi,
-            'delete_form' => $deleteForm->createView(),
+            'allitem' => $allItem
+           /* 'form' => $form->createView(),*/
         ));
     }
 
@@ -135,19 +140,15 @@ class AnalisisController extends Controller
     /**
      * Deletes a analisi entity.
      *
-     * @Route("/{id}", name="analisis_delete")
-     * @Method("DELETE")
+     * @Route("/d/{id}", name="analisis_delete")
      */
-    public function deleteAction(Request $request, Analisis $analisi)
+    public function deleteAction( Analisis $analisi)
     {
-        $form = $this->createDeleteForm($analisi);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
             $em->remove($analisi);
             $em->flush();
-        }
+
 
         return $this->redirectToRoute('analisis_index');
     }

@@ -12,6 +12,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
 class AnalisisType extends AbstractType
 {
@@ -22,7 +23,12 @@ class AnalisisType extends AbstractType
     {
         $builder->add('fechaCreado')
             ->add('fechaEntrega')
-            ->add('estado')
+            ->add('estado', ChoiceType::class, array(
+                'choices'  => array(
+                    'Pendiente' => 'Pendiente',
+                    'Realizado' => 'Realizado',
+
+                )))
             ->add('paciente', EntityType::class, array(
                 'class' => 'AppBundle:Paciente'))
             ->add('profesional', EntityType::class, array(
@@ -32,9 +38,11 @@ class AnalisisType extends AbstractType
                     'entry_type'   => EntityType::class,
                     'allow_add'    => true,
                     'allow_delete' => true,
+                    'label' => false,
                     'by_reference' => false,
                     'entry_options'=> array(
                         'class' => 'AppBundle:TipoAnalisis',
+                        'label' => false
 
                     ),
                 )
