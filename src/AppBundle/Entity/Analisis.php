@@ -75,6 +75,9 @@ class Analisis
     private $itemTipoAnalisis;
 
 
+
+
+
     /**
      * Get id
      *

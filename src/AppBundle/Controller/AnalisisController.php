@@ -3,6 +3,7 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Analisis;
+use AppBundle\Entity\ResultadoAnalisis;
 use AppBundle\Entity\TipoAnalisis;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
@@ -73,11 +74,19 @@ class AnalisisController extends Controller
             foreach ($items as $it)
             {
             $analisi->addItemTipoAnalisi($it);
+
+            $resultadoAnalisis = new ResultadoAnalisis();
+            $resultadoAnalisis->setAnalisis($analisi);
+            $resultadoAnalisis->setItem($it);
+            $resultadoAnalisis->setResultado(0);
+            $em->persist($resultadoAnalisis);
+
             }
 
 
 
             $em->persist($analisi);
+
             $em->flush();
 
             return $this->redirectToRoute('analisis_show', array('id' => $analisi->getId()));
@@ -101,7 +110,9 @@ class AnalisisController extends Controller
 
         /*$form = $this->createForm('AppBundle\Form\AnalisisType', $analisi);*/
         $em = $this->getDoctrine()->getManager();
-        $allItem = $em->getRepository('AppBundle:ItemTipoAnalisis')->findAll() ;
+
+        $allItem = $em->getRepository('AppBundle:ResultadoAnalisis')->findBy(array('analisis' => $analisi));
+
 
         return $this->render('AppBundle:analisis:show.html.twig', array(
             'analisi' => $analisi,

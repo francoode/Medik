@@ -55,7 +55,7 @@
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-8">
-                {{ form_widget(form.fechaEntrega, {'attr' : {'class' : 'form-control col-10'}}) }}
+                {{ form_widget(form.fechaEntrega, {'attr' : {'class' : ''}}) }}
             </div>
             <div class="col-md-3">
                 {{ form_errors(form.fechaEntrega) }}
@@ -69,7 +69,7 @@
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-8">
-                {{ form_widget(form.fechaCreado, {'attr' : {'class' : 'form-control col-10'}}) }}
+                {{ form_widget(form.fechaCreado, {'attr' : {'class' : ''}}) }}
             </div>
             <div class="col-md-3">
                 {{ form_errors(form.fechaCreado) }}
@@ -79,12 +79,15 @@
 
     <div class="row">
         <div class="form-group">
+            <h3 class="text-info" style="
+    padding-left: 15px;">Tipos de análisis a realizar:{# <a href="#" id="add-another-email"><i class="fa fa-plus-circle" aria-hidden="true"></i></a>#} </h3>
             <div class=" col-md-1">
-                {{ form_label(form.tipoAnalisis, 'Tipo Análisis', {
+                {{ form_label(form.tipoAnalisis, '', {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-8">
-                <ul id="email-fields-list"
+               {# <ul id="email-fields-list"#}
+                <ul class="tags"
 
                     data-prototype="{{ form_widget(form.tipoAnalisis.vars.prototype)|e }}">
                 </ul>
@@ -100,7 +103,7 @@
 
     {{ form_end(form) }}
 
-    <a href="#" id="add-another-email">Add another email</a>
+
 
 
 {% endblock %}
@@ -111,29 +114,101 @@
 
 
 
+<script>
+    // setup an "add a tag" link
+    var $addTagLink = $('<a href="#" class="add_tag_link"> <button type="button" class="btn btn-default btn-sm "><i class="fa fa-plus-square"></i> Agregar Tipo Analisis</button></a>');
+    var $newLinkLi = $('<li style="\n' +
+        '    list-style: none;\n' +
+        '"></li>').append($addTagLink);
+
+    jQuery(document).ready(function() {
+        // Get the ul that holds the collection of tags
+        var $collectionHolder = $('ul.tags');
+
+        // add the "add a tag" anchor and li to the tags ul
+        $collectionHolder.append($newLinkLi);
+
+        // count the current form inputs we have (e.g. 2), use that as the new
+        // index when inserting a new item (e.g. 2)
+        $collectionHolder.data('index', $collectionHolder.find(':input').length);
+
+        $addTagLink.on('click', function(e) {
+            // prevent the link from creating a "#" on the URL
+            e.preventDefault();
+
+            // add a new tag form (see code block below)
+            addTagForm($collectionHolder, $newLinkLi);
+        });
+
+
+    });
+
+    function addTagForm($collectionHolder, $newLinkLi) {
+        // Get the data-prototype explained earlier
+        var prototype = $collectionHolder.data('prototype');
+
+        // get the new index
+        var index = $collectionHolder.data('index');
+
+        // Replace '$$name$$' in the prototype's HTML to
+        // instead be a number based on how many items we have
+        var newForm = prototype.replace(/__name__/g, index);
+
+        // increase the index with one for the next item
+        $collectionHolder.data('index', index + 1);
+
+        // Display the form in the page in an li, before the "Add a tag" link li
+        var $newFormLi = $('<li style="\n' +
+            '    list-style: none;\n' +
+            '"></li>').append(newForm);
+
+        // also add a remove button, just for this example
+        $newFormLi.append('<a href="#" class="remove-tag">' +
+            '<button type="button" class="btn btn-danger btn-xs style" style="\n' +
+            '    padding-top: 3px;\n' +
+            '    padding-bottom: 2px;\n' +
+            '    padding-left: 4px;\n' +
+            '    margin-left: 15px;\n' +
+            '    padding-right: 4px;\n' +
+            '"><i class="fa fa-trash-o"></i> </button></a>');
+
+        $newLinkLi.before($newFormLi);
+
+        // handle the removal, just for this example
+        $('.remove-tag').click(function(e) {
+            e.preventDefault();
+
+            $(this).parent().remove();
+
+            return false;
+        });
+    }
+
+</script>
+
+
+
+
+{#
 <script type="text/javascript">
     // keep track of how many email fields have been rendered
     var emailCount = '{{ form.tipoAnalisis|length }}';
 
     jQuery(document).ready(function() {
+        $collectionHolder = $('ul.email-fields-list');
+
         jQuery('#add-another-email').click(function(e) {
             e.preventDefault();
-
             var emailList = jQuery('#email-fields-list');
-
-            // grab the prototype template
             var newWidget = emailList.attr('data-prototype');
-            // replace the "__name__" used in the id and name of the prototype
-            // with a number that's unique to your emails
-            // end name attribute looks like name="contact[emails][2]"
             newWidget = newWidget.replace(/__name__/g, emailCount);
             emailCount++;
-
-            // create a new list element and add it to the list
             var newLi = jQuery('<li style=" list-style: none;"></li>').html(newWidget);
             newLi.appendTo(emailList);
+
         });
     })
 </script>
+#}
 
 {% endblock %}

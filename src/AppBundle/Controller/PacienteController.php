@@ -57,6 +57,8 @@ class PacienteController extends Controller
 
         $form->handleRequest($request);
 
+
+
         if($form->isValid() && $form->isSubmitted())
         {
             $p->setFechaActualizado(new \DateTime());
@@ -64,10 +66,10 @@ class PacienteController extends Controller
             $em = $this->getDoctrine()->getManager();
             $em->persist($p);
             $em->flush();
-            return $this->generateUrl('paciente_list');
+            return $this->redirectToRoute('paciente_list');
         }
 
-        return $this->generateUrl('paciente_list');;
+        return $this->redirectToRoute('paciente_list');
     }
 
     /**
