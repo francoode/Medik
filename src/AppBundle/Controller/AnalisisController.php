@@ -79,7 +79,9 @@ class AnalisisController extends Controller
             $resultadoAnalisis->setAnalisis($analisi);
             $resultadoAnalisis->setItem($it);
             $resultadoAnalisis->setResultado(0);
-            $em->persist($resultadoAnalisis);
+            $analisi->addItem($resultadoAnalisis);
+
+            
 
             }
 

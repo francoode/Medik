@@ -65,14 +65,11 @@ class Analisis
     private $tipoAnalisis;
 
     /**
-     * @ORM\ManyToMany(targetEntity="ItemTipoAnalisis")
-     * @ORM\JoinTable(name="analisis_items",
-     *          joinColumns={@ORM\JoinColumn(name="analisis_id", referencedColumnName="id")},
-     *          inverseJoinColumns={@ORM\JoinColumn(name="item_id", referencedColumnName="id")}
-     *          )
-     */
+     *
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="Analisis")
 
-    private $itemTipoAnalisis;
+     */
+    private $item;
 
 
 
@@ -277,5 +274,38 @@ class Analisis
     public function getItemTipoAnalisis()
     {
         return $this->itemTipoAnalisis;
+    }
+
+    /**
+     * Add item
+     *
+     * @param \AppBundle\Entity\ResultadoAnalisis $item
+     * @return Analisis
+     */
+    public function addItem(\AppBundle\Entity\ResultadoAnalisis $item)
+    {
+        $this->item[] = $item;
+
+        return $this;
+    }
+
+    /**
+     * Remove item
+     *
+     * @param \AppBundle\Entity\ResultadoAnalisis $item
+     */
+    public function removeItem(\AppBundle\Entity\ResultadoAnalisis $item)
+    {
+        $this->item->removeElement($item);
+    }
+
+    /**
+     * Get item
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getItem()
+    {
+        return $this->item;
     }
 }
