@@ -73,12 +73,14 @@ class AnalisisController extends Controller
 
             foreach ($items as $it)
             {
-            $analisi->addItemTipoAnalisi($it);
+
 
             $resultadoAnalisis = new ResultadoAnalisis();
             $resultadoAnalisis->setAnalisis($analisi);
             $resultadoAnalisis->setItem($it);
             $resultadoAnalisis->setResultado(0);
+
+
             $analisi->addItem($resultadoAnalisis);
 
             

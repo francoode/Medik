@@ -66,8 +66,7 @@ class Analisis
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="Analisis")
-
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="Analisis", cascade={"persist"})
      */
     private $item;
 
@@ -243,38 +242,6 @@ class Analisis
         return $this->tipoAnalisis;
     }
 
-    /**
-     * Add itemTipoAnalisis
-     *
-     * @param \AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis
-     * @return Analisis
-     */
-    public function addItemTipoAnalisi(\AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis)
-    {
-        $this->itemTipoAnalisis[] = $itemTipoAnalisis;
-
-        return $this;
-    }
-
-    /**
-     * Remove itemTipoAnalisis
-     *
-     * @param \AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis
-     */
-    public function removeItemTipoAnalisi(\AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis)
-    {
-        $this->itemTipoAnalisis->removeElement($itemTipoAnalisis);
-    }
-
-    /**
-     * Get itemTipoAnalisis
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getItemTipoAnalisis()
-    {
-        return $this->itemTipoAnalisis;
-    }
 
     /**
      * Add item
