@@ -5,7 +5,6 @@ namespace AppBundle\Form;
 
 use AppBundle\AppBundle;
 use AppBundle\Entity\TipoAnalisis;
-use function Sodium\add;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
@@ -14,7 +13,7 @@ use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 
-class AnalisisType extends AbstractType
+class CargaType extends AbstractType
 {
     /**
      * {@inheritdoc}
@@ -47,12 +46,17 @@ class AnalisisType extends AbstractType
                     ),
                 )
             )
+            ->add('item',CollectionType::class, array(
+                    'entry_type'   => ResultadoAnalisisType::class,
+                    'allow_add'    => true,
+                )
+            )
 
             ->add('Guardar', SubmitType::class);
 
 
     }
-    
+
     /**
      * {@inheritdoc}
      */
@@ -68,7 +72,7 @@ class AnalisisType extends AbstractType
      */
     public function getBlockPrefix()
     {
-        return 'appbundle_analisis';
+        return 'appbundle_carga';
     }
 
 

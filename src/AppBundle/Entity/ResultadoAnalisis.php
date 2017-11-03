@@ -123,4 +123,9 @@ class ResultadoAnalisis
     {
         return $this->item;
     }
+
+    public function __toString()
+    {
+        return 'asd';
+    }
 }
