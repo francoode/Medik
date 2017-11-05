@@ -31,7 +31,7 @@ class ResultadoAnalisis
     /**
      *
      * @ORM\ManyToOne(targetEntity="AppBundle\Entity\ItemTipoAnalisis")
-     * @ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")
+     * @ORM\JoinColumn(name="item_tipoanalisis_id", referencedColumnName="id")
      */
     private $item;
 
