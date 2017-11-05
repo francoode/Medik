@@ -142,8 +142,12 @@ class AnalisisController extends Controller
             return $this->redirectToRoute('analisis_edit', array('id' => $analisi->getId()));
         }
 
+        $em = $this->getDoctrine()->getManager();
+        $allItem = $em->getRepository('AppBundle:ResultadoAnalisis')->findBy(array('analisis' => $analisi));
+
         return $this->render('AppBundle:analisis:edit.html.twig', array(
             'analisi' => $analisi,
+            'allitem' => $allItem,
             'edit_form' => $editForm->createView(),
             'delete_form' => $deleteForm->createView(),
         ));

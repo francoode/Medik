@@ -1,4 +1,4 @@
-{% extends 'base.html.twig' %}
+{% extends 'front.html.twig' %}
 
 {% block body %}
     <h2 class="text-info">Edición Análisis</h2>
@@ -7,14 +7,14 @@
     <div class="row">
         <div class="form-group">
             <div class=" col-md-1">
-                {{ form_label(form.paciente, null, {
+                {{ form_label(edit_form.paciente, null, {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-8">
-                {{ form_widget(form.paciente, {'attr' : {'class' : 'form-control col-10'}}) }}
+                {{ form_widget(edit_form.paciente, {'attr' : {'class' : 'form-control col-10'}}) }}
             </div>
             <div class="col-md-3">
-                {{ form_errors(form.paciente) }}
+                {{ form_errors(edit_form.paciente) }}
             </div>
         </div>
     </div>
@@ -22,14 +22,14 @@
     <div class="row">
         <div class="form-group">
             <div class=" col-md-1">
-                {{ form_label(form.profesional, null, {
+                {{ form_label(edit_form.profesional, null, {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-8">
-                {{ form_widget(form.profesional, {'attr' : {'class' : 'form-control col-10'}}) }}
+                {{ form_widget(edit_form.profesional, {'attr' : {'class' : 'form-control col-10'}}) }}
             </div>
             <div class="col-md-3">
-                {{ form_errors(form.profesional) }}
+                {{ form_errors(edit_form.profesional) }}
             </div>
         </div>
     </div>
@@ -37,30 +37,75 @@
     <div class="row">
         <div class="form-group">
             <div class=" col-md-1">
-                {{ form_label(form.estado, null, {
+                {{ form_label(edit_form.estado, null, {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-8">
-                {{ form_widget(form.estado, {'attr' : {'class' : 'form-control col-10'}}) }}
+                {{ form_widget(edit_form.estado, {'attr' : {'class' : 'form-control col-10'}}) }}
             </div>
             <div class="col-md-3">
-                {{ form_errors(form.estado) }}
+                {{ form_errors(edit_form.estado) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(edit_form.fechaEntrega, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(edit_form.fechaEntrega, {'attr' : {'class' : ''}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(edit_form.fechaEntrega) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(edit_form.fechaCreado, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(edit_form.fechaCreado, {'attr' : {'class' : ''}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(edit_form.fechaCreado) }}
             </div>
         </div>
     </div>
 
 
 
-    {{ form_end(edit_form) }}
 
-    <ul>
-        <li>
-            <a href="{{ path('analisis_index') }}">Back to the list</a>
-        </li>
-        <li>
-            {{ form_start(delete_form) }}
-                <input type="submit" value="Delete">
-            {{ form_end(delete_form) }}
-        </li>
-    </ul>
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-8" >
+                {{ form_widget(edit_form.item, {'attr' : {'class' : ''}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(edit_form.item) }}
+            </div>
+        </div>
+    </div>
+
+
+    <div class="row">
+        <div class="form-group">
+
+            <div class="col-md-8">
+                {{ form_widget(edit_form.Guardar, {'attr' : {'class' : ''}}) }}
+            </div>
+        </div>
+    </div>
+
+
+    {{ form_end(edit_form, {'render_rest':false}) }}
+
+
 {% endblock %}
+

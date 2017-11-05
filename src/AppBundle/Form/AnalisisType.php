@@ -4,6 +4,7 @@ namespace AppBundle\Form;
 
 
 use AppBundle\AppBundle;
+use AppBundle\Entity\ResultadoAnalisis;
 use AppBundle\Entity\TipoAnalisis;
 use function Sodium\add;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
@@ -50,6 +51,10 @@ class AnalisisType extends AbstractType
             ->add('item',CollectionType::class, array(
                     'entry_type'   => ResultadoAnalisisType::class,
                     'allow_add'    => true,
+                    'label' => true,
+                    'entry_options' => array(
+                        'label' => false
+                    )
                 )
             )
 

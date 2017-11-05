@@ -11,9 +11,14 @@ class ResultadoAnalisisType extends AbstractType
     /**
      * {@inheritdoc}
      */
+
+
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('resultado');
+
+
+        $builder->add('resultado', null, array('label' => false));
+
     }
     
     /**
