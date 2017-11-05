@@ -134,7 +134,7 @@ class AnalisisController extends Controller
     public function editAction(Request $request, Analisis $analisi)
     {
         $deleteForm = $this->createDeleteForm($analisi);
-        $editForm = $this->createForm('AppBundle\Form\CargaType', $analisi);
+        $editForm = $this->createForm('AppBundle\Form\AnalisisType', $analisi);
         $editForm->handleRequest($request);
 
         if ($editForm->isSubmitted() && $editForm->isValid()) {

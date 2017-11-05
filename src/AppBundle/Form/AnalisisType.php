@@ -47,6 +47,11 @@ class AnalisisType extends AbstractType
                     ),
                 )
             )
+            ->add('item',CollectionType::class, array(
+                    'entry_type'   => ResultadoAnalisisType::class,
+                    'allow_add'    => true,
+                )
+            )
 
             ->add('Guardar', SubmitType::class);
 

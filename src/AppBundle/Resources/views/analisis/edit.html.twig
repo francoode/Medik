@@ -4,8 +4,53 @@
     <h2 class="text-info">Edición Análisis</h2>
 
     {{ form_start(edit_form) }}
-        {{ form_widget(edit_form) }}
-        <input type="submit" value="Edit" />
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.paciente, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.paciente, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.paciente) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.profesional, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.profesional, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.profesional) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.estado, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.estado, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.estado) }}
+            </div>
+        </div>
+    </div>
+
+
+
     {{ form_end(edit_form) }}
 
     <ul>

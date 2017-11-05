@@ -97,10 +97,15 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="form-group">
+            <div class="col-md-8">
+       {{ form_widget(form.Guardar, {'attr' : {'class' : ''}}) }}
+        </div>
+    </div>
 
 
-
-    {{ form_end(form) }}
+    {{ form_end(form, {'render_rest': false}) }}
 
 
 
