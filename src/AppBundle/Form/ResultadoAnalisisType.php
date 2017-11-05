@@ -17,7 +17,9 @@ class ResultadoAnalisisType extends AbstractType
     {
 
 
-        $builder->add('resultado', null, array('label' => false));
+        $builder->add('resultado', null, array(
+            'label' => false,
+        ));
 
     }
     

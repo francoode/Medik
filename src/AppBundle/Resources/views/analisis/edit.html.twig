@@ -80,18 +80,25 @@
     </div>
 
 
+    {% for it in edit_form.item %}
 
-
+ 
     <div class="row">
         <div class="form-group">
+
+            <div class="col-md-1">
+                {{ form_label(it,  it.vars.value.item.nombre  ) }}
+            </div>
             <div class="col-md-8" >
-                {{ form_widget(edit_form.item, {'attr' : {'class' : ''}}) }}
+                {{ form_widget(it, {'attr' : {'class' : ''}}) }}
             </div>
             <div class="col-md-3">
-                {{ form_errors(edit_form.item) }}
+                {{ form_errors(it) }}
             </div>
         </div>
     </div>
+
+    {% endfor %}
 
 
     <div class="row">
