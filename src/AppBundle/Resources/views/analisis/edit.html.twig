@@ -48,7 +48,10 @@
             </div>
         </div>
     </div>
+    
+    {{ form_widget(edit_form.tipoAnalisis, {'attr': {'class':'hidden'}}) }}
 
+    {{ form_row(edit_form._token) }}
     <div class="row">
         <div class="form-group">
             <div class=" col-md-1">
@@ -64,24 +67,18 @@
         </div>
     </div>
 
-    <div class="row">
-        <div class="form-group">
-            <div class=" col-md-1">
-                {{ form_label(edit_form.fechaCreado, null, {
-                    'label_attr' : {'class' : 'control-label'}}) }}
-            </div>
-            <div class="col-md-8">
-                {{ form_widget(edit_form.fechaCreado, {'attr' : {'class' : ''}}) }}
-            </div>
-            <div class="col-md-3">
-                {{ form_errors(edit_form.fechaCreado) }}
-            </div>
-        </div>
-    </div>
 
+
+    {% set primera = 1 %}
 
     {% for it in edit_form.item %}
-
+        {% if primera == 1 %}
+         <h4>{{ it.vars.value.item.tipoAnalisis  }}</h4>
+        {% else %}
+            {% if tipo != it.vars.value.item.tipoAnalisis   %}
+                <h4>{{ it.vars.value.item.tipoAnalisis  }}</h4>
+            {% endif %}
+        {% endif %}
  
     <div class="row">
         <div class="form-group">
@@ -97,6 +94,9 @@
             </div>
         </div>
     </div>
+
+        {% set tipo = it.vars.value.item.tipoAnalisis  %}
+        {% set primera = 2 %}
 
     {% endfor %}
 
@@ -116,3 +116,14 @@
 
 {% endblock %}
 
+
+{% block javascripts %}
+{{ parent() }}
+    <script>
+
+    $(document).ready(function(){
+        $('#appbundle_analisis_paciente').attr("disabled", true);
+        }
+    )
+    </script>
+{% endblock %}

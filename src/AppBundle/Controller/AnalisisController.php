@@ -134,10 +134,21 @@ class AnalisisController extends Controller
     public function editAction(Request $request, Analisis $analisi)
     {
         $deleteForm = $this->createDeleteForm($analisi);
+        $paciente = $analisi->getPaciente();
+        $fechaCreado = $analisi->getFechaCreado();
+
+
+
         $editForm = $this->createForm('AppBundle\Form\AnalisisType', $analisi);
         $editForm->handleRequest($request);
 
+
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+            $analisi->setFechaCreado($fechaCreado);
+            $analisi->setPaciente($paciente);
+
+
+
             $this->getDoctrine()->getManager()->flush();
             return $this->redirectToRoute('analisis_edit', array('id' => $analisi->getId()));
         }
