@@ -87,6 +87,8 @@ class AnalisisController extends Controller
 
             }
 
+            $analisi->setFechaCreado(new \DateTime());
+
 
 
             $em->persist($analisi);
