@@ -1,16 +1,66 @@
-{% extends 'base.html.twig' %}
+{% extends 'front.html.twig' %}
 
-{% block body %}
-    <h2 class="text-info">Nuevo Tipo Análisis</h2>
+{%  block body %}
+    <h2 class="text-info">Nuevo Item Tipo Analisis</h2>
+    <div class="form">
+        {{ form_start(form) }}
 
-    {{ form_start(form) }}
-        {{ form_widget(form) }}
-        <input type="submit" value="Create" />
-    {{ form_end(form) }}
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.nombre, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.nombre, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.nombre) }}
+                </div>
+            </div>
+        </div>
 
-    <ul>
-        <li>
-            <a href="{{ path('tipoanalisis_index') }}">Back to the list</a>
-        </li>
-    </ul>
-{% endblock %}
+        <br>
+
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.metodo, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.metodo, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.metodo) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+      
+
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-4">
+                </div>
+                <div class="col-md-4">
+                    {{ form_widget(form.Guardar, {'attr' : {'class' : 'btn'}}) }}
+                </div>
+                <div class="col-md-8">
+                </div>
+            </div>
+        </div>
+
+
+
+
+
+        {{ form_end(form) }}
+    </div>
+
+
+{% endblock body %}
