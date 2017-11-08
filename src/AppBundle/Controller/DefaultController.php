@@ -6,6 +6,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
+use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 
 class DefaultController extends Controller
 {
@@ -32,26 +33,51 @@ class DefaultController extends Controller
 
         $html = $this->renderView('AppBundle:analisis:j.html.twig', array(
             'analisi' => $analisi,
-            'allitem' => $allItem
+            'allitem' => $allItem,
         ));
 
 
-        $pdfGenerator = $this->get('spraed.pdf.generator');
 
-        return new Response($pdfGenerator->generatePDF($html),
-            200,
-            array(
-                'Content-Type' => 'application/pdf',
-                'Content-Disposition' => 'inline; filename="out.pdf"',
-                '/var/www/html/proyectof/app/Resources/css/bootstrap.css',
-                '/var/www/html/proyectof/app/Resources/css/bootstrap-grid.css',
-                '/var/www/html/proyectof/app/Resources/css/bootstrap-reboot.css',
-                '/var/www/html/proyectof/app/Resources/css/bootstrap-theme.css',
-                '/var/www/html/proyectof/app/Resources/css/main.css'
 
-            )
+        /*
+        Descarga PDF
+
+                $response = new Response (
+                    $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
+                    200,
+                    array(
+                        'Content-Type'          => '/home/franco/pdf/',
+                        'Content-Disposition'   => 'attachment; filename="archivo.pdf"'
+                    )
+                );
+
+        return $response;
+        */
+
+        return new PdfResponse(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
+                'orientation' => 'landscape',
+                'enable-javascript' => true,
+                'javascript-delay' => 1000,
+                'no-stop-slow-scripts' => true,
+                'no-background' => false,
+                'lowquality' => false,
+                'encoding' => 'utf-8',
+                'images' => true,
+                'cookie' => array(),
+                'dpi' => 300,
+                'image-dpi' => 300,
+                'enable-external-links' => true,
+                'enable-internal-links' => true
+            )),
+            'file.pdf'
         );
+
+
+
+
     }
+
 
 
 }

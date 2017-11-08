@@ -44,6 +44,16 @@ twig:
     debug: '%kernel.debug%'
     strict_variables: '%kernel.debug%'
 
+knp_snappy:
+    pdf:
+        enabled: true
+        binary: /usr/local/bin/wkhtmltopdf
+        options: []
+    image:
+        enabled: true
+        binary: /usr/local/bin/wkhtmltoimage
+        options: []
+
 # Doctrine Configuration
 doctrine:
     dbal:
@@ -60,6 +70,7 @@ doctrine:
         #   2. Uncomment database_path in parameters.yml.dist
         #   3. Uncomment next line:
         #path: '%database_path%'
+
 
     orm:
         auto_generate_proxy_classes: '%kernel.debug%'
