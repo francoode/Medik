@@ -1,43 +1,38 @@
-{% extends 'base.html.twig' %}
+
+
+{% extends 'front.html.twig' %}
+
 
 {% block body %}
-    <h1>Itemtipoanalises list</h1>
+    <h2 class="text-info">Listado Item Tipo Análisis</h2>
 
-    <table>
+    <table class="table table-striped" style="width: 90%" >
         <thead>
-            <tr>
-                <th>Id</th>
-                <th>Tipoanalisis</th>
-                <th>Nombre</th>
-                <th>Valorreferencia</th>
-                <th>Actions</th>
-            </tr>
+        <tr>
+            <th>Id</th>
+            <th>Tipoanalisis</th>
+            <th>Nombre</th>
+            <th>Valor referencia</th>
+            <th>Actions</th>
+        </tr>
         </thead>
         <tbody>
-        {% for itemTipoAnalisi in itemTipoAnalises %}
+        {%  for itemTipoAnalisi in itemTipoAnalises %}
             <tr>
-                <td><a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">{{ itemTipoAnalisi.id }}</a></td>
+                <td>{{ itemTipoAnalisi.id }}</td>
                 <td>{{ itemTipoAnalisi.tipoAnalisis }}</td>
                 <td>{{ itemTipoAnalisi.nombre }}</td>
                 <td>{{ itemTipoAnalisi.valorReferencia }}</td>
                 <td>
-                    <ul>
-                        <li>
-                            <a href="{{ path('itemtipoanalisis_show', { 'id': itemTipoAnalisi.id }) }}">show</a>
-                        </li>
-                        <li>
-                            <a href="{{ path('itemtipoanalisis_edit', { 'id': itemTipoAnalisi.id }) }}">edit</a>
-                        </li>
-                    </ul>
+                    <a href="{{ path('itemtipoanalisis_edit', {'id':itemTipoAnalisi.id}) }}"><i class="fa fa-pencil"></i> </a>
+                    <a href="{{ path('itemtipoanalisis_delete',{'id':itemTipoAnalisi.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+
                 </td>
+
             </tr>
         {% endfor %}
         </tbody>
     </table>
 
-    <ul>
-        <li>
-            <a href="{{ path('itemtipoanalisis_new') }}">Create a new itemTipoAnalisi</a>
-        </li>
-    </ul>
+
 {% endblock %}

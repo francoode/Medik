@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 
 class ItemTipoAnalisisType extends AbstractType
 {
@@ -19,7 +20,8 @@ class ItemTipoAnalisisType extends AbstractType
             'choice_value' => 'id'
         ))
             ->add('nombre')
-            ->add('valorReferencia');
+            ->add('valorReferencia')
+            ->add('Guardar', SubmitType::class);
     }
     
     /**

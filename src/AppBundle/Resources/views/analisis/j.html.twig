@@ -1,0 +1,108 @@
+<link rel="stylesheet" href="{{ app.request.scheme ~'://'~ app.request.httpHost ~ asset('css/bootstrap.min.css') }}" />
+
+<div class="page-content">
+    <!-- BEGIN PAGE BAR -->
+    <div class="page-bar">
+        <!-- BEGIN PAGE BREADCRUMB -->
+
+
+        <div class="page-toolbar">
+
+        </div>
+        <!-- END PAGE BREADCRUMB -->
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="portlet light bordered">
+                <div class="portlet-title">
+                    <div class="caption">
+                        <i class="icon-user font-dark"></i>
+                        <span class="caption-subject font-dark sbold uppercase">
+                                <h2 class="text-info">Ver Análisis </h2>
+
+                            </span>
+                    </div>
+                </div>
+                <div class="portlet-body form">
+                    <h4>Análisis   &nbsp;&nbsp;&nbsp;- &nbsp;&nbsp;&nbsp;  Nro: {{ analisi.id }}</h4>
+                    <table class="table">
+                        <!-- event -->
+                        <tr>
+                            <th class="col-md-3">
+                                Paciente:
+                            </th>
+                            <td class="col-md-9">
+                                {{ analisi.paciente }}
+                            </td>
+                        </tr>
+
+                        <!-- contract number -->
+                        <tr>
+                            <th class="col-md-3">
+                                Profesional:
+                            </th>
+                            <td class="col-md-9">
+                                {{ analisi.paciente }}
+                            </td>
+                        </tr>
+
+                        <!-- signin date -->
+                        <tr>
+                            <th class="col-md-3">
+                                Fecha realizado:
+                            </th>
+                            <td class="col-md-9">
+                                {{ analisi.fechaCreado|date("d/m/Y") }}
+                            </td>
+                        </tr>
+
+                        <!-- creation date -->
+                        <tr>
+                            <th class="col-md-3">
+                                Fecha de entrega:
+                            </th>
+                            <td class="col-md-9">
+                                {{ analisi.fechaEntrega|date("d/m/Y") }}
+                            </td>
+                        </tr>
+
+
+
+                        <!-- user -->
+                        <tr>
+                            <th class="col-md-3">
+                                Estado Actual:
+                            </th>
+                            <td class="col-md-9" >
+                                {{ analisi.estado }}
+                            </td>
+                        </tr>
+                    </table>
+
+                    {% for a in analisi.tipoAnalisis %}
+                        <h4>Tipo de analisis: {{ a.nombre }}</h4>
+                        Metodo: {{ a.metodo }}
+                        {% for all in allitem %}
+                            {% if all.item.tipoanalisis == a %}
+                                <table class="table">
+                                    <tr>
+                                        <th class="col-md-3">
+                                            {{ all.item }}
+                                        </th>
+                                        <td class="col-md-9" style="padding-left: 20px;">
+                                            {{ all.resultado }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+
+
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- END PAGE BASE CONTENT -->
+</div>
