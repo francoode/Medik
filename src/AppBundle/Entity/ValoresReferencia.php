@@ -24,9 +24,16 @@ class ValoresReferencia
     /**
      * @var float
      *
-     * @ORM\Column(name="valor", type="float", nullable=true)
+     * @ORM\Column(name="valor_min", type="float", nullable=true)
      */
-    private $valor;
+    private $valorMin;
+
+    /**
+     * @var float
+     *
+     * @ORM\Column(name="valor_max", type="float", nullable=true)
+     */
+    private $valorMax;
 
     /**
      * @var int
