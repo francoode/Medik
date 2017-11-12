@@ -3,6 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\ItemTipoAnalisis;
+use AppBundle\Entity\ValoresReferencia;
+use AppBundle\Form\ValoresReferenciaType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
@@ -45,11 +47,10 @@ class ItemTipoAnalisisController extends Controller
 
         if ($form->isSubmitted() && $form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-
             $em->persist($itemTipoAnalisi);
             $em->flush();
 
-            return $this->redirectToRoute('itemtipoanalisis_show', array('id' => $itemTipoAnalisi->getId()));
+            return $this->redirectToRoute('itemtipoanalisis_new', array('id' => $itemTipoAnalisi->getId()));
         }
 
         return $this->render('AppBundle:itemtipoanalisis:new.html.twig', array(

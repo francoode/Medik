@@ -37,18 +37,19 @@ class ItemTipoAnalisis
      */
     private $nombre;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="ValorReferencia", type="float")
-     */
-    private $valorReferencia;
+
 
     /**
      * @var string
      * @ORM\Column(name="unidad", type="string", length=50)
      */
     private $unidad;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="ItemTipoAnalisis", cascade={"persist"})
+     */
+    private $valoresReferencia;
+
 
 
     /**
@@ -86,28 +87,7 @@ class ItemTipoAnalisis
         return $this->nombre;
     }
 
-    /**
-     * Set valorReferencia
-     *
-     * @param float $valorReferencia
-     * @return ItemTipoAnalisis
-     */
-    public function setValorReferencia($valorReferencia)
-    {
-        $this->valorReferencia = $valorReferencia;
-
-        return $this;
-    }
-
-    /**
-     * Get valorReferencia
-     *
-     * @return float 
-     */
-    public function getValorReferencia()
-    {
-        return $this->valorReferencia;
-    }
+  
 
 
     /**
@@ -161,5 +141,50 @@ class ItemTipoAnalisis
     public function getUnidad()
     {
         return $this->unidad;
+    }
+
+
+
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->valoresReferencia = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add valoresReferencium
+     *
+     * @param \AppBundle\Entity\ValoresReferencia $valoresReferencium
+     *
+     * @return ItemTipoAnalisis
+     */
+    public function addValoresReferencium(\AppBundle\Entity\ValoresReferencia $valoresReferencium)
+    {
+
+        $this->valoresReferencia[] = $valoresReferencium;
+        $valoresReferencium->setItemTipoAnalisis($this);
+        return $this;
+    }
+
+    /**
+     * Remove valoresReferencium
+     *
+     * @param \AppBundle\Entity\ValoresReferencia $valoresReferencium
+     */
+    public function removeValoresReferencium(\AppBundle\Entity\ValoresReferencia $valoresReferencium)
+    {
+        $this->valoresReferencia->removeElement($valoresReferencium);
+    }
+
+    /**
+     * Get valoresReferencia
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getValoresReferencia()
+    {
+        return $this->valoresReferencia;
     }
 }

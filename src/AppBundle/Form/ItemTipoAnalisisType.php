@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
@@ -20,7 +21,17 @@ class ItemTipoAnalisisType extends AbstractType
             'choice_value' => 'id'
         ))
             ->add('nombre')
-            ->add('valorReferencia')
+            ->add('unidad')
+            ->add('valoresReferencia', CollectionType::class, array(
+                'entry_type'   => ValoresReferenciaType::class,
+                'allow_add'    => true,
+                'allow_delete' => true,
+                'label' => false,
+                'by_reference' => false,
+                'entry_options' => array(
+                    'label' => false
+                )
+            ))
             ->add('Guardar', SubmitType::class);
     }
     

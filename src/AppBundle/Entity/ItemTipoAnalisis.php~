@@ -37,18 +37,19 @@ class ItemTipoAnalisis
      */
     private $nombre;
 
-    /**
-     * @var float
-     *
-     * @ORM\Column(name="ValorReferencia", type="float")
-     */
-    private $valorReferencia;
+
 
     /**
      * @var string
      * @ORM\Column(name="unidad", type="string", length=50)
      */
     private $unidad;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="ItemTipoAnalisis", cascade={"persist"})
+     */
+    private $valoresReferencia;
+
 
 
     /**
@@ -86,28 +87,7 @@ class ItemTipoAnalisis
         return $this->nombre;
     }
 
-    /**
-     * Set valorReferencia
-     *
-     * @param float $valorReferencia
-     * @return ItemTipoAnalisis
-     */
-    public function setValorReferencia($valorReferencia)
-    {
-        $this->valorReferencia = $valorReferencia;
-
-        return $this;
-    }
-
-    /**
-     * Get valorReferencia
-     *
-     * @return float 
-     */
-    public function getValorReferencia()
-    {
-        return $this->valorReferencia;
-    }
+  
 
 
     /**
@@ -138,4 +118,31 @@ class ItemTipoAnalisis
 
         return $this->getNombre();
     }
+
+    /**
+     * Set unidad
+     *
+     * @param string $unidad
+     *
+     * @return ItemTipoAnalisis
+     */
+    public function setUnidad($unidad)
+    {
+        $this->unidad = $unidad;
+
+        return $this;
+    }
+
+    /**
+     * Get unidad
+     *
+     * @return string
+     */
+    public function getUnidad()
+    {
+        return $this->unidad;
+    }
+
+
+
 }
