@@ -44,6 +44,11 @@ class ItemTipoAnalisis
      */
     private $valorReferencia;
 
+    /**
+     * @var string
+     * @ORM\Column(name="unidad", type="string", length=50)
+     */
+    private $unidad;
 
 
     /**
@@ -132,5 +137,29 @@ class ItemTipoAnalisis
     {
 
         return $this->getNombre();
+    }
+
+    /**
+     * Set unidad
+     *
+     * @param string $unidad
+     *
+     * @return ItemTipoAnalisis
+     */
+    public function setUnidad($unidad)
+    {
+        $this->unidad = $unidad;
+
+        return $this;
+    }
+
+    /**
+     * Get unidad
+     *
+     * @return string
+     */
+    public function getUnidad()
+    {
+        return $this->unidad;
     }
 }

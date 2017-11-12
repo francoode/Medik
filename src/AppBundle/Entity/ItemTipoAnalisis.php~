@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Doctrine\ORM\Mapping\OneToMany;
 use AppBundle\Entity\TipoAnalisis;
 
 /**
@@ -23,9 +24,9 @@ class ItemTipoAnalisis
     private $id;
 
     /**
-     * @var int
-     * @ORM\Column(name="tipoanalisis_id")
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis")
+     *
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis", inversedBy = "itemTipoAnalisis" )
+     * @ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")
      */
     private $tipoAnalisis;
 
@@ -43,6 +44,11 @@ class ItemTipoAnalisis
      */
     private $valorReferencia;
 
+    /**
+     * @var string
+     * @ORM\Column(name="unidad", type="string", length=50)
+     */
+    private $unidad;
 
 
     /**
@@ -104,11 +110,32 @@ class ItemTipoAnalisis
     }
 
 
-   
+    /**
+     * Set tipoAnalisis
+     *
+     * @param \AppBundle\Entity\TipoAnalisis $tipoAnalisis
+     * @return ItemTipoAnalisis
+     */
+    public function setTipoAnalisis(\AppBundle\Entity\TipoAnalisis $tipoAnalisis = null)
+    {
+        $this->tipoAnalisis = $tipoAnalisis;
 
-   
+        return $this;
+    }
 
-   
+    /**
+     * Get tipoAnalisis
+     *
+     * @return \AppBundle\Entity\TipoAnalisis 
+     */
+    public function getTipoAnalisis()
+    {
+        return $this->tipoAnalisis;
+    }
 
+    public function __toString()
+    {
 
+        return $this->getNombre();
+    }
 }

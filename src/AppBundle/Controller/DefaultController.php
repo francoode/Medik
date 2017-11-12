@@ -76,6 +76,8 @@ class DefaultController extends Controller
                 'cookie' => array(),
                 'page-height' =>  180,
                 'page-width' => 140,
+                'margin-top' => 15,
+                'margin-bottom' => 15,
                 'dpi' => 300,
                 'image-dpi' => 300,
                 'enable-external-links' => true,

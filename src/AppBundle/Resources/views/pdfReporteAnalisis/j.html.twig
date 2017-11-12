@@ -1,4 +1,4 @@
-<div class="page-content">
+<div class="page-content" style="padding-top: 5px">
     <!-- BEGIN PAGE BAR -->
     <div class="page-bar">
         <!-- BEGIN PAGE BREADCRUMB -->
@@ -24,13 +24,19 @@
                                         <th class="col-md-3">
                                             {{ all.item }}
                                         </th>
-                                        <td class="col-md-9" style="padding-left: 20px;">
+                                        <td class="col-md-9" style="padding-left: 100px;">
                                             {{ all.resultado }}
+                                        </td>
+                                        <td class="col-md-9" style="padding-left: 10px;">
+                                            {{ all.item.unidad }}
                                         </td>
                                     </tr>
                                 </table>
                             {% endif %}
                         {% endfor %}
+
+      {# Salto de página. Ver si es necesario <div style="PAGE-BREAK-AFTER: always;"></div>#}
+
                     {% endfor %}
 
 
