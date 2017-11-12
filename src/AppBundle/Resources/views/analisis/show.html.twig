@@ -24,9 +24,25 @@
                         <div class="caption">
                             <i class="icon-user font-dark"></i>
                             <span class="caption-subject font-dark sbold uppercase">
+
                                 <h2 class="text-info">Ver Análisis </h2>
 
                             </span>
+                        </div>
+                        <div class="container-fluid">
+                            <div class="row">
+                                <div class="col-md-2 col-md-offset-6">
+                                    <a href="{{ path('pdfCliente', { 'idP': analisi.id }) }}">
+                                    <button type="button" class="btn btn-info btn-xs">
+
+                                        Emitir Informe Paciente</button>
+                                    </a>
+
+                                </div>
+                                <div class="col-md-1" style="padding-left: 0px;">
+                                    <button type="button" class="btn btn-info btn-xs">Emitir Informe Profesional</button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                     <div class="portlet-body form">

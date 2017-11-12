@@ -20,18 +20,18 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/pdf", name="pdfreporte")
+     * @Route("/pdfPaciente/{idP}", name="pdfCliente")
      */
-    public function reportePdf()
+    public function reporteClientePdf($idP)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $analisi = $em->getRepository('AppBundle:Analisis')->find(16);
+        $analisi = $em->getRepository('AppBundle:Analisis')->find($idP);
         $allItem = $em->getRepository('AppBundle:ResultadoAnalisis')->findBy(array('analisis' => $analisi));
 
 
 
-        $html = $this->renderView('AppBundle:pdfReporteAnalisis:j.html.twig', array(
+        $html = $this->renderView('AppBundle:pdfReporteAnalisis:pdfCliente.html.twig', array(
             'analisi' => $analisi,
             'allitem' => $allItem,
         ));
@@ -44,22 +44,6 @@ class DefaultController extends Controller
         $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdf.html.twig');
 
 
-
-
-        /*
-        Descarga PDF
-
-                $response = new Response (
-                    $this->get('knp_snappy.pdf')->getOutputFromHtml($html),
-                    200,
-                    array(
-                        'Content-Type'          => '/home/franco/pdf/',
-                        'Content-Disposition'   => 'attachment; filename="archivo.pdf"'
-                    )
-                );
-
-        return $response;
-        */
 
         return new PdfResponse(
             $this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
@@ -85,8 +69,6 @@ class DefaultController extends Controller
             )),
             'analisis.pdf'
         );
-
-
 
 
     }
