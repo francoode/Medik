@@ -31,10 +31,17 @@ class DefaultController extends Controller
 
 
 
-        $html = $this->renderView('AppBundle:analisis:j.html.twig', array(
+        $html = $this->renderView('AppBundle:pdfReporteAnalisis:j.html.twig', array(
             'analisi' => $analisi,
             'allitem' => $allItem,
         ));
+
+        $head = $this->renderView('AppBundle:pdfReporteAnalisis:headpdf.html.twig',array(
+                'analisi' => $analisi,
+            )
+        );
+
+        $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdf.html.twig');
 
 
 
@@ -58,6 +65,8 @@ class DefaultController extends Controller
             $this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
                 'orientation' => 'landscape',
                 'enable-javascript' => true,
+                'header-html' => $head,
+                'footer-html' => $boot,
                 'javascript-delay' => 1000,
                 'no-stop-slow-scripts' => true,
                 'no-background' => false,
@@ -65,12 +74,14 @@ class DefaultController extends Controller
                 'encoding' => 'utf-8',
                 'images' => true,
                 'cookie' => array(),
+                'page-height' =>  180,
+                'page-width' => 140,
                 'dpi' => 300,
                 'image-dpi' => 300,
                 'enable-external-links' => true,
                 'enable-internal-links' => true
             )),
-            'file.pdf'
+            'analisis.pdf'
         );
 
 

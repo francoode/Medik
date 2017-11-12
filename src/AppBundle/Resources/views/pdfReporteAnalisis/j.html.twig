@@ -1,0 +1,38 @@
+<div class="page-content">
+    <!-- BEGIN PAGE BAR -->
+    <div class="page-bar">
+        <!-- BEGIN PAGE BREADCRUMB -->
+
+
+        <div class="page-toolbar">
+
+        </div>
+        <!-- END PAGE BREADCRUMB -->
+    </div>
+
+
+                <div class="portlet-body form">
+
+                    {% for a in analisi.tipoAnalisis %}
+                        <h4 style="margin-bottom: 0px;">{{ a.nombre }}</h4>
+                        <div style="margin-bottom: 10px;">Método: {{ a.metodo }}</div>
+
+                        {% for all in allitem %}
+                            {% if all.item.tipoanalisis == a %}
+                                <table class="table">
+                                    <tr>
+                                        <th class="col-md-3">
+                                            {{ all.item }}
+                                        </th>
+                                        <td class="col-md-9" style="padding-left: 20px;">
+                                            {{ all.resultado }}
+                                        </td>
+                                    </tr>
+                                </table>
+                            {% endif %}
+                        {% endfor %}
+                    {% endfor %}
+
+
+    <!-- END PAGE BASE CONTENT -->
+</div>
