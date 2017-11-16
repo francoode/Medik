@@ -72,6 +72,13 @@ class DefaultController extends Controller
             'analisis.pdf'
         );
 
+    }
+
+    /**
+     * @Route("/pdfProfesional/{idP}", name="pdfProfesional")
+     */
+    public function reporteProfesionalpdf()
+    {
 
     }
 
