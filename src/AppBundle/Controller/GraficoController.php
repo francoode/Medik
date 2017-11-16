@@ -20,15 +20,32 @@ use Knp\Bundle\SnappyBundle\Snappy\Response\PdfResponse;
 class GraficoController extends Controller
 {
 
+    /**
+     * @Route("/graficos", name="graficos", options={"expose": true})
+     */
+    public function graficosAction()
+    {
+
+        return $this->render('AppBundle:graficos:graficos.html.twig');
+    }
+
    /**
-    * @Route("/result", name="result")
+    * @Route("/result", name="resultGraficos",  options={"expose": true})
+    * @Method("GET")
     */
    public function resultAction()
    {
        $em = $this->getDoctrine()->getManager();
        $resultados = $em->getRepository('AppBundle:Analisis')->getAnalisisPaciente(2,2);
 
-       dump($resultados);exit;
+
+       foreach ($resultados as $res)
+       {
+           $res['fechaEntrega']->format('Y-m-d');
+       }
+
+       return new JsonResponse(['resultados' => $resultados]);
+
    }
 
 }

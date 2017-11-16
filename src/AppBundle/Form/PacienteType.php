@@ -5,6 +5,7 @@ namespace AppBundle\Form;
 use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
+use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
 class PacienteType extends AbstractType
 {
@@ -19,8 +20,10 @@ class PacienteType extends AbstractType
             ->add('apellido')
             ->add('email')
             ->add('fechaNacimiento')
-            ->add('obraSocial')
-            ->add('activo')
+            ->add('obraSocial', EntityType::class, array(
+                'class' => 'AppBundle:ObraSocial'
+            ))
+
         ->add('save','submit',array('label' => 'Guardar'));
     }
 

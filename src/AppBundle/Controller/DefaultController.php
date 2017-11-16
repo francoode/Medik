@@ -75,16 +75,7 @@ class DefaultController extends Controller
 
     }
 
-    /**
-     * @Route("/json/ajax_tiporecurso", name="ajax_tiporecurso", options={"expose": true})
-     * @Method("GET")
-     */
-    public function obtenerRecursos()
-    {
-        $recursos = 'hola';
-        return new JsonResponse(['recursos' => $recursos]);
 
-    }
 
 
 

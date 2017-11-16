@@ -78,19 +78,16 @@ class Paciente
     private $fechaActualizado;
 
     /**
-     * @var string
-     *
-     * @ORM\Column(name="obraSocial", type="string", length=50)
+     * @ORM\ManyToOne(targetEntity="ObraSocial")
      */
     private $obraSocial;
 
     /**
      * @var string
+     * @ORM\Column(name="numero_afiliado", type="string", length=50)
      *
-     * @ORM\Column(name="activo", type="boolean")
      */
-    private $activo;
-
+    private $nroAfiliado;
 
 
 
@@ -319,25 +316,33 @@ class Paciente
      * @param boolean $activo
      * @return Paciente
      */
-    public function setActivo($activo)
+
+    public function __toString()
     {
-        $this->activo = $activo;
+        return $this->getNombre();
+    }
+
+    /**
+     * Set nroAfiliados
+     *
+     * @param string $nroAfiliado
+     *
+     * @return Paciente
+     */
+    public function setNroAfiliado($nroAfiliado)
+    {
+        $this->nroAfiliado = $nroAfiliado;
 
         return $this;
     }
 
     /**
-     * Get activo
+     * Get nroAfiliado
      *
-     * @return boolean 
+     * @return string
      */
-    public function getActivo()
+    public function getNroAfiliado()
     {
-        return $this->activo;
-    }
-
-    public function __toString()
-    {
-        return $this->getNombre();
+        return $this->nroAfiliado;
     }
 }

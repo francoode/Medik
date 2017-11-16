@@ -22,7 +22,7 @@ class AnalisisRepository extends EntityRepository
 
 
         $query->select('ra.resultado')
-            ->addSelect('a.fechaEntrega')
+            ->addSelect('a.fechaEntrega ')
             ->from('AppBundle:ResultadoAnalisis', 'ra')
             ->leftJoin('ra.analisis','a')
             ->leftJoin('ra.item','it')

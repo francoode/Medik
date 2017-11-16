@@ -1,10 +1,15 @@
+{% extends 'front.html.twig' %}
+
+{%  block body %}
+{% endblock body %}
+
 {% block javascripts %}
 
     {{ parent() }}
     <script>
         $(document).ready(function()
         {
-            var urlJ= "{{ path('ajax_tiporecurso') }}";
+            var urlJ= "{{ path('resultGraficos') }}";
             
             $.ajax({
                     url: urlJ,
