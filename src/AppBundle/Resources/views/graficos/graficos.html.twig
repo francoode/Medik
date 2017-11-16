@@ -1,0 +1,18 @@
+{% block javascripts %}
+
+    {{ parent() }}
+    <script>
+        $(document).ready(function()
+        {
+            var urlJ= "{{ path('ajax_tiporecurso') }}";
+            
+            $.ajax({
+                    url: urlJ,
+                    type: 'GET',
+                    dataType: 'json',
+                }
+            )
+        })
+    </script>
+
+{% endblock %}
