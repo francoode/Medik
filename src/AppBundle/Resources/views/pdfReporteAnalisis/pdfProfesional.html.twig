@@ -1,0 +1,115 @@
+
+    <link rel="stylesheet" href="/var/www/html/ProyectoFinal/app/Resources/vendor/bootstrap/css/bootstrap.css">
+
+
+
+<div class = "container-fluid" style="font-size:16px; font-family: Arial">
+
+<br>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1 " >
+            <b>Analisis Nro:</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.id }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1 " >
+            <b>Fecha :</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.fechaCreado | date("d/m/Y")}}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1 " >
+            <b>Fecha Entrega:</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.fechaEntrega | date("d/m/Y") }}
+        </div>
+    </div>
+    <br>
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1 " >
+            <b>Paciente</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.paciente }} {{ analisi.paciente.apellido }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1">
+            <b>Obra Social</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.paciente.obraSocial }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1">
+            <b>Número de Afiliado</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.paciente.nroAfiliado }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1">
+            <b>Fecha Nacimiento</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.paciente.fechaNacimiento | date("d/m/Y")  }}
+        </div>
+    </div>
+
+
+    <br>
+
+
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1 " >
+            <b>Profesional</b>
+        </div>
+        <div class="col-xs-2">
+            {{ analisi.profesional }} {{ analisi.profesional.apellido }}
+        </div>
+    </div>
+    <br>
+    <hr>
+    <br>
+
+    <div class="row">
+        <div class="col-xs-3 col-xs-offset-1 " >
+            <b>Tipos de análisis a realizar</b>
+        </div>
+    </div>
+    <br>
+    <ul>
+    {% for a in analisi.tipoAnalisis %}
+
+        <div class="row">
+            <div class="col-xs-3 col-xs-offset-1">
+                <li>{{ a }}</li>
+            </div>
+
+        </div>
+
+
+    {% endfor %}
+    </ul>
+
+
+
+
+
+
+</div>

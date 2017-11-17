@@ -77,8 +77,43 @@ class DefaultController extends Controller
     /**
      * @Route("/pdfProfesional/{idP}", name="pdfProfesional")
      */
-    public function reporteProfesionalpdf()
+    public function reporteProfesionalpdf($idP)
     {
+        $em = $this->getDoctrine()->getManager();
+        $analisi = $em->getRepository('AppBundle:Analisis')->find($idP);
+
+        $html =  $this->renderView('AppBundle:pdfReporteAnalisis:pdfProfesional.html.twig', array(
+            'analisi' => $analisi
+        ));
+
+        $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdfP.html.twig');
+
+
+        return new PdfResponse(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
+                'orientation' => 'landscape',
+                'enable-javascript' => true,
+                'javascript-delay' => 1000,
+                'no-stop-slow-scripts' => true,
+                'header-html' => $boot,
+                'no-background' => false,
+                'lowquality' => false,
+                'encoding' => 'utf-8',
+                'page-height' =>  210,
+                'page-width' => 250,
+                'images' => true,
+                'cookie' => array(),
+                'margin-top' => 15,
+                'margin-bottom' => 15,
+                'dpi' => 300,
+                'image-dpi' => 300,
+                'enable-external-links' => true,
+                'enable-internal-links' => true
+            )),
+            'profesional.pdf'
+        );
+
+
 
     }
 
