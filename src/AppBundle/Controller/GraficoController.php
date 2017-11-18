@@ -30,20 +30,19 @@ class GraficoController extends Controller
     }
 
    /**
-    * @Route("/result", name="resultGraficos",  options={"expose": true})
+    * @Route("/result/{idPaciente}/{idItem}", name="resultGraficos",  options={"expose": true})
     * @Method("GET")
     */
-   public function resultAction()
+   public function resultAction($idPaciente, $idItem)
    {
        $em = $this->getDoctrine()->getManager();
-       $resultados = $em->getRepository('AppBundle:Analisis')->getAnalisisPaciente(1,2);
+
+       $resultados = $em->getRepository('AppBundle:Analisis')->getAnalisisPaciente($idPaciente,$idItem);
 
         foreach ($resultados as &$res)
         {
             $res['fechaEntrega'] = $res['fechaEntrega']->format('d-m-y');
         }
-
-
 
        return new JsonResponse(['resultados' => $resultados]);
 
