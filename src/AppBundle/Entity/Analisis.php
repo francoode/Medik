@@ -35,14 +35,14 @@ class Analisis
     private $profesional;
 
     /**
-     * @var \Date
+     * @var \DateTime
      *
      * @ORM\Column(name="fecha_creado", type="date")
      */
     private $fechaCreado;
 
     /**
-     * @var \Date
+     * @var \DateTime
      *
      * @ORM\Column(name="fecha_entrega", type="date")
      */
@@ -90,7 +90,7 @@ class Analisis
     /**
      * Set fechaEntrega
      *
-     * @param \Date $fechaEntrega
+     * @param \DateTime $fechaEntrega
      * @return Analisis
      */
     public function setFechaEntrega($fechaEntrega)
@@ -103,7 +103,7 @@ class Analisis
     /**
      * Get fechaEntrega
      *
-     * @return \Date
+     * @return \DateTime
      */
     public function getFechaEntrega()
     {
@@ -136,7 +136,7 @@ class Analisis
     /**
      * Set fechaCreado
      *
-     * @param \Date $fechaCreado
+     * @param \DateTime $fechaCreado
      * @return Analisis
      */
     public function setFechaCreado($fechaCreado)
@@ -149,7 +149,7 @@ class Analisis
     /**
      * Get fechaCreado
      *
-     * @return \Date
+     * @return \DateTime
      */
     public function getFechaCreado()
     {
