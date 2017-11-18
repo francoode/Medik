@@ -36,13 +36,14 @@ class GraficoController extends Controller
    public function resultAction()
    {
        $em = $this->getDoctrine()->getManager();
-       $resultados = $em->getRepository('AppBundle:Analisis')->getAnalisisPaciente(2,2);
+       $resultados = $em->getRepository('AppBundle:Analisis')->getAnalisisPaciente(1,2);
+
+        foreach ($resultados as &$res)
+        {
+            $res['fechaEntrega'] = $res['fechaEntrega']->format('d-m-y');
+        }
 
 
-       foreach ($resultados as $res)
-       {
-           $res['fechaEntrega']->format('Y-m-d');
-       }
 
        return new JsonResponse(['resultados' => $resultados]);
 
