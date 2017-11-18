@@ -87,7 +87,7 @@ class AnalisisController extends Controller
 
             }
 
-            $analisi->setFechaCreado(new \Date());
+            $analisi->setFechaCreado(new \DateTime());
 
 
 
