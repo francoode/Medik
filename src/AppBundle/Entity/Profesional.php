@@ -3,6 +3,8 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
+
 
 /**
  * Profesional
@@ -10,7 +12,9 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="profesionales")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\ProfesionalRepository")
  */
-class Profesional
+
+
+class Profesional implements UserInterface
 {
     /**
      * @var int
@@ -328,6 +332,23 @@ class Profesional
     {
         return $this->actualizado;
     }
+
+    function getRoles()
+    {
+        return array('ROLE_USUARIO');
+    }
+
+    function getUsername()
+    {
+        return $this->getUsuario();
+    }
+
+
+    function eraseCredentials()
+    {
+        $this->password = null;
+    }
+
 
     public function __toString()
     {

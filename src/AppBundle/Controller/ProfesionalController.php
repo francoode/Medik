@@ -21,6 +21,11 @@ class ProfesionalController extends Controller
     }
 
 
+
+
+
+
+
     public function addAction()
     {
         $prof = new Profesional();
