@@ -1,8 +1,27 @@
 {% extends 'front.html.twig' %}
 
 {%  block body %}
+    <div class="container-fluid">
 
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-2 col-md-offset-1">
+            {{ form_label(form.item,'Seleccione Item') }}
+            </div>
+            <div class="col-md-2">
+            {{ form_widget(form.item) }}
+            </div>
+            {{ form_errors(form.item) }}
+            <div class="col-md-3">
+                <button class="btn btn-default btn-sm" id="graficar">Graficar</button>
+            </div>
+        </div>
+
+        {{ form_end(form) }}
+        <br>
     <div id="grafica" style="width:100%; height:400px;"></div>
+
+    </div>
 
 {% endblock body %}
 
@@ -12,82 +31,95 @@
     <script>
         $(document).ready(function()
         {
-            var idPac = 1;
-            var idItem =2;
-
-            var urlJ= "{{ path('resultGraficos', {'idPaciente': 'idPac','idItem': 'idItem'}) }}";
-            urlJ = urlJ.replace("idPac", idPac);
-            urlJ = urlJ.replace("idItem", idItem);
 
 
 
-            var ejeX = [];
-            var ejeY = [];
-           $.ajax({
-                    url: urlJ,
-                    type: 'GET',
-                    dataType: 'json',
-                    success: function (data) {
-                        var result = data.resultados;
-
-                        for(var i=0; i<result.length; i++)
-                        {
-                            ejeX.push(result[i].resultado);
-                            ejeY.push(result[i].fechaEntrega)
-                        }
+            
+                var idPac = 1;
+               idItem = 2;
 
 
-                    },
-               async: false
-                }
-            );
+                var urlJ= "{{ path('resultGraficos', {'idPaciente': 'idPac','idItem': 'idItem'}) }}";
+                urlJ = urlJ.replace("idPac", idPac);
+                urlJ = urlJ.replace("idItem", idItem);
+
+                console.log(idItem);
+
+                var ejeX = [];
+                var ejeY = [];
+                $.ajax({
+                        url: urlJ,
+                        type: 'GET',
+                        dataType: 'json',
+                        success: function (data) {
+                            var result = data.resultados;
+
+                            for(var i=0; i<result.length; i++)
+                            {
+                                ejeX.push(result[i].resultado);
+                                ejeY.push(result[i].fechaEntrega)
+                            }
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-            var myChart = Highcharts.chart('grafica', {
-                chart: {
-                    type: 'line'
-                },
-                title: {
-                    text: 'Comparación Resultados de Análisis'
-                },
-                xAxis: {
-
-                    categories: ejeY
-                },
-                yAxis: {
-                    plotBands: [{
-                        color: 'rgba(65, 134, 27, 0.4)',
-                        from: 3,
-                        to: 4,
-                        label:{
-                            text: 'Valores Normales'
-                        }
-
-                    }],
-                    title: {
-                        text: 'Resultado Análisis'
+                        },
+                        async: false
                     }
-                },
-                series: [ {
-                    name: 'John',
-                    data: ejeX
-                }]
-            });
+               );
+
+                var myChart = Highcharts.chart('grafica', {
+                    chart: {
+                        type: 'line'
+                    },
+                    title: {
+                        text: 'Comparación Resultados de Análisis'
+                    },
+                    xAxis: {
+
+                        categories: ejeY
+                    },
+                    yAxis: {
+                        plotBands: [{
+                            color: 'rgba(65, 134, 27, 0.4)',
+                            from: 3,
+                            to: 4,
+                            label:{
+                                text: 'Valores Normales'
+                            }
+
+                        }],
+                        title: {
+                            text: 'Resultado Análisis'
+                        }
+                    },
+                    series: [ {
+                        name: 'John',
+                        data: ejeX
+                    }]
+                });
 
 
-        })
+
+
+            })
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     </script>
 
 
