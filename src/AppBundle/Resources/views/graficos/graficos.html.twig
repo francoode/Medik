@@ -46,8 +46,9 @@
                 urlJ = urlJ.replace("idPac", idPac);
                 urlJ = urlJ.replace("idItem", idItem);
 
-                console.log(idItem);
-
+                var textoComparacion = "Comparación Resultados de Análisis - ";
+                textoComparacion = textoComparacion.concat($("#form_item option:selected").text());
+                
                 var ejeX = [];
                 var ejeY = [];
                 $.ajax({
@@ -74,7 +75,7 @@
                         type: 'line'
                     },
                     title: {
-                        text: 'Comparación Resultados de Análisis'
+                        text: textoComparacion
                     },
                     xAxis: {
 
@@ -95,7 +96,7 @@
                         }
                     },
                     series: [ {
-                        name: 'John',
+                        name: 'Paciente',
                         data: ejeX
                     }]
                 });
