@@ -13,7 +13,10 @@
             </div>
             {{ form_errors(form.item) }}
             <div class="col-md-3">
-                <button class="btn btn-default btn-sm" id="graficar">Graficar</button>
+
+                <button type='button'  class="btn btn-default btn-sm" id="graficar">Graficar</button>
+
+
             </div>
         </div>
 
@@ -31,13 +34,13 @@
     <script>
         $(document).ready(function()
         {
+            $('#form_item').append('<option value=-1>Seleccione un Item</option>')
+                .val(-1);
 
 
-
-            
+            $('#graficar').click(function (){
                 var idPac = 1;
-               idItem = 2;
-
+                var idItem = $('#form_item').val();
 
                 var urlJ= "{{ path('resultGraficos', {'idPaciente': 'idPac','idItem': 'idItem'}) }}";
                 urlJ = urlJ.replace("idPac", idPac);
@@ -64,7 +67,7 @@
                         },
                         async: false
                     }
-               );
+                );
 
                 var myChart = Highcharts.chart('grafica', {
                     chart: {
@@ -96,6 +99,17 @@
                         data: ejeX
                     }]
                 });
+
+
+
+
+            });
+
+
+
+
+
+
 
 
 
