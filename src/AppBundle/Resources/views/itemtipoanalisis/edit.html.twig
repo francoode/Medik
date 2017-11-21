@@ -1,7 +1,7 @@
 {% extends 'front.html.twig' %}
 
 {%  block body %}
-    <h2 class="text-info">Nuevo Item Tipo Analisis</h2>
+    <h2 class="text-info">Editar Item Tipo Analisis</h2>
     <div class="form">
         {{ form_start(edit_form) }}
 
@@ -40,20 +40,7 @@
 
         <br>
 
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(edit_form.valorReferencia, null, {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(edit_form.valorReferencia, {'attr' : {'class' : 'form-control col-10'}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(edit_form.valorReferencia) }}
-                </div>
-            </div>
-        </div>
+
 
 
 
@@ -73,7 +60,7 @@
 
 
 
-        {{ form_end(edit_form) }}
+        {{ form_end(edit_form, {'render_rest': false}) }}
     </div>
 
 
