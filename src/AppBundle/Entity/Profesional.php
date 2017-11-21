@@ -349,6 +349,11 @@ class Profesional implements UserInterface
         $this->password = null;
     }
 
+    function getSalt()
+    {
+        return null;
+    }
+
 
     public function __toString()
     {
