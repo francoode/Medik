@@ -1,8 +1,9 @@
 {% extends 'front.html.twig' %}
 
 {%  block body %}
-    <h2 class="text-info">Nuevo Item Tipo Analisis</h2>
+    <h2 class="text-info">Editar Item Tipo Analisis</h2>
     <div class="form">
+        <div class="container-fluid">
         {{ form_start(edit_form) }}
 
         <div class="row">
@@ -43,17 +44,92 @@
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
-                    {{ form_label(edit_form.valorReferencia, null, {
+                    {{ form_label(edit_form.unidad, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(edit_form.valorReferencia, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(edit_form.unidad, {'attr' : {'class' : 'form-control col-10'}}) }}
                 </div>
                 <div class="col-md-3">
-                    {{ form_errors(edit_form.valorReferencia) }}
+                    {{ form_errors(edit_form.unidad) }}
                 </div>
             </div>
         </div>
+
+        <br>
+
+        {% for vr in edit_form.valoresReferencia %}
+            <div class="row">
+                <div class="form-group">
+
+                    <div class="col-md-2">
+                        {{ form_label(vr.valorMin ) }}
+                    </div>
+                    <div class="col-md-3" >
+                        {{ form_widget(vr.valorMin, {'attr' : {'class' : ''}}) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_errors(vr.valorMin) }}
+                    </div>
+                </div>
+            </div>
+
+            <div class="row">
+                <div class="form-group">
+
+                    <div class="col-md-2">
+                        {{ form_label(vr.valorMax ) }}
+                    </div>
+                    <div class="col-md-3" >
+                        {{ form_widget(vr.valorMax, {'attr' : {'class' : ''}}) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_errors(vr.valorMax) }}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group">
+
+                    <div class="col-md-2">
+                        {{ form_label(vr.edadMax ) }}
+                    </div>
+                    <div class="col-md-3" >
+                        {{ form_widget(vr.edadMax, {'attr' : {'class' : ''}}) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_errors(vr.edadMax) }}
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row">
+                <div class="form-group">
+
+                    <div class="col-md-2">
+                        {{ form_label(vr.edadMin ) }}
+                    </div>
+                    <div class="col-md-3" >
+                        {{ form_widget(vr.edadMin, {'attr' : {'class' : ''}}) }}
+                    </div>
+                    <div class="col-md-3">
+                        {{ form_errors(vr.edadMin) }}
+                    </div>
+                </div>
+            </div>
+
+
+
+
+
+            <br>
+
+        {% endfor %}
+
+
 
 
 
@@ -73,7 +149,8 @@
 
 
 
-        {{ form_end(edit_form) }}
+        {{ form_end(edit_form, {'render_rest': false}) }}
+        </div>
     </div>
 
 

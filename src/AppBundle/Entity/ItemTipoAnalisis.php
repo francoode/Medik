@@ -46,7 +46,7 @@ class ItemTipoAnalisis
     private $unidad;
 
     /**
-     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="ItemTipoAnalisis", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="itemTipoAnalisis", cascade={"persist"})
      */
     private $valoresReferencia;
 
