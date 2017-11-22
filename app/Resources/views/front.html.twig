@@ -28,7 +28,9 @@
     <!-- NAVBAR -->
     <nav class="navbar navbar-default navbar-fixed-top" style="height: 70px;">
         <div class="brand" style="height: 70px;">
-            <a href="index.html"><img src="app/Resources/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+            <!-- <a href="index.html"><img src="app/Resources/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
+           -->
+             <a href="index.html"><img src="{{ asset('app/Resources/img/logo-medik2.jpg')  }}" alt="MediSoft Logo" class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -107,6 +109,11 @@
                         </div>
                     </li>
 
+
+
+
+
+
                     <li>
                         <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages5" class="collapse ">
@@ -132,6 +139,10 @@
                         </div>
                     </li>
 
+                    <li>
+                        <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
+
+                    </li>
 
 
 
