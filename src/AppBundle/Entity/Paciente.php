@@ -89,7 +89,7 @@ class Paciente
      */
     private $nroAfiliado;
 
-
+    private $string;
 
 
 
@@ -319,7 +319,10 @@ class Paciente
 
     public function __toString()
     {
-        return $this->getNombre();
+        $this->string .=  $this->getNombre();
+        $this->string .= " ";
+        $this->string .= $this->getApellido();
+        return $this->string;
     }
 
     /**

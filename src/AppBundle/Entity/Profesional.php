@@ -94,6 +94,8 @@ class Profesional implements UserInterface
      */
     private $actualizado;
 
+    private $string;
+
 
     /**
      * Get id
@@ -357,6 +359,9 @@ class Profesional implements UserInterface
 
     public function __toString()
     {
-        return $this->getNombre();
+        $this->string .=  $this->getNombre();
+        $this->string .= " ";
+        $this->string .= $this->getApellido();
+        return $this->string;
     }
 }
