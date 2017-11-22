@@ -12,7 +12,6 @@
             <th>Id</th>
             <th>Tipoanalisis</th>
             <th>Nombre</th>
-            <th>Valor referencia</th>
             <th>Actions</th>
         </tr>
         </thead>
@@ -22,7 +21,6 @@
                 <td>{{ itemTipoAnalisi.id }}</td>
                 <td>{{ itemTipoAnalisi.tipoAnalisis }}</td>
                 <td>{{ itemTipoAnalisi.nombre }}</td>
-                <td>{{ itemTipoAnalisi.valorReferencia }}</td>
                 <td>
                     <a href="{{ path('itemtipoanalisis_edit', {'id':itemTipoAnalisi.id}) }}"><i class="fa fa-pencil"></i> </a>
                     <a href="{{ path('itemtipoanalisis_delete',{'id':itemTipoAnalisi.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>

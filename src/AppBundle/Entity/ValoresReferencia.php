@@ -53,7 +53,6 @@ class ValoresReferencia
      * @ORM\ManyToOne(targetEntity="ItemTipoAnalisis", inversedBy="ValoresReferencia")
      * @ORM\JoinColumn(name="item_id", referencedColumnName="id")
      */
-
     private $itemTipoAnalisis;
 
 
@@ -165,5 +164,53 @@ class ValoresReferencia
     public function getItemTipoAnalisis()
     {
         return $this->itemTipoAnalisis;
+    }
+
+    /**
+     * Set valorMin
+     *
+     * @param float $valorMin
+     *
+     * @return ValoresReferencia
+     */
+    public function setValorMin($valorMin)
+    {
+        $this->valorMin = $valorMin;
+
+        return $this;
+    }
+
+    /**
+     * Get valorMin
+     *
+     * @return float
+     */
+    public function getValorMin()
+    {
+        return $this->valorMin;
+    }
+
+    /**
+     * Set valorMax
+     *
+     * @param float $valorMax
+     *
+     * @return ValoresReferencia
+     */
+    public function setValorMax($valorMax)
+    {
+        $this->valorMax = $valorMax;
+
+        return $this;
+    }
+
+    /**
+     * Get valorMax
+     *
+     * @return float
+     */
+    public function getValorMax()
+    {
+        return $this->valorMax;
     }
 }
