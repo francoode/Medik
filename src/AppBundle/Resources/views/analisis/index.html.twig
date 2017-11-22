@@ -21,8 +21,8 @@
         {%  for analisess in analises %}
             <tr>
                 <td>{{ analisess.id }}</td>
-                <td>{{ analisess.paciente }}</td>
-                <td>{{ analisess.profesional }}</td>
+                <td>{{ analisess.paciente.nombre }}&nbsp;{{analisess.paciente.apellido}}</td>
+                <td>{{ analisess.profesional.nombre }}&nbsp;{{analisess.profesional.apellido}}</td>
                 <td>{{ analisess.fechaCreado|date("d/m/Y") }}</td>
                 <td>{{ analisess.fechaEntrega|date("d/m/Y") }}</td>
                 <td>{{ analisess.estado }}</td>
