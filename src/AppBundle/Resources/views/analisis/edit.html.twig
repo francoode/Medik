@@ -68,6 +68,21 @@
         </div>
     </div>
 
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-2">
+                {{ form_label(edit_form.comentario, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-7">
+                {{ form_widget(edit_form.comentario, {'attr' : {'class' : ''}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(edit_form.comentario) }}
+            </div>
+        </div>
+    </div>
+
 
 
     {% set primera = 1 %}
@@ -87,6 +102,7 @@
         <div class="form-group">
 
 
+
             <div class="col-md-2">
                 {{ form_label(it,  it.vars.value.item.nombre  ) }}
             </div>
@@ -101,9 +117,10 @@
                 </select>
             </div>
             {% else %}
-                <div class="col-md-8" >
+                <div class="col-md-2" >
                     {{ form_widget(it, {'attr' : {'class' : ''}}) }}
                 </div>
+                <div class="col-md-1">{{ it.vars.value.item.unidad }} </div>
             {% endif %}
             <div class="col-md-3">
                 {{ form_errors(it) }}
