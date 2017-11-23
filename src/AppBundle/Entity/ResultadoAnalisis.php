@@ -38,7 +38,7 @@ class ResultadoAnalisis
     /**
      * @var float
      *
-     * @ORM\Column(name="resultado", type="float")
+     * @ORM\Column(name="resultado", type="string")
      */
     private $resultado;
 
