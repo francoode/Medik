@@ -106,14 +106,14 @@
             <div class="col-md-2">
                 {{ form_label(it,  it.vars.value.item.nombre  ) }}
             </div>
-            {% if it.vars.value.item.nombre == 'Hemoglobina' %}
+            {% if it.vars.value.item.esPon == true %}
             <div class="col-md-7" >
 
-                <select id="{{ it.children.resultado.vars.id }}" name="{{ it.children.resultado.vars.full_name }}">
-                    <option value="volvo">Volvo</option>
-                    <option value="saab">Saab</option>
-                    <option value="mercedes">Mercedes</option>
-                    <option value="audi">Audi</option>
+                <select id="{{ it.children.resultado.vars.id }}" name="{{ it.children.resultado.vars.full_name }}" style=" width: 190px;">
+                    {% if it.vars.value.resultado  %}
+                    <option value="{{ it.vars.value.resultado }}">{{ it.vars.value.resultado }}</option>
+                    <option value="Positov">Positivo</option>
+                    <option value="Negativo">Negativo</option>
                 </select>
             </div>
             {% else %}

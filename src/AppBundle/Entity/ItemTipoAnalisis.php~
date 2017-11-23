@@ -54,7 +54,7 @@ class ItemTipoAnalisis
      * @var boolean
      * @ORM\Column(name="es_pon", type="boolean")
      */
-    private $es_pon;
+    private $esPon;
     
 
 
@@ -194,4 +194,6 @@ class ItemTipoAnalisis
     {
         return $this->valoresReferencia;
     }
+
+   
 }

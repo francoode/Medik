@@ -33,7 +33,7 @@ class ItemTipoAnalisisType extends AbstractType
                     'label' => false
                 )
             ))
-            ->add('es_pon', CheckboxType::class,array(
+            ->add('esPon', CheckboxType::class,array(
                 'required' => false
             ))
             ->add('Guardar', SubmitType::class);

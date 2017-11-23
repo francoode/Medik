@@ -54,7 +54,7 @@ class ItemTipoAnalisis
      * @var boolean
      * @ORM\Column(name="es_pon", type="boolean")
      */
-    private $es_pon;
+    private $esPon;
     
 
 
@@ -195,6 +195,8 @@ class ItemTipoAnalisis
         return $this->valoresReferencia;
     }
 
+   
+
     /**
      * Set esPon
      *
@@ -204,7 +206,7 @@ class ItemTipoAnalisis
      */
     public function setEsPon($esPon)
     {
-        $this->es_pon = $esPon;
+        $this->esPon = $esPon;
 
         return $this;
     }
@@ -216,6 +218,6 @@ class ItemTipoAnalisis
      */
     public function getEsPon()
     {
-        return $this->es_pon;
+        return $this->esPon;
     }
 }

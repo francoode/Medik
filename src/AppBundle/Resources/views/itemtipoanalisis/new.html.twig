@@ -57,14 +57,14 @@
 
         <div class="form-check">
             <div class=" col-md-2">
-                {{ form_label(form.es_pon, 'Positivo/Negativo', {
+                {{ form_label(form.esPon, 'Positivo/Negativo', {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-7">
-                {{ form_widget(form.es_pon) }}
+                {{ form_widget(form.esPon) }}
             </div>
             <div class="col-md-3">
-                {{ form_errors(form.es_pon) }}
+                {{ form_errors(form.esPon) }}
             </div>
         </div>
     </div>
@@ -106,7 +106,7 @@
     {{ parent() }}
 <script type="text/javascript">
 
-    $('#appbundle_itemtipoanalisis_es_pon').click(function(){
+    $('#appbundle_itemtipoanalisis_esPon').click(function(){
         if (this.checked) {
             $('#agregarValores').css('display','none');
         }
@@ -125,7 +125,7 @@
         '"></li>').append($addTagLink);
 
     jQuery(document).ready(function() {
-        $('#appbundle_itemtipoanalisis_es_pon').css('height', 20)
+        $('#appbundle_itemtipoanalisis_esPon').css('height', 20)
         .css('width',20);
 
 
