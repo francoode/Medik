@@ -87,9 +87,15 @@
             <div class="col-md-1">
                 {{ form_label(it,  it.vars.value.item.nombre  ) }}
             </div>
+            {% if it.vars.value.item.nombre == 'Hemoglobina' %}
             <div class="col-md-8" >
                 {{ form_widget(it, {'attr' : {'class' : 'futuroSelect'}}) }}
             </div>
+            {% else %}
+                <div class="col-md-8" >
+                    {{ form_widget(it, {'attr' : {'class' : ''}}) }}
+                </div>
+            {% endif %}
             <div class="col-md-3">
                 {{ form_errors(it) }}
             </div>
@@ -126,9 +132,16 @@
         $('#appbundle_analisis_paciente').attr("disabled", true);
 
 
-        var selects = $('.futuroSelect div input').prop("type","select");
+        var selects = $('.futuroSelect div input');
 
+        selects.each(function (index) {
+           var id = this.id;
+           var nombre = this.name;
+           this.remove();
 
+           console.log(id);
+           console.log(nombre);
+        })
 
         }
     )
