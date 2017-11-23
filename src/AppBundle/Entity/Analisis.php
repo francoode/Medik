@@ -72,7 +72,7 @@ class Analisis
 
     /**
      * @var string
-     * @ORM\Column(name="comentario", type="string", length=200)
+     * @ORM\Column(name="comentario", type="string", length=200, nullable=true)
      */
     private $comentario;
 

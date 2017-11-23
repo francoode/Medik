@@ -59,7 +59,9 @@ class AnalisisType extends AbstractType
                     )
                 )
             )
-            ->add('comentario',TextareaType::class)
+            ->add('comentario',TextareaType::class,array(
+                'required' => false,
+            ))
 
             ->add('Guardar', SubmitType::class);
 
