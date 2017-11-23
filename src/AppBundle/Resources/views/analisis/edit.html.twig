@@ -88,7 +88,7 @@
                 {{ form_label(it,  it.vars.value.item.nombre  ) }}
             </div>
             <div class="col-md-8" >
-                {{ form_widget(it, {'attr' : {'class' : ''}}) }}
+                {{ form_widget(it, {'attr' : {'class' : 'futuroSelect'}}) }}
             </div>
             <div class="col-md-3">
                 {{ form_errors(it) }}
@@ -124,6 +124,12 @@
 
     $(document).ready(function(){
         $('#appbundle_analisis_paciente').attr("disabled", true);
+
+
+        var selects = $('.futuroSelect div input').prop("type","select");
+
+
+
         }
     )
     </script>
