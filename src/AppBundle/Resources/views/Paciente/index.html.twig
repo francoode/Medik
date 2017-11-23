@@ -6,7 +6,7 @@
     <div class="container">
         <div class="row">
             <a href="{{ path('profesionales_new') }}">Agregar Profesional</a>
-            <table class="table table-striped" style="width: 90%" >
+            <table id="example" class="table table-striped" style="width: 90%" >
                 <thead>
                 <tr>
                     <th>Id</th>
@@ -23,6 +23,22 @@
 
                 </tr>
                 </thead>
+                <tfoot>
+                <tr>
+                    <th>Id</th>
+                    <th>Nombre</th>
+                    <th>Apellido</th>
+                    <th>Fecha Nacimiento</th>
+                    <th>Email</th>
+                    <th>Usuario</th>
+                    <th>Password</th>
+                    <th>Creado</th>
+                    <th>Actualizado</th>
+                    <th>Obra Social</th>
+                    <th>Acciones</th>
+
+                </tr>
+                </tfoot>
                 <tbody>
                 {%  for pa in p %}
                     <tr>
@@ -35,7 +51,7 @@
                         <td>{{ pa.password }}</td>
                         <td>{{ pa.fechaRegistro|date("d/m/Y") }}</td>
                         <td>{{ pa.fechaActualizado|date("d/m/Y") }}</td>
-                        <td>{{ pa.obraSocial }}</td>
+                        <td>{{ pa.obraSocial |slice(0,20) }}</td>
                         <td>
                             <a href="{{ path('paciente_edit', {'id':pa.id}) }}">Edit</a>
                             <a href="{{ path('paciente_delete', {'id':pa.id}) }}">Delete</a>
@@ -54,3 +70,44 @@
 
 
 {% endblock body %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            // Setup - add a text input to each footer cell
+            $('#example tfoot th').each( function () {
+                var title = $(this).text();
+
+
+                if(title != 'Acciones')
+                {
+                    $(this).html( '<input type="text" placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                }
+                else
+                {
+                    $(this).html( '<input type="hidden"  placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                }
+
+
+            } );
+
+            // DataTable
+            var table = $('#example').DataTable();
+
+            // Apply the search
+            table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+
+            $('#example_filter').hide();
+        } );
+    </script>
+{% endblock %}
