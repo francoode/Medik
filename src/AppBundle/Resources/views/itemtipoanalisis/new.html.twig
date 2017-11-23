@@ -106,6 +106,16 @@
     {{ parent() }}
 <script type="text/javascript">
 
+    $('#appbundle_itemtipoanalisis_es_pon').click(function(){
+        if (this.checked) {
+            $('#agregarValores').css('display','none');
+        }
+        else
+        {
+            $('#agregarValores').css('display','inline');
+        }
+    });
+
 
 
     // setup an "add a tag" link
@@ -117,6 +127,9 @@
     jQuery(document).ready(function() {
         $('#appbundle_itemtipoanalisis_es_pon').css('height', 20)
         .css('width',20);
+
+
+
         // Get the ul that holds the collection of tags
         var $collectionHolder = $('ul.tags');
 
