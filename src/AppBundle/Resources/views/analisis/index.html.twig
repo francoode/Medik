@@ -4,7 +4,7 @@
 {% block body %}
     <h2 class="text-info">Listado Análisis</h2>
 
-    <table class="table table-striped" style="width: 90%" >
+    <table id="example" class="table table-striped" style="width: 90%" >
         <thead>
         <tr>
             <th>Id</th>
@@ -17,6 +17,17 @@
 
         </tr>
         </thead>
+        <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Nombre Paciente</th>
+            <th>Nombre Profesional</th>
+            <th>Fecha Inicio</th>
+            <th>Fecha Entregado</th>
+            <th>Estado</th>
+            <th>Acciones</th>
+        </tr>
+        </tfoot>
         <tbody>
         {%  for analisess in analises %}
             <tr>
@@ -38,4 +49,32 @@
     </table>
 
 
+{% endblock %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            // Setup - add a text input to each footer cell
+            $('#example tfoot th').each( function () {
+                var title = $(this).text();
+                $(this).html( '<input type="text" placeholder="Search '+title+'" />' );
+            } );
+
+            // DataTable
+            var table = $('#example').DataTable();
+
+            // Apply the search
+            table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+        } );
+    </script>
 {% endblock %}
