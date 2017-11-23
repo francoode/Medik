@@ -3,6 +3,7 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -31,6 +32,9 @@ class ItemTipoAnalisisType extends AbstractType
                 'entry_options' => array(
                     'label' => false
                 )
+            ))
+            ->add('es_pon', CheckboxType::class,array(
+                'required' => false
             ))
             ->add('Guardar', SubmitType::class);
     }
