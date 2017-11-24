@@ -107,14 +107,14 @@
                 {{ form_label(it,  it.vars.value.item.nombre  ) }}
             </div>
             {% if it.vars.value.item.esPon == true %}
-            <div class="col-md-7" >
+                <div class="col-md-7" >
 
-                <select id="{{ it.children.resultado.vars.id }}" name="{{ it.children.resultado.vars.full_name }}" style=" width: 190px;">
-                    {% if it.vars.value.resultado  %}
+                <select class="sec" style="width: 190px;" id="{{ it.children.resultado.vars.id }}" name="{{ it.children.resultado.vars.full_name }}">
                     <option value="{{ it.vars.value.resultado }}">{{ it.vars.value.resultado }}</option>
-                    <option value="Positov">Positivo</option>
+                    <option value="Positivo">Positivo</option>
                     <option value="Negativo">Negativo</option>
                 </select>
+
             </div>
             {% else %}
                 <div class="col-md-2" >
@@ -155,20 +155,17 @@
     <script>
 
     $(document).ready(function(){
+        
+        var usedNames = {};
+        $(".sec > option").each(function () {
+            if(usedNames[this.text]) {
+                $(this).remove();
+            } else {
+                usedNames[this.text] = this.value;
+            }
+        });
+
         $('#appbundle_analisis_paciente').attr("disabled", true);
-
-
-        var selects = $('.futuroSelect div input');
-
-        selects.each(function (index) {
-           var id = this.id;
-           var nombre = this.name;
-
-
-
-           console.log(id);
-           console.log(nombre);
-        })
 
         }
     )
