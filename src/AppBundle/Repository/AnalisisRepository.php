@@ -54,5 +54,39 @@ class AnalisisRepository extends EntityRepository
         return $query->getQuery()->getResult();
 
     }
+
+    public function getCantidadTipo($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(ta.id) as cantidad')
+            ->addSelect('ta.nombre')
+            ->from('AppBundle:Analisis','a')
+            ->join('a.tipoAnalisis','ta')
+            ->groupBy('ta.id')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getTotalTipo($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(ta) as total')
+            ->from('AppBundle:Analisis','a')
+            ->join('a.tipoAnalisis','ta')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+    }
 }
 

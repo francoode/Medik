@@ -26,7 +26,7 @@ class ReportesController extends Controller
 
         $form->handleRequest($request);
 
-        if($form->isSubmitted() and $form->isValid())
+        if($form->isSubmitted() && $form->isValid())
         {
             $data = $form->getData();
             $fi = $data['fechaInicio'];
@@ -49,8 +49,35 @@ class ReportesController extends Controller
     /**
      * @Route("/cantidadTipo", name="cantidadTipo")
      */
-    public function cantidadTipoAction()
+    public function cantidadTipoAction(Request $request)
     {
-        return $this->render('AppBundle:reportes:reporteCantidadTipo.html.twig');
+
+
+        $form = $this->createForm(new ReporteType(), array(
+            'action' => $this->generateUrl('cantidadTipo'),
+            'method' => 'POST'
+        ));
+
+        $form->handleRequest($request);
+
+        if($form->isValid() && $form->isSubmitted())
+        {
+            $data = $form->getData();
+            $fi = $data['fechaInicio'];
+            $ff = $data['fechaFin'];
+            $cantidad = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getCantidadTipo($fi, $ff);
+            $total = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getTotalTipo($fi, $ff);
+            $total = $total[0];
+
+            return $this->render('AppBundle:reportes:reporteCantidadTipo.html.twig', array(
+                'form' => $form->createView(),
+                'cantidad' => $cantidad,
+                'total' => $total
+            ));
+        }
+
+        return $this->render('AppBundle:reportes:reporteCantidadTipo.html.twig', array(
+            'form' => $form->createView()
+        ));
     }
 }
