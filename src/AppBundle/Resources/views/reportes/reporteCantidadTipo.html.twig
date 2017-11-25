@@ -44,6 +44,20 @@
         <br>
         <hr>
 
+        {% if cantidad is defined %}
+
+            {% set fechainicio = app.request.request.get('appbundle_reporte').fechaInicio  %}
+            {% set fechafin = app.request.request.get('appbundle_reporte').fechaFin  %}
+
+            <div class="row">
+                <a href="{{ path('pdfCantidiadTipo', {'fi': fechainicio, 'ff': fechafin}) }}">
+                    <button type="button" class="btn btn-default btn-xs">Emitir Informe</button>
+                </a>
+            </div>
+
+            <br>
+        {% endif %}
+
             {% if cantidad is defined %}
                 <div class="row">
                     <div class="col-md-2 col-md-offset-1">

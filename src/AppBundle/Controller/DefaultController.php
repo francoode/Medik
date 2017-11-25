@@ -172,6 +172,59 @@ class DefaultController extends Controller
     }
 
 
+    /**
+     * @Route("/cantidadTipo/{fi}/{ff}/", name="pdfCantidiadTipo")
+     */
+    public function reporteCantidadTipoAction( $fi, $ff)
+    {
+
+
+        $cantidad = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getCantidadTipo($fi, $ff);
+        $total = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getTotalTipo($fi, $ff);
+        $total = $total[0];
+
+
+        $html =  $this->renderView('AppBundle:pdfReporteAnalisis:pdfCantidadTipo.html.twig', array(
+            'fi' => $fi,
+            'ff' => $ff,
+            'total' => $total,
+            'cantidad' => $cantidad
+        ));
+
+        $head = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdfP.html.twig');
+
+
+
+
+        return new PdfResponse(
+            $this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
+                'orientation' => 'landscape',
+                'enable-javascript' => true,
+                'javascript-delay' => 1000,
+                'no-stop-slow-scripts' => true,
+                'header-html' => $head,
+                'no-background' => false,
+                'lowquality' => false,
+                'encoding' => 'utf-8',
+                'page-height' =>  210,
+                'page-width' => 250,
+                'images' => true,
+                'cookie' => array(),
+                'margin-top' => 15,
+                'margin-bottom' => 15,
+                'dpi' => 300,
+                'image-dpi' => 300,
+                'enable-external-links' => true,
+                'enable-internal-links' => true
+            )),
+            'tipoanalisis.pdf'
+        );
+
+
+
+    }
+
+
 
 
 
