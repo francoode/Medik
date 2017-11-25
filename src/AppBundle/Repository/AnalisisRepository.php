@@ -125,5 +125,21 @@ class AnalisisRepository extends EntityRepository
         return $query->getQuery()->getResult();
 
     }
+
+    public function getAnalisisbydate($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a')
+            ->from('AppBundle:Analisis','a')
+            ->where('a.fechaCreado >= :fi')
+            ->andWhere('a.fechaCreado <= :ff')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+
+        return $query->getQuery()->getResult();
+    }
 }
 

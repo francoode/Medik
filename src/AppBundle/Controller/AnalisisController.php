@@ -7,7 +7,9 @@ use AppBundle\Entity\ResultadoAnalisis;
 use AppBundle\Entity\TipoAnalisis;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
-use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Symfony\Component\HttpFoundation\Request;
+use AppBundle\Form\ReporteType;
 
 /**
  * Analisi controller.
@@ -20,16 +22,39 @@ class AnalisisController extends Controller
      * Lists all analisi entities.
      *
      * @Route("/", name="analisis_index")
-     * @Method("GET")
+     * @Method({"GET", "POST"})
      */
-    public function indexAction()
+    public function indexAction(Request $request)
     {
-        $em = $this->getDoctrine()->getManager();
+        $form = $this->createForm(new ReporteType(), array(
+            'action' => $this->generateUrl('pacienteReporte'),
+            'method' => 'POST'
+        ));
 
+        $form->handleRequest($request);
+
+        if($form->isSubmitted() && $form->isValid())
+        {
+            $data = $form->getData();
+            $fi = $data['fechaInicio'];
+            $ff = $data['fechaFin'];
+
+            $analisis = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getAnalisisbydate($fi, $ff);
+
+          
+
+            return $this->render('AppBundle:analisis:index.html.twig', array(
+                'form' => $form->createView(),
+                'analises' => $analisis
+            ));
+        }
+
+        $em = $this->getDoctrine()->getManager();
         $analises = $em->getRepository('AppBundle:Analisis')->findAll();
 
         return $this->render('AppBundle:analisis:index.html.twig', array(
             'analises' => $analises,
+            'form' => $form->createView()
         ));
     }
 
