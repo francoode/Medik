@@ -122,7 +122,7 @@ class DefaultController extends Controller
     /**
      * @Route("/cantidadOS/{fi}/{ff}/", name="pdfCantidadOS")
      */
-    public function reporteCantidadOSpdf(DateTime $fi,DateTime $ff)
+    public function reporteCantidadOSpdf( $fi, $ff)
     {
 
 
