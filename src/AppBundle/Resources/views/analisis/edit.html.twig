@@ -6,11 +6,11 @@
     {{ form_start(edit_form) }}
     <div class="row">
         <div class="form-group">
-            <div class=" col-md-1">
+            <div class=" col-md-2">
                 {{ form_label(edit_form.paciente, null, {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 {{ form_widget(edit_form.paciente, {'attr' : {'class' : 'form-control col-10'}}) }}
             </div>
             <div class="col-md-3">
@@ -21,11 +21,11 @@
 
     <div class="row">
         <div class="form-group">
-            <div class=" col-md-1">
+            <div class=" col-md-2">
                 {{ form_label(edit_form.profesional, null, {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 {{ form_widget(edit_form.profesional, {'attr' : {'class' : 'form-control col-10'}}) }}
             </div>
             <div class="col-md-3">
@@ -36,11 +36,11 @@
 
     <div class="row">
         <div class="form-group">
-            <div class=" col-md-1">
+            <div class=" col-md-2">
                 {{ form_label(edit_form.estado, null, {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 {{ form_widget(edit_form.estado, {'attr' : {'class' : 'form-control col-10'}}) }}
             </div>
             <div class="col-md-3">
@@ -55,15 +55,30 @@
     {{ form_row(edit_form._token) }}
     <div class="row">
         <div class="form-group">
-            <div class=" col-md-1">
+            <div class=" col-md-2">
                 {{ form_label(edit_form.fechaEntrega, null, {
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
-            <div class="col-md-8">
+            <div class="col-md-7">
                 {{ form_widget(edit_form.fechaEntrega, {'attr' : {'class' : ''}}) }}
             </div>
             <div class="col-md-3">
                 {{ form_errors(edit_form.fechaEntrega) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-2">
+                {{ form_label(edit_form.comentario, null, {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-7">
+                {{ form_widget(edit_form.comentario, {'attr' : {'class' : ''}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(edit_form.comentario) }}
             </div>
         </div>
     </div>
@@ -73,6 +88,8 @@
     {% set primera = 1 %}
 
     {% for it in edit_form.item %}
+
+
         {% if primera == 1 %}
          <h4>{{ it.vars.value.item.tipoAnalisis  }}</h4>
         {% else %}
@@ -84,12 +101,27 @@
     <div class="row">
         <div class="form-group">
 
-            <div class="col-md-1">
+
+
+            <div class="col-md-2">
                 {{ form_label(it,  it.vars.value.item.nombre  ) }}
             </div>
-            <div class="col-md-8" >
-                {{ form_widget(it, {'attr' : {'class' : ''}}) }}
+            {% if it.vars.value.item.esPon == true %}
+                <div class="col-md-7" >
+
+                <select class="sec" style="width: 190px;" id="{{ it.children.resultado.vars.id }}" name="{{ it.children.resultado.vars.full_name }}">
+                    <option value="{{ it.vars.value.resultado }}">{{ it.vars.value.resultado }}</option>
+                    <option value="Positivo">Positivo</option>
+                    <option value="Negativo">Negativo</option>
+                </select>
+
             </div>
+            {% else %}
+                <div class="col-md-2" >
+                    {{ form_widget(it, {'attr' : {'class' : ''}}) }}
+                </div>
+                <div class="col-md-1">{{ it.vars.value.item.unidad }} </div>
+            {% endif %}
             <div class="col-md-3">
                 {{ form_errors(it) }}
             </div>
@@ -123,7 +155,18 @@
     <script>
 
     $(document).ready(function(){
+
+        var usedNames = {};
+        $(".sec > option").each(function () {
+            if(usedNames[this.text]) {
+                $(this).remove();
+            } else {
+                usedNames[this.text] = this.value;
+            }
+        });
+
         $('#appbundle_analisis_paciente').attr("disabled", true);
+
         }
     )
     </script>

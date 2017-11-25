@@ -51,6 +51,7 @@ class GraficoController extends Controller
         foreach ($resultados as &$res)
         {
             $res['fechaEntrega'] = $res['fechaEntrega']->format('d-m-y');
+            $res['resultado'] = floatval($res['resultado']);
         }
 
 

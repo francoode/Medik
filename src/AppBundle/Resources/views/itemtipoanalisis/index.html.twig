@@ -6,7 +6,7 @@
 {% block body %}
     <h2 class="text-info">Listado Item Tipo Análisis</h2>
 
-    <table class="table table-striped" style="width: 90%" >
+    <table id="example" class="table table-striped" style="width: 90%" >
         <thead>
         <tr>
             <th>Id</th>
@@ -15,6 +15,14 @@
             <th>Actions</th>
         </tr>
         </thead>
+        <tfoot>
+        <tr>
+            <th>Id</th>
+            <th>Tipoanalisis</th>
+            <th>Nombre</th>
+            <th>Actions</th>
+        </tr>
+        </tfoot>
         <tbody>
         {%  for itemTipoAnalisi in itemTipoAnalises %}
             <tr>
@@ -34,3 +42,46 @@
 
 
 {% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            // Setup - add a text input to each footer cell
+            $('#example tfoot th').each( function () {
+                var title = $(this).text();
+
+
+                if(title != 'Actions')
+                {
+                    $(this).html( '<input type="text" placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                }
+                else
+                {
+                    $(this).html( '<input type="hidden"  placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                }
+
+
+            } );
+
+            // DataTable
+            var table = $('#example').DataTable();
+
+            // Apply the search
+            table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+
+            $('#example_filter').hide();
+        } );
+    </script>
+{% endblock %}
+

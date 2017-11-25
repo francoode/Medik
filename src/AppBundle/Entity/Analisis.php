@@ -70,6 +70,12 @@ class Analisis
      */
     private $item;
 
+    /**
+     * @var string
+     * @ORM\Column(name="comentario", type="string", length=200, nullable=true)
+     */
+    private $comentario;
+
 
 
 
@@ -274,5 +280,29 @@ class Analisis
     public function getItem()
     {
         return $this->item;
+    }
+
+    /**
+     * Set comentario
+     *
+     * @param string $comentario
+     *
+     * @return Analisis
+     */
+    public function setComentario($comentario)
+    {
+        $this->comentario = $comentario;
+
+        return $this;
+    }
+
+    /**
+     * Get comentario
+     *
+     * @return string
+     */
+    public function getComentario()
+    {
+        return $this->comentario;
     }
 }

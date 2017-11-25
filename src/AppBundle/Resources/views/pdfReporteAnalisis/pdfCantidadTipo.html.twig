@@ -1,0 +1,35 @@
+<link rel="stylesheet" href="/var/www/html/ProyectoFinal/app/Resources/vendor/bootstrap/css/bootstrap.css">
+
+<h3>Reporte Tipo de Análisis Realizados</h3>
+Fecha Desde: {{ fi }} - Fecha Hasta: {{ ff }}
+<br>
+{% if cantidad is defined %}
+    <div class="row">
+        <div class="col-xs-7 col-md-offset-1">
+            <b> Obra Social</b>
+
+        </div>
+        <div class="col-xs-2" style="text-align: center">
+            <b>Cantidad</b>
+        </div>
+        <div class="col-xs-2" style="text-align: center">
+            <b> Porcentaje %</b>
+        </div>
+    </div>
+
+    {% for c in cantidad %}
+        <div class="row">
+            <div class="col-xs-7 col-md-offset-1">
+                {{ c.nombre }}
+
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+                {{ c.cantidad }}
+            </div>
+            <div class="col-xs-2" style="text-align: center">
+                {{ ((c.cantidad * 100) // total.total) }} %
+            </div>
+        </div>
+
+    {% endfor %}
+{% endif %}

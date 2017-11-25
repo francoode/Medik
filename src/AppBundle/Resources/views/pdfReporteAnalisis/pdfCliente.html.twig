@@ -1,4 +1,4 @@
-<link rel="stylesheet" href="C:/wamp64/www/proyecto/app/Resources/vendor/bootstrap/css/bootstrap.css">
+<link rel="stylesheet" href="/var/www/html/ProyectoFinal/app/Resources/vendor/bootstrap/css/bootstrap.css">
 
 <div class="container-fluid" style="font-size:16px">
     {% for a in analisi.tipoAnalisis %}
@@ -8,17 +8,20 @@
 
         <div class="row">
 
-            <div class="col-xs-2 col-xs-offset-3 " >
-                <b>Resultado</b>
+            <div class="col-xs-2 col-xs-offset-5 " >
+                <b>Resultadto</b>
             </div>
             <div class="col-xs-2">
                 <b>Unidad</b>
+            </div>
+            <div class="col-xs-2">
+                <b>Valores Referencia</b>
             </div>
         </div>
         {% for all in allitem %}
             {% if all.item.tipoanalisis == a %}
         <div class="row">
-            <div class="col-xs-2 col-xs-offset-1">
+            <div class="col-xs-4 col-xs-offset-1">
                 {{ all.item }}
             </div>
             <div class="col-xs-2">
@@ -26,6 +29,18 @@
             </div>
             <div class="col-xs-2">
                 {{ all.item.unidad }}
+            </div>
+            <div class="col-xs-2">
+
+                {% for vr in all.item.valoresReferencia %}
+                 {% if vr.valorMax is not null  and vr.valorMin is not null and vr.edadMin is not null and vr.edadMax is not null%}
+                     {% if analisi.paciente.edad >= vr.edadMin and analisi.paciente.edad <= vr.edadMax %}
+                         {{ vr.valorMin }}{{ all.item.unidad }} - {{ vr.valorMax }}{{ all.item.unidad }}
+                     {% endif %}
+                 {% endif %}
+                {% endfor %}
+
+
             </div>
         </div>
 

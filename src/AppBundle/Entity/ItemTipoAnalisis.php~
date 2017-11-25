@@ -46,9 +46,16 @@ class ItemTipoAnalisis
     private $unidad;
 
     /**
-     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="ItemTipoAnalisis", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="itemTipoAnalisis", cascade={"persist"})
      */
     private $valoresReferencia;
+
+    /**
+     * @var boolean
+     * @ORM\Column(name="es_pon", type="boolean")
+     */
+    private $esPon;
+    
 
 
 
@@ -145,4 +152,48 @@ class ItemTipoAnalisis
 
 
 
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->valoresReferencia = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Add valoresReferencium
+     *
+     * @param \AppBundle\Entity\ValoresReferencia $valoresReferencium
+     *
+     * @return ItemTipoAnalisis
+     */
+    public function addValoresReferencium(\AppBundle\Entity\ValoresReferencia $valoresReferencium)
+    {
+
+        $this->valoresReferencia[] = $valoresReferencium;
+        $valoresReferencium->setItemTipoAnalisis($this);
+        return $this;
+    }
+
+    /**
+     * Remove valoresReferencium
+     *
+     * @param \AppBundle\Entity\ValoresReferencia $valoresReferencium
+     */
+    public function removeValoresReferencium(\AppBundle\Entity\ValoresReferencia $valoresReferencium)
+    {
+        $this->valoresReferencia->removeElement($valoresReferencium);
+    }
+
+    /**
+     * Get valoresReferencia
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getValoresReferencia()
+    {
+        return $this->valoresReferencia;
+    }
+
+   
 }

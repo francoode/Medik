@@ -7,11 +7,11 @@
 
         <div class="row">
             <div class="form-group">
-                <div class=" col-md-1">
+                <div class=" col-md-2">
                     {{ form_label(form.tipoAnalisis, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     {{ form_widget(form.tipoAnalisis, {'attr' : {'class' : 'form-control col-10'}}) }}
                 </div>
                 <div class="col-md-3">
@@ -25,11 +25,11 @@
 
         <div class="row">
             <div class="form-group">
-                <div class=" col-md-1">
+                <div class=" col-md-2">
                     {{ form_label(form.nombre, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     {{ form_widget(form.nombre, {'attr' : {'class' : 'form-control col-10'}}) }}
                 </div>
                 <div class="col-md-3">
@@ -40,11 +40,11 @@
 
         <div class="row">
             <div class="form-group">
-                <div class=" col-md-1">
+                <div class=" col-md-2">
                     {{ form_label(form.unidad, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-7">
                     {{ form_widget(form.unidad, {'attr' : {'class' : 'form-control col-10'}}) }}
                 </div>
                 <div class="col-md-3">
@@ -53,9 +53,25 @@
             </div>
         </div>
 
+        <div class="row">
 
+        <div class="form-check">
+            <div class=" col-md-2">
+                {{ form_label(form.esPon, 'Positivo/Negativo', {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-7">
+                {{ form_widget(form.esPon) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.esPon) }}
+            </div>
+        </div>
+    </div>
 
-        <div>
+<br>
+
+        <div id="agregarValores">
             <ul class="tags"
                 data-prototype="{{ form_widget(form.valoresReferencia.vars.prototype)|e }}">
             </ul>
@@ -90,15 +106,30 @@
     {{ parent() }}
 <script type="text/javascript">
 
+    $('#appbundle_itemtipoanalisis_esPon').click(function(){
+        if (this.checked) {
+            $('#agregarValores').css('display','none');
+        }
+        else
+        {
+            $('#agregarValores').css('display','inline');
+        }
+    });
+
 
 
     // setup an "add a tag" link
-    var $addTagLink = $('<a href="#" class="add_tag_link"> <button type="button" class="btn btn-default btn-sm "><i class="fa fa-plus-square"></i> Agregar Tipo Analisis</button></a>');
+    var $addTagLink = $('<a href="#" class="add_tag_link"> <button type="button" class="btn btn-default btn-sm "><i class="fa fa-plus-square"></i> Agregar Valores Referencia</button></a>');
     var $newLinkLi = $('<li style="\n' +
         '    list-style: none;\n' +
         '"></li>').append($addTagLink);
 
     jQuery(document).ready(function() {
+        $('#appbundle_itemtipoanalisis_esPon').css('height', 20)
+        .css('width',20);
+
+
+
         // Get the ul that holds the collection of tags
         var $collectionHolder = $('ul.tags');
 

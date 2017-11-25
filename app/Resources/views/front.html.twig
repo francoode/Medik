@@ -11,15 +11,18 @@
     <link rel="stylesheet" href="{{ asset('app/Resources/vendor/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('app/Resources/vendor/linearicons/style.css') }}">
     <link rel="stylesheet" href="{{ asset('app/Resources/vendor/chartist/css/chartist-custom.css') }}" />
+    <link rel="stylesheet" href="{{ asset('app/Resources/vendor/chartist/css/datatables.min.css') }}" />
     <!-- MAIN CSS -->
     <link rel="stylesheet" href="{{ asset('app/Resources/css/main.css') }}">
     <!-- FOR DEMO PURPOSES ONLY. You should remove this in your project -->
     <link rel="stylesheet" href="{{ asset('app/Resources/css/demo.css') }}">
+    <link rel="stylesheet" href="{{ asset('app/Resources/css/datepicker.css') }}">
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('app/Resources/img/apple-icon.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('app/Resources/img/favicon.png') }}">
+
 </head>
 
 <body>
@@ -197,7 +200,10 @@
 <script src="{{ asset('app/Resources/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js') }}"></script>
 <script src="{{ asset('app/Resources/vendor/chartist/js/chartist.min.js') }}"></script>
 <script src="{{ asset('app/Resources/scripts/klorofil-common.js') }}"></script>
-    <script src="https://code.highcharts.com/highcharts.js"></script>
+    <script src="{{ asset('app/Resources/js/highcharts.js') }}"></script>
+    <script src="{{ asset('app/Resources/js/datatables.min.js') }}"></script>
+    <script src="{{ asset('app/Resources/js/bootstrap-datepicker.js') }}"></script>
+
 <script>
     $(function() {
         var data, options;

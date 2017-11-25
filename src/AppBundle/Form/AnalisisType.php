@@ -14,6 +14,7 @@ use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
 use Symfony\Component\Form\Extension\Core\Type\SubmitType;
 use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
+use Symfony\Component\Form\Extension\Core\Type\TextareaType;
 
 class AnalisisType extends AbstractType
 {
@@ -27,6 +28,7 @@ class AnalisisType extends AbstractType
             ->add('estado', ChoiceType::class, array(
                 'choices'  => array(
                     'Pendiente' => 'Pendiente',
+                    'En Ejecución' => 'En Ejecución',
                     'Realizado' => 'Realizado',
 
                 )))
@@ -57,6 +59,9 @@ class AnalisisType extends AbstractType
                     )
                 )
             )
+            ->add('comentario',TextareaType::class,array(
+                'required' => false,
+            ))
 
             ->add('Guardar', SubmitType::class);
 

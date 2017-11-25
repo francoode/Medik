@@ -66,10 +66,15 @@ class Analisis
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="Analisis")
-
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="analisis", cascade={"persist"})
      */
     private $item;
+
+    /**
+     * @var string
+     * @ORM\Column(name="comentario", type="string", length=200)
+     */
+    private $comentario;
 
 
 
@@ -104,7 +109,7 @@ class Analisis
     /**
      * Get fechaEntrega
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getFechaEntrega()
     {
@@ -150,7 +155,7 @@ class Analisis
     /**
      * Get fechaCreado
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getFechaCreado()
     {
@@ -243,36 +248,37 @@ class Analisis
         return $this->tipoAnalisis;
     }
 
+
     /**
-     * Add itemTipoAnalisis
+     * Add item
      *
-     * @param \AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis
+     * @param \AppBundle\Entity\ResultadoAnalisis $item
      * @return Analisis
      */
-    public function addItemTipoAnalisi(\AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis)
+    public function addItem(\AppBundle\Entity\ResultadoAnalisis $item)
     {
-        $this->itemTipoAnalisis[] = $itemTipoAnalisis;
+        $this->item[] = $item;
 
         return $this;
     }
 
     /**
-     * Remove itemTipoAnalisis
+     * Remove item
      *
-     * @param \AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis
+     * @param \AppBundle\Entity\ResultadoAnalisis $item
      */
-    public function removeItemTipoAnalisi(\AppBundle\Entity\ItemTipoAnalisis $itemTipoAnalisis)
+    public function removeItem(\AppBundle\Entity\ResultadoAnalisis $item)
     {
-        $this->itemTipoAnalisis->removeElement($itemTipoAnalisis);
+        $this->item->removeElement($item);
     }
 
     /**
-     * Get itemTipoAnalisis
+     * Get item
      *
      * @return \Doctrine\Common\Collections\Collection 
      */
-    public function getItemTipoAnalisis()
+    public function getItem()
     {
-        return $this->itemTipoAnalisis;
+        return $this->item;
     }
 }

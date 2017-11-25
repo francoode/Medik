@@ -36,5 +36,110 @@ class AnalisisRepository extends EntityRepository
        return ($query->getQuery()->getResult());
 
     }
+
+    public function getAnalisisByPaciente($ff,$fi,$paciente)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a')
+            ->from('AppBundle:Analisis','a')
+            ->where('a.paciente = :idPaciente')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->andWhere('a.fechaCreado <= :ff')
+            ->setParameter('idPaciente',$paciente->getId())
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+
+    }
+
+    public function getCantidadTipo($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(ta.id) as cantidad')
+            ->addSelect('ta.nombre')
+            ->from('AppBundle:Analisis','a')
+            ->join('a.tipoAnalisis','ta')
+            ->groupBy('ta.id')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getTotalTipo($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(ta) as total')
+            ->from('AppBundle:Analisis','a')
+            ->join('a.tipoAnalisis','ta')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getCantidadOS($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(p.obraSocial) as cantidad')
+            ->addSelect('os.name')
+            ->from('AppBundle:Analisis', 'a')
+            ->join('a.paciente','p')
+            ->join('p.obraSocial','os')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->groupBy('p.obraSocial')
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getTotalOS($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(p.obraSocial) as total')
+            ->from('AppBundle:Analisis', 'a')
+            ->join('a.paciente','p')
+            ->join('p.obraSocial','os')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+
+    }
+
+    public function getAnalisisbydate($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a')
+            ->from('AppBundle:Analisis','a')
+            ->where('a.fechaCreado >= :fi')
+            ->andWhere('a.fechaCreado <= :ff')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+
+        return $query->getQuery()->getResult();
+    }
 }
 
