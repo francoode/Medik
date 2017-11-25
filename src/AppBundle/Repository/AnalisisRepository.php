@@ -88,5 +88,42 @@ class AnalisisRepository extends EntityRepository
 
         return $query->getQuery()->getResult();
     }
+
+    public function getCantidadOS($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(p.obraSocial) as cantidad')
+            ->addSelect('os.name')
+            ->from('AppBundle:Analisis', 'a')
+            ->join('a.paciente','p')
+            ->join('p.obraSocial','os')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->groupBy('p.obraSocial')
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getTotalOS($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('COUNT(p.obraSocial) as total')
+            ->from('AppBundle:Analisis', 'a')
+            ->join('a.paciente','p')
+            ->join('p.obraSocial','os')
+            ->where('a.fechaCreado <= :ff')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+
+    }
 }
 
