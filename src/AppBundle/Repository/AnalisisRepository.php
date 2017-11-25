@@ -36,5 +36,23 @@ class AnalisisRepository extends EntityRepository
        return ($query->getQuery()->getResult());
 
     }
+
+    public function getAnalisisByPaciente($ff,$fi,$paciente)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a')
+            ->from('AppBundle:Analisis','a')
+            ->where('a.paciente = :idPaciente')
+            ->andWhere('a.fechaCreado >= :fi')
+            ->andWhere('a.fechaCreado <= :ff')
+            ->setParameter('idPaciente',$paciente->getId())
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+        return $query->getQuery()->getResult();
+
+    }
 }
 

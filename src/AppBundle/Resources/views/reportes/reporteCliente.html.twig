@@ -49,6 +49,52 @@
         </div>
 
     {{ form_end(form) }}
+        <br>
+        <hr>
+
+        <table id="example" class="table table-striped" style="width: 90%" >
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>Nombre Paciente</th>
+                <th>Nombre Profesional</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Entregado</th>
+                <th>Estado</th>
+                <th>Resultados</th>
+
+            </tr>
+            </thead>
+            {#<tfoot>                 Descomentar para volver a tener el filtro
+            <tr>
+                <th>Id</th>
+                <th>Nombre Paciente</th>
+                <th>Nombre Profesional</th>
+                <th>Fecha Inicio</th>
+                <th>Fecha Entregado</th>
+                <th>Estado</th>
+                <th>Acciones</th>
+            </tr>
+            </tfoot>#}
+            <tbody>
+            {% if analisis is defined %}
+                {% for analisess in analisis %}
+                    <tr>
+                        <td>{{ analisess.id }}</td>
+                        <td>{{ analisess.paciente.nombre }}&nbsp;{{analisess.paciente.apellido}}</td>
+                        <td>{{ analisess.profesional.nombre }}&nbsp;{{analisess.profesional.apellido}}</td>
+                        <td>{{ analisess.fechaCreado|date("d/m/Y") }}</td>
+                        <td>{{ analisess.fechaEntrega|date("d/m/Y") }}</td>
+                        <td>{{ analisess.estado }}</td>
+                        <td style="text-align: center">
+                            <a href="{{ path('analisis_show',{'id':analisess.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
+                        </td>
+
+                    </tr>
+                {% endfor %}
+            {% endif %}
+            </tbody>
+        </table>
 
     </div>
 
@@ -65,7 +111,44 @@
                 format: 'yyyy-mm-dd'
             });
 
+            $('hr').css('border-top', '1px solid #8c8b8b')
+
             $('.js-example-basic-single').select2();
+
+            // Setup - add a text input to each footer cell
+            $('#example tfoot th').each( function () {
+                var title = $(this).text();
+
+
+                if(title != 'Acciones')
+                {
+                    $(this).html( '<input type="text" placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                }
+                else
+                {
+                    $(this).html( '<input type="hidden"  placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                }
+
+
+            } );
+
+            // DataTable
+            var table = $('#example').DataTable();
+
+            // Apply the search
+            table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.footer() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+
+            $('#example_filter').hide();
         });
     </script>
 {% endblock javascripts %}
