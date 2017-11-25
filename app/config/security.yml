@@ -2,13 +2,12 @@ security:
   firewalls:
     administracion:
       pattern: ^/*
-      provider: usuarios
       anonymous: ~
       form_login:
         login_path: login
         check_path: usuario_login_check
       logout:
-        path: usuario_logout
+        path: logout
 
   access_control:
     - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
@@ -16,10 +15,16 @@ security:
     - { path: ^/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
 
   providers:
-    usuarios:
+    todos:
+      chain:
+        providers: [profesional, paciente]
+    profesional:
       entity: { class: AppBundle\Entity\Profesional, property: usuario }
+    paciente:
+      entity: { class: AppBundle\Entity\Paciente, property: usuario }
 
   encoders:
     AppBundle\Entity\Profesional: plaintext
+    AppBundle\Entity\Paciente: plaintext
 
 

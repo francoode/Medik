@@ -142,10 +142,12 @@
                         </div>
                     </li>
 
+                    {% if is_granted('ROLE_PACIENTE') %}
                     <li>
                         <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
 
                     </li>
+                    {% endif %}
 
 
 
