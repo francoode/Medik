@@ -63,6 +63,7 @@ class PacienteController extends Controller
         {
             $p->setFechaActualizado(new \DateTime());
             $p->setFechaRegistro(new \DateTime());
+            $p->setEdad();
             $em = $this->getDoctrine()->getManager();
             $em->persist($p);
             $em->flush();
@@ -99,17 +100,7 @@ class PacienteController extends Controller
 
         if($form->isSubmitted() && $form->isValid())
         {
-            $password = $form->get('password')->getData();
-            if(!empty($password))
-            {
-
-                /*$encoder = $this->container->get('security.password_encoder');
-                $encoded = $encoder->encodePassword($prof, $password);
-                $prof->setPassword($encoded);*/
-                $prof->setPassword($password);
-
-
-            }
+            $p->setEdad();
 
             $em = $this->getDoctrine()->getManager();
             $em->flush();

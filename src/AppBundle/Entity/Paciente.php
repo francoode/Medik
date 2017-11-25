@@ -91,6 +91,12 @@ class Paciente
 
     private $string;
 
+    /**
+     * @var integer
+     * @ORM\Column(name="edad", type="integer", nullable=true)
+     */
+    private $edad;
+
 
 
     /**
@@ -347,5 +353,33 @@ class Paciente
     public function getNroAfiliado()
     {
         return $this->nroAfiliado;
+    }
+
+    /**
+     * Set edad
+     *
+     * @param integer $edad
+     *
+     * @return Paciente
+     */
+    public function setEdad()
+    {
+        $dob = $this->getFechaNacimiento();
+        $now = new  \DateTime();
+        $diff = $now->diff($dob);
+        $diff = $diff->y;
+
+        $this->edad = $diff;
+        return $this;
+    }
+
+    /**
+     * Get edad
+     *
+     * @return integer
+     */
+    public function getEdad()
+    {
+        return $this->edad;
     }
 }

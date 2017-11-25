@@ -6,6 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
+use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+
 class ProfesionalType extends AbstractType
 {
     /**
@@ -18,7 +20,7 @@ class ProfesionalType extends AbstractType
             ->add('password', 'password')
             ->add('nombre')
             ->add('apellido')
-            ->add('fechaNacimiento')
+            ->add('fechaNacimiento',BirthdayType::class)
             ->add('dni')
             ->add('email', 'email')
             ->add('activo','checkbox')

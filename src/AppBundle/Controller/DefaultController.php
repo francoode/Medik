@@ -47,7 +47,7 @@ class DefaultController extends Controller
 
 
 
-        return new PdfResponse(
+     return new PdfResponse(
             $this->get('knp_snappy.pdf')->getOutputFromHtml($html, array(
                 'orientation' => 'landscape',
                 'enable-javascript' => true,
