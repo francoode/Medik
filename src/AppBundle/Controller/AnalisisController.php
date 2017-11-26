@@ -47,11 +47,11 @@ class AnalisisController extends Controller
 
             if($entityName == 'AppBundle\Entity\Paciente')
             {
-                $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('profesional' => $idT));
+                $analisis = $em->getRepository('AppBundle:Analisis')->getAnalisisbydatePac($fi, $ff, $idT);
             }
             elseif ($entityName == 'AppBundle\Entity\Profesional' )
             {
-                $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('paciente' => $idT));
+                $analisis = $em->getRepository('AppBundle:Analisis')->getAnalisisbydateProf($fi, $ff,$idT);
             }
             else{
                 $analisis = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getAnalisisbydate($fi, $ff);
@@ -74,11 +74,11 @@ class AnalisisController extends Controller
 
         if($entityName == 'AppBundle\Entity\Paciente')
         {
-            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('profesional' => $idT));
+            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('paciente' => $idT));
         }
         elseif ($entityName == 'AppBundle\Entity\Profesional' )
         {
-            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('paciente' => $idT));
+            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('profesional' => $idT));
         }
         else{
             $analises = $em->getRepository('AppBundle:Analisis')->findAll();

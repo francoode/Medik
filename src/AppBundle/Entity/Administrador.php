@@ -201,7 +201,7 @@ class Administrador implements UserInterface
 
     function eraseCredentials()
     {
-        $this->password = null;
+        return null;
     }
 
     function getSalt()
