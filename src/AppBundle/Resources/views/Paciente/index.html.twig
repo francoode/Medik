@@ -15,9 +15,8 @@
                     <th>Fecha Nacimiento</th>
                     <th>Email</th>
                     <th>Usuario</th>
-                    <th>Password</th>
-                    <th>Creado</th>
-                    <th>Actualizado</th>
+
+
                     <th>Obra Social</th>
                     <th>Acciones</th>
 
@@ -31,9 +30,8 @@
                     <th>Fecha Nacimiento</th>
                     <th>Email</th>
                     <th>Usuario</th>
-                    <th>Password</th>
-                    <th>Creado</th>
-                    <th>Actualizado</th>
+
+
                     <th>Obra Social</th>
                     <th>Acciones</th>
 
@@ -48,13 +46,12 @@
                         <td>{{ pa.fechaNacimiento|date("d/m/Y") }}</td>
                         <td>{{ pa.email }}</td>
                         <td>{{ pa.usuario }}</td>
-                        <td>{{ pa.password }}</td>
-                        <td>{{ pa.fechaRegistro|date("d/m/Y") }}</td>
-                        <td>{{ pa.fechaActualizado|date("d/m/Y") }}</td>
+
+
                         <td>{{ pa.obraSocial |slice(0,20) }}</td>
                         <td>
-                            <a href="{{ path('paciente_edit', {'id':pa.id}) }}">Edit</a>
-                            <a href="{{ path('paciente_delete', {'id':pa.id}) }}">Delete</a>
+                            <a href="{{ path('profesional_edit', {'id':pa.id}) }}"><i class="fa fa-pencil"></i> </a>
+                            <a href="{{ path('profesional_delete',{'id':pa.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
 
                     </tr>
