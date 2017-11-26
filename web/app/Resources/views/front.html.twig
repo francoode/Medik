@@ -33,7 +33,11 @@
         <div class="brand" style="height: 70px;">
             <!-- <a href="index.html"><img src="app/Resources/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
            -->
+<<<<<<< HEAD
              <a href="index.html"><img src="{{ asset('app/Resources/img/logo-medik2.jpg')  }}" alt="MediSoft Logo" class="img-responsive logo"></a>
+=======
+             <a href="index.html"><img src="{{ asset('app/Resources/img/logo.png')  }}" alt="MediSoft Logo" class="img-responsive logo"></a>
+>>>>>>> f1a69a0040cf7c493a26bf7f5284cb11cd95ffd6
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -116,7 +120,11 @@
 
 
 
+<<<<<<< HEAD
 
+=======
+                    {% if is_granted('ROLE_ADMINISTRADOR')  %}
+>>>>>>> f1a69a0040cf7c493a26bf7f5284cb11cd95ffd6
                     <li>
                         <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages5" class="collapse ">
@@ -141,11 +149,26 @@
                             </ul>
                         </div>
                     </li>
+<<<<<<< HEAD
 
+=======
+                    {% endif %}
+
+                    {% if is_granted('ROLE_PACIENTE')%}
+>>>>>>> f1a69a0040cf7c493a26bf7f5284cb11cd95ffd6
                     <li>
                         <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
 
                     </li>
+<<<<<<< HEAD
+=======
+                    {% elseif is_granted('ROLE_ADMINISTRADOR') %}
+                        <li>
+                            <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
+
+                        </li>
+                   {% endif %}
+>>>>>>> f1a69a0040cf7c493a26bf7f5284cb11cd95ffd6
 
 
 

@@ -337,7 +337,7 @@ class Profesional implements UserInterface
 
     function getRoles()
     {
-        return array('ROLE_USUARIO');
+        return array('ROLE_PROFESIONAL');
     }
 
     function getUsername()
@@ -348,7 +348,7 @@ class Profesional implements UserInterface
 
     function eraseCredentials()
     {
-        $this->password = null;
+        return null;
     }
 
     function getSalt()

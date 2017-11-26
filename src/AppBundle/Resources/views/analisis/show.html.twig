@@ -39,11 +39,20 @@
                                     </a>
 
                                 </div>
+                                {% if is_granted('ROLE_PROFESIONAL')  %}
                                 <div class="col-md-1" style="padding-left: 0px;">
                                     <a href="{{ path('pdfProfesional', {'idP': analisi.id}) }}">
                                     <button type="button" class="btn btn-info btn-xs">Emitir Informe Profesional</button>
                                     </a>
                                 </div>
+                                {% endif %}
+                                {% if is_granted('ROLE_ADMINISTRADOR')  %}
+                                    <div class="col-md-1" style="padding-left: 0px;">
+                                        <a href="{{ path('pdfProfesional', {'idP': analisi.id}) }}">
+                                            <button type="button" class="btn btn-info btn-xs">Emitir Informe Profesional</button>
+                                        </a>
+                                    </div>
+                                {% endif %}
                             </div>
                         </div>
                     </div>
