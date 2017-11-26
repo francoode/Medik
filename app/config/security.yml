@@ -7,7 +7,7 @@ security:
         login_path: login
         check_path: usuario_login_check
       logout:
-        path: logout
+        path: usuario_logout
 
   access_control:
     - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }

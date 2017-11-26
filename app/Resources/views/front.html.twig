@@ -33,7 +33,7 @@
         <div class="brand" style="height: 70px;">
             <!-- <a href="index.html"><img src="app/Resources/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
            -->
-             <a href="index.html"><img src="{{ asset('app/Resources/img/logo-medik2.jpg')  }}" alt="MediSoft Logo" class="img-responsive logo"></a>
+             <a href="index.html"><img src="{{ asset('app/Resources/img/logo.png')  }}" alt="MediSoft Logo" class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -44,7 +44,7 @@
             <div id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                        {#<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="lnr lnr-alarm"></i>
                             <span class="badge bg-danger">5</span>
                         </a>
@@ -56,6 +56,7 @@
                             <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
                             <li><a href="#" class="more">See all notifications</a></li>
                         </ul>
+                        #}
                     </li>
 
                     <li class="dropdown">
@@ -80,6 +81,7 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
+                    {% if is_granted('ROLE_ADMINISTRADOR')  %}
                     <li>
                         <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Profesionales</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages" class="collapse ">
@@ -99,9 +101,10 @@
                             </ul>
                         </div>
                     </li>
+                    {% endif %}
 
 
-
+                    {% if is_granted('ROLE_ADMINISTRADOR')  %}
                     <li>
                         <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages4" class="collapse ">
@@ -111,12 +114,24 @@
                             </ul>
                         </div>
                     </li>
+                    {% endif %}
+                    {% if is_granted('ROLE_PROFESIONAL')  %}
+                        <li>
+                            <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages4" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="{{ path('analisis_index') }}" class="">Listar</a></li>
+                                    <li><a href="{{ path('analisis_new') }}" class="">Nuevo</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% endif %}
 
 
 
 
 
-
+                    {% if is_granted('ROLE_ADMINISTRADOR')  %}
                     <li>
                         <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages5" class="collapse ">
@@ -141,13 +156,19 @@
                             </ul>
                         </div>
                     </li>
+                    {% endif %}
 
-                    {% if is_granted('ROLE_PACIENTE') %}
+                    {% if is_granted('ROLE_PACIENTE')%}
                     <li>
                         <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
 
                     </li>
-                    {% endif %}
+                    {% elseif is_granted('ROLE_ADMINISTRADOR') %}
+                        <li>
+                            <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
+
+                        </li>
+                   {% endif %}
 
 
 
