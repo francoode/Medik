@@ -99,10 +99,7 @@
                             </ul>
                         </div>
                     </li>
-                    {% endif %}
 
-
-                    {% if is_granted('ROLE_ADMINISTRADOR')  %}
                     <li>
                         <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages4" class="collapse ">
@@ -112,8 +109,71 @@
                             </ul>
                         </div>
                     </li>
+                        <li>
+                            <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages5" class="collapse ">
+                                <ul class="nav">
+                                    <li>    <a href="#subPages51" data-toggle="collapse" class="collapsed"> <span>Tipo Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
+                                        <div id="subPages51" class="collapse ">
+                                            <ul class="nav">
+                                                <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_index') }}" class="">Listar</a></li>
+                                                <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_new') }}" class="">Nuevo</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+                                    <li>    <a href="#subPages52" data-toggle="collapse" class="collapsed"> <span>Items Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
+                                        <div id="subPages52" class="collapse ">
+                                            <ul class="nav">
+                                                <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_index') }}" class="">Listar</a></li>
+                                                <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_new') }}" class="">Nuevo</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
+
+                        </li>
                     {% endif %}
+
                     {% if is_granted('ROLE_PROFESIONAL')  %}
+                        <li>
+                            <a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Pacientes</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages2" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="{{ path('paciente_list') }}" class="">Listar</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages4" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="{{ path('analisis_index') }}" class="">Listar</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
+
+                        </li>
+                    {% endif %}
+
+
+
+
+
+
+
+
+                    {% if is_granted('ROLE_PACIENTE')%}
                         <li>
                             <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                             <div id="subPages4" class="collapse ">
@@ -123,49 +183,11 @@
                                 </ul>
                             </div>
                         </li>
-                    {% endif %}
-
-
-
-
-
-                    {% if is_granted('ROLE_ADMINISTRADOR')  %}
-                    <li>
-                        <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages5" class="collapse ">
-                            <ul class="nav">
-                                <li>    <a href="#subPages51" data-toggle="collapse" class="collapsed"> <span>Tipo Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
-                                <div id="subPages51" class="collapse ">
-                                    <ul class="nav">
-                                        <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_index') }}" class="">Listar</a></li>
-                                        <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_new') }}" class="">Nuevo</a></li>
-                                    </ul>
-                                </div>
-                                </li>
-
-                                <li>    <a href="#subPages52" data-toggle="collapse" class="collapsed"> <span>Items Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
-                                    <div id="subPages52" class="collapse ">
-                                        <ul class="nav">
-                                            <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_index') }}" class="">Listar</a></li>
-                                            <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_new') }}" class="">Nuevo</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    {% endif %}
-
-                    {% if is_granted('ROLE_PACIENTE')%}
                     <li>
                         <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
 
                     </li>
-                    {% elseif is_granted('ROLE_ADMINISTRADOR') %}
-                        <li>
-                            <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
 
-                        </li>
                    {% endif %}
 
 

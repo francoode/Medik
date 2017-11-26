@@ -31,6 +31,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.ttf" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.ttf" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff2" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff2" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/app/Resources/views/front.html.twig" afterPath="$PROJECT_DIR$/app/Resources/views/front.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.svg" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/scripts/klorofil-common.js" afterPath="$PROJECT_DIR$/web/app/Resources/scripts/klorofil-common.js" />
@@ -94,8 +95,8 @@
       <file leaf-file-name="front.html.twig" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/Resources/views/front.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="85">
-              <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+            <state relative-caret-position="505">
+              <caret line="184" column="29" lean-forward="false" selection-start-line="184" selection-start-column="29" selection-end-line="184" selection-end-column="29" />
               <folding>
                 <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
               </folding>
@@ -118,7 +119,6 @@
       <find>brand</find>
       <find>delete_form</find>
       <find>add</find>
-      <find>analisis</find>
       <find>additem</find>
       <find>registerNamespaces</find>
       <find>$loader</find>
@@ -137,6 +137,7 @@
       <find>nav navbar-nav navbar-right</find>
       <find>Medik</find>
       <find>img-responsive</find>
+      <find>analisis</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -215,7 +216,7 @@
     <sorting>DEFINITION_ORDER</sorting>
   </component>
   <component name="PhpWorkspaceProjectConfiguration" backward_compatibility_performed="true" />
-  <component name="ProjectFrameBounds" extendedState="7">
+  <component name="ProjectFrameBounds" extendedState="6">
     <option name="x" value="10" />
     <option name="y" value="20" />
     <option name="width" value="1346" />
@@ -426,15 +427,15 @@
       <workItem from="1511582693120" duration="9806000" />
       <workItem from="1511615140017" duration="6930000" />
       <workItem from="1511645676934" duration="2118000" />
-      <workItem from="1511703697847" duration="7136000" />
+      <workItem from="1511703697847" duration="8164000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="251531000" />
+    <option name="totallyTimeSpent" value="252559000" />
   </component>
   <component name="ToolWindowManager">
-    <frame x="10" y="20" width="1366" height="732" extended-state="7" />
+    <frame x="10" y="20" width="1366" height="732" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21229868" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" x="512" y="55" width="341" height="625" />
@@ -2042,8 +2043,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/Resources/views/front.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="85">
-          <caret line="35" column="56" lean-forward="false" selection-start-line="35" selection-start-column="56" selection-end-line="35" selection-end-column="56" />
+        <state relative-caret-position="505">
+          <caret line="184" column="29" lean-forward="false" selection-start-line="184" selection-start-column="29" selection-end-line="184" selection-end-column="29" />
           <folding>
             <element signature="n#style#0;n#img#0;n#a#0;n#div#0;n#nav#0;n#div#0;n#body#0;n#html#0;n#!!top" expanded="true" />
           </folding>
