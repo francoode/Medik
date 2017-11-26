@@ -5,7 +5,7 @@
     <div class ="panel-body">
     <div class="container">
         <div class="row">
-            <a href="{{ path('profesionales_new') }}">Agregar Profesional</a>
+
             <table id="example" class="table table-striped" style="width: 90%" >
                 <thead>
                 <tr>
@@ -50,8 +50,8 @@
 
                         <td>{{ pa.obraSocial |slice(0,20) }}</td>
                         <td>
-                            <a href="{{ path('profesional_edit', {'id':pa.id}) }}"><i class="fa fa-pencil"></i> </a>
-                            <a href="{{ path('profesional_delete',{'id':pa.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <a href="{{ path('paciente_edit', {'id':pa.id}) }}"><i class="fa fa-pencil"></i> </a>
+                            <a href="{{ path('paciente_delete',{'id':pa.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                         </td>
 
                     </tr>

@@ -46,6 +46,14 @@ class DefaultController extends Controller
 
         $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdf.html.twig');
 
+        $nombrePdf = 'A-';
+         $nombrePdf .= $analisi->getId();
+        $nombrePdf .= 'Pac-';
+        $nombrePdf .= $analisi->getPaciente()->getNombre();
+        $nombrePdf .= $analisi->getPaciente()->getApellido();
+        $nombrePdf .= '.pdf';
+
+
 
 
      return new PdfResponse(
@@ -70,7 +78,7 @@ class DefaultController extends Controller
                 'enable-external-links' => true,
                 'enable-internal-links' => true
             )),
-            'analisis.pdf'
+            $nombrePdf
         );
 
     }
@@ -88,6 +96,16 @@ class DefaultController extends Controller
         ));
 
         $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdfP.html.twig');
+
+        $nombrePdf = 'A-';
+        $nombrePdf .= $analisi->getId();
+        $nombrePdf .= 'Pac-';
+        $nombrePdf .= $analisi->getPaciente()->getNombre();
+        $nombrePdf .= $analisi->getPaciente()->getApellido();
+        $nombrePdf .= 'Pro-';
+        $nombrePdf .= $analisi->getProfesional()->getNombre();
+        $nombrePdf .= $analisi->getProfesional()->getApellido();
+        $nombrePdf .= '.pdf';
 
 
         return new PdfResponse(
@@ -111,7 +129,7 @@ class DefaultController extends Controller
                 'enable-external-links' => true,
                 'enable-internal-links' => true
             )),
-            'profesional.pdf'
+            $nombrePdf
         );
 
 
