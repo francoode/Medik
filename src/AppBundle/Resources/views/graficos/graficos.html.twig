@@ -3,18 +3,23 @@
 {%  block body %}
     <div class="container-fluid">
 
+
+
         {{ form_start(form) }}
+
+
+
         <div class="row">
             <div class="col-md-2 col-md-offset-1">
             {{ form_label(form.item,'Seleccione Item') }}
             </div>
             <div class="col-md-2">
-            {{ form_widget(form.item) }}
+            {{ form_widget(form.item,{'attr':{'class':'js-example-basic-single' }}) }}
             </div>
             {{ form_errors(form.item) }}
             <div class="col-md-3">
 
-                <button type='button'  class="btn btn-default btn-sm" id="graficar">Graficar</button>
+                <button style="margin-left: 10px " type='button'  class="btn btn-default btn-sm" id="graficar">Graficar</button>
 
 
             </div>
@@ -31,15 +36,20 @@
 {% block javascripts %}
 
     {{ parent() }}
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
     <script>
         $(document).ready(function()
         {
+            $('.js-example-basic-single').select2();
+
             $('#form_item').append('<option value=-1>Seleccione un Item</option>')
                 .val(-1);
 
 
             $('#graficar').click(function (){
-                var idPac = 1;
+                var idPac = "{{ app.user.id }}";
+                console.log(idPac);
                 var idItem = $('#form_item').val();
 
                 var urlJ= "{{ path('resultGraficos', {'idPaciente': 'idPac','idItem': 'idItem'}) }}";

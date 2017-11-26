@@ -2,7 +2,7 @@
 <html lang="en">
 
 <head>
-    <title>Medik</title>
+    <title>BioMedik</title>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
@@ -33,7 +33,7 @@
         <div class="brand" style="height: 70px;">
             <!-- <a href="index.html"><img src="app/Resources/img/logo-dark.png" alt="Klorofil Logo" class="img-responsive logo"></a>
            -->
-             <a href="index.html"><img src="{{ asset('app/Resources/img/logo-medik2.jpg')  }}" alt="MediSoft Logo" class="img-responsive logo"></a>
+             <a href="index.html"><img style="width: 60%" src="{{ asset('app/Resources/img/logo.png')  }}" alt="MediSoft Logo" class="img-responsive logo"></a>
         </div>
         <div class="container-fluid">
             <div class="navbar-btn">
@@ -44,7 +44,7 @@
             <div id="navbar-menu">
                 <ul class="nav navbar-nav navbar-right">
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
+                        {#<a href="#" class="dropdown-toggle icon-menu" data-toggle="dropdown">
                             <i class="lnr lnr-alarm"></i>
                             <span class="badge bg-danger">5</span>
                         </a>
@@ -56,15 +56,14 @@
                             <li><a href="#" class="notification-item"><span class="dot bg-success"></span>Your request has been approved</a></li>
                             <li><a href="#" class="more">See all notifications</a></li>
                         </ul>
+                        #}
                     </li>
 
                     <li class="dropdown">
-                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><img src="app/Resources/img/user.png" class="img-circle" alt="Avatar"> <span>Samuel</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
+                        <a href="#" class="dropdown-toggle" data-toggle="dropdown"><i class="lnr lnr-user"></i> <span>{{ app.user.usuario }}</span> <i class="icon-submenu lnr lnr-chevron-down"></i></a>
                         <ul class="dropdown-menu">
-                            <li><a href="#"><i class="lnr lnr-user"></i> <span>My Profile</span></a></li>
-                            <li><a href="#"><i class="lnr lnr-envelope"></i> <span>Message</span></a></li>
-                            <li><a href="#"><i class="lnr lnr-cog"></i> <span>Settings</span></a></li>
-                            <li><a href="#"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
+                            <li><a href="#"><i class="lnr lnr-user"></i> <span>Mi Perfil</span></a></li>
+                            <li><a href="{{ path('usuario_logout') }}"><i class="lnr lnr-exit"></i> <span>Logout</span></a></li>
                         </ul>
                     </li>
                     <!-- <li>
@@ -80,6 +79,7 @@
         <div class="sidebar-scroll">
             <nav>
                 <ul class="nav">
+                    {% if is_granted('ROLE_ADMINISTRADOR')  %}
                     <li>
                         <a href="#subPages" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Profesionales</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages" class="collapse ">
@@ -100,8 +100,6 @@
                         </div>
                     </li>
 
-
-
                     <li>
                         <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
                         <div id="subPages4" class="collapse ">
@@ -111,41 +109,94 @@
                             </ul>
                         </div>
                     </li>
+                        <li>
+                            <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages5" class="collapse ">
+                                <ul class="nav">
+                                    <li>    <a href="#subPages51" data-toggle="collapse" class="collapsed"> <span>Tipo Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
+                                        <div id="subPages51" class="collapse ">
+                                            <ul class="nav">
+                                                <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_index') }}" class="">Listar</a></li>
+                                                <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_new') }}" class="">Nuevo</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+
+
+                                    <li>    <a href="#subPages52" data-toggle="collapse" class="collapsed"> <span>Items Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
+                                        <div id="subPages52" class="collapse ">
+                                            <ul class="nav">
+                                                <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_index') }}" class="">Listar</a></li>
+                                                <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_new') }}" class="">Nuevo</a></li>
+                                            </ul>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </div>
+                        </li>
+                        <li>
+                            <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
+
+                        </li>
+
+                        <li>
+                            <a href="#subPages6" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Reportes</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages6" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="{{ path('cantidadTipo') }}" class="">Reporte Tipo Análisis</a></li>
+                                    <li><a href="{{ path('cantidadOS') }}" class="">Reporte OS</a></li>
+                                </ul>
+                            </div>
+                        </li>
+                    {% endif %}
+
+                    {% if is_granted('ROLE_PROFESIONAL')  %}
+                        <li>
+                            <a href="#subPages2" data-toggle="collapse" class="collapsed"><i class="fa fa-user-circle"></i> <span>Pacientes</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages2" class="collapse ">
+                                <ul class="nav">
+                                    <li><a href="{{ path('paciente_list') }}" class="">Listar</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                        <li>
+                            <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages4" class="collapse ">
+                                <ul class="nav">
+
+                                    <li><a href="{{ path('analisis_index')}}" class="">Listar</a></li>
+
+                                </ul>
+                            </div>
+                        </li>
+
+                    {% endif %}
 
 
 
 
 
 
-                    <li>
-                        <a href="#subPages5" data-toggle="collapse" class="collapsed"><i class="fa fa-cogs"></i> <span>Configuración</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
-                        <div id="subPages5" class="collapse ">
-                            <ul class="nav">
-                                <li>    <a href="#subPages51" data-toggle="collapse" class="collapsed"> <span>Tipo Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
-                                <div id="subPages51" class="collapse ">
-                                    <ul class="nav">
-                                        <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_index') }}" class="">Listar</a></li>
-                                        <li style="padding-left: 20px;"><a href="{{ path('tipoanalisis_new') }}" class="">Nuevo</a></li>
-                                    </ul>
-                                </div>
-                                </li>
 
-                                <li>    <a href="#subPages52" data-toggle="collapse" class="collapsed"> <span>Items Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i> </a>
-                                    <div id="subPages52" class="collapse ">
-                                        <ul class="nav">
-                                            <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_index') }}" class="">Listar</a></li>
-                                            <li style="padding-left: 20px;"><a href="{{ path('itemtipoanalisis_new') }}" class="">Nuevo</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
 
+                    {% if is_granted('ROLE_PACIENTE')%}
+                        <li>
+                            <a href="#subPages4" data-toggle="collapse" class="collapsed"><i class="fa fa-flask"></i> <span>Análisis</span> <i class="icon-submenu lnr lnr-chevron-left"></i></a>
+                            <div id="subPages4" class="collapse ">
+                                <ul class="nav">
+
+                                    <li><a href="{{ path('analisis_index') }}" class="">Listar</a></li>
+                                </ul>
+                            </div>
+                        </li>
                     <li>
                         <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
 
                     </li>
+
+                   {% endif %}
 
 
 
@@ -187,7 +238,7 @@
     <div class="clearfix"></div>
     <footer>
         <div class="container-fluid">
-            <p class="copyright">&copy; 2017 <a href="https://www.themeineed.com" target="_blank">Theme I Need</a>. All Rights Reserved.</p>
+
         </div>
     </footer>
 </div>

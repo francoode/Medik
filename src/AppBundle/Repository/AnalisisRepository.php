@@ -126,6 +126,42 @@ class AnalisisRepository extends EntityRepository
 
     }
 
+    public function getAnalisisbydateProf($fi, $ff, $prof)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a')
+            ->from('AppBundle:Analisis','a')
+            ->where('a.fechaCreado >= :fi')
+            ->andWhere('a.fechaCreado <= :ff')
+            ->andWhere('a.profesional = :prof')
+            ->setParameter('prof', $prof)
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+
+        return $query->getQuery()->getResult();
+    }
+
+    public function getAnalisisbydatePac($fi, $ff, $pac)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a')
+            ->from('AppBundle:Analisis','a')
+            ->where('a.fechaCreado >= :fi')
+            ->andWhere('a.fechaCreado <= :ff')
+            ->andWhere('a.paciente = :pac')
+            ->setParameter('pac', $pac)
+            ->setParameter('fi',$fi)
+            ->setParameter('ff',$ff)
+            ->getQuery();
+
+
+        return $query->getQuery()->getResult();
+    }
+
     public function getAnalisisbydate($fi, $ff)
     {
         $em = $this->getEntityManager();

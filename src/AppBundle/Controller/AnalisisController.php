@@ -26,6 +26,12 @@ class AnalisisController extends Controller
      */
     public function indexAction(Request $request)
     {
+        $em = $this->getDoctrine()->getManager();
+        $obj = $this->get('security.token_storage')->getToken()->getUser();
+        $idT = $obj->getId();
+        $entityName = $em->getMetadataFactory()->getMetadataFor(get_class($obj))->getName();
+
+
         $form = $this->createForm(new ReporteType(), array(
             'action' => $this->generateUrl('pacienteReporte'),
             'method' => 'POST'
@@ -39,7 +45,19 @@ class AnalisisController extends Controller
             $fi = $data['fechaInicio'];
             $ff = $data['fechaFin'];
 
-            $analisis = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getAnalisisbydate($fi, $ff);
+            if($entityName == 'AppBundle\Entity\Paciente')
+            {
+                $analisis = $em->getRepository('AppBundle:Analisis')->getAnalisisbydatePac($fi, $ff, $idT);
+            }
+            elseif ($entityName == 'AppBundle\Entity\Profesional' )
+            {
+                $analisis = $em->getRepository('AppBundle:Analisis')->getAnalisisbydateProf($fi, $ff,$idT);
+            }
+            else{
+                $analisis = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getAnalisisbydate($fi, $ff);
+            }
+
+
 
           
 
@@ -49,8 +67,23 @@ class AnalisisController extends Controller
             ));
         }
 
-        $em = $this->getDoctrine()->getManager();
-        $analises = $em->getRepository('AppBundle:Analisis')->findAll();
+
+
+
+
+
+        if($entityName == 'AppBundle\Entity\Paciente')
+        {
+            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('paciente' => $idT));
+        }
+        elseif ($entityName == 'AppBundle\Entity\Profesional' )
+        {
+            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('profesional' => $idT));
+        }
+        else{
+            $analises = $em->getRepository('AppBundle:Analisis')->findAll();
+        }
+
 
         return $this->render('AppBundle:analisis:index.html.twig', array(
             'analises' => $analises,

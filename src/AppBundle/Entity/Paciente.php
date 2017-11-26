@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Paciente
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="paciente")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PacienteRepository")
  */
-class Paciente
+class Paciente implements UserInterface
 {
     /**
      * @var int
@@ -372,6 +373,28 @@ class Paciente
         $this->edad = $diff;
         return $this;
     }
+
+    function getRoles()
+    {
+        return array('ROLE_PACIENTE');
+    }
+
+    function getUsername()
+    {
+        return $this->getUsuario();
+    }
+
+
+    function eraseCredentials()
+    {
+       return null;
+    }
+
+    function getSalt()
+    {
+        return null;
+    }
+
 
     /**
      * Get edad
