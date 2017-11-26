@@ -47,11 +47,11 @@ twig:
 knp_snappy:
     pdf:
         enabled: true
-        binary: /usr/local/bin/wkhtmltopdf
+        binary: C:/intel/wkhtmltopdf/bin/wkhtmltopdf
         options: []
     image:
         enabled: true
-        binary: /usr/local/bin/wkhtmltoimage
+        binary: C:/intel/wkhtmltoimage/bin/wkhtmltoimage
         options: []
 
 # Doctrine Configuration
