@@ -66,7 +66,7 @@ class Analisis
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="analisis", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="analisis", cascade={"persist", "remove"})
      */
     private $item;
 
