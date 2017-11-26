@@ -116,10 +116,13 @@ class AnalisisController extends Controller
             $collTipoAnalisis = $collTipoAnalisis['tipoAnalisis'];
 
            $items = [];
+
             foreach ($collTipoAnalisis as $col)
             {
+                
                 $itemsCol = $em->getRepository('AppBundle:ItemTipoAnalisis')->findBy(array(
-                    'tipoAnalisis' => $col[0]));
+                    'tipoAnalisis' => $col));
+
                 if(!is_null($itemsCol))
                 {
                     foreach ($itemsCol as $ic)
