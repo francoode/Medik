@@ -12,19 +12,23 @@ security:
   access_control:
     - { path: ^/login, roles: IS_AUTHENTICATED_ANONYMOUSLY }
     - { path: ^/registro, roles: IS_AUTHENTICATED_ANONYMOUSLY }
-    - { path: ^/*, roles: IS_AUTHENTICATED_ANONYMOUSLY }
+    - { path: ^/*, roles: [ROLE_PROFESIONAL, ROLE_PACIENTE, ROLE_ADMINISTRADOR] }
 
   providers:
     todos:
       chain:
-        providers: [profesional, paciente]
+        providers: [profesional, paciente, administrador]
     profesional:
       entity: { class: AppBundle\Entity\Profesional, property: usuario }
     paciente:
       entity: { class: AppBundle\Entity\Paciente, property: usuario }
+    administrador:
+      entity: { class: AppBundle\Entity\Administrador, property: usuario }
+
 
   encoders:
     AppBundle\Entity\Profesional: plaintext
     AppBundle\Entity\Paciente: plaintext
+    AppBundle\Entity\Administrador: plaintext
 
 
