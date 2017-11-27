@@ -79,9 +79,12 @@ class PacienteController extends Controller
     public function deleteAction($id)
     {
         $em = $this->getDoctrine()->getManager();
-        $p = $em->getRepository('AppBundle:Paciente')->findOneBy(array('id'=>$id));
+        $p = $em->getRepository('AppBundle:Paciente')->find($id);
+
         $em->remove($p);
         $em->flush();
+
+        return $this->redirectToRoute('paciente_list');
     }
 
     /**

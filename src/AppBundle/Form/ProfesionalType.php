@@ -17,7 +17,7 @@ class ProfesionalType extends AbstractType
     {
         $builder
             ->add('usuario')
-            ->add('password', 'password')
+            ->add('password')
             ->add('nombre')
             ->add('apellido')
             ->add('fechaNacimiento',BirthdayType::class)

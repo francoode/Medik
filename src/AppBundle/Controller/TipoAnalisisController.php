@@ -48,7 +48,7 @@ class TipoAnalisisController extends Controller
             $em->persist($tipoAnalisi);
             $em->flush();
 
-            return $this->redirectToRoute('tipoanalisis_show', array('id' => $tipoAnalisi->getId()));
+            return $this->redirectToRoute('tipoanalisis_index');
         }
 
         return $this->render('AppBundle:tipoanalisis:new.html.twig', array(

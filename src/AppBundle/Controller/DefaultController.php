@@ -46,6 +46,14 @@ class DefaultController extends Controller
 
         $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdf.html.twig');
 
+        $nombrePdf = 'A-';
+         $nombrePdf .= $analisi->getId();
+        $nombrePdf .= 'Pac-';
+        $nombrePdf .= $analisi->getPaciente()->getNombre();
+        $nombrePdf .= $analisi->getPaciente()->getApellido();
+        $nombrePdf .= '.pdf';
+
+
 
 
      return new PdfResponse(
@@ -70,7 +78,7 @@ class DefaultController extends Controller
                 'enable-external-links' => true,
                 'enable-internal-links' => true
             )),
-            'analisis.pdf'
+            $nombrePdf
         );
 
     }
@@ -88,6 +96,16 @@ class DefaultController extends Controller
         ));
 
         $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdfP.html.twig');
+
+        $nombrePdf = 'A-';
+        $nombrePdf .= $analisi->getId();
+        $nombrePdf .= 'Pac-';
+        $nombrePdf .= $analisi->getPaciente()->getNombre();
+        $nombrePdf .= $analisi->getPaciente()->getApellido();
+        $nombrePdf .= 'Pro-';
+        $nombrePdf .= $analisi->getProfesional()->getNombre();
+        $nombrePdf .= $analisi->getProfesional()->getApellido();
+        $nombrePdf .= '.pdf';
 
 
         return new PdfResponse(
@@ -111,7 +129,7 @@ class DefaultController extends Controller
                 'enable-external-links' => true,
                 'enable-internal-links' => true
             )),
-            'profesional.pdf'
+            $nombrePdf
         );
 
 
@@ -221,6 +239,31 @@ class DefaultController extends Controller
         );
 
 
+
+    }
+
+
+    /**
+     * @Route("/adm/edit/", name="edit_administrador")
+     */
+    public function editAdmAction(Request $request)
+    {
+        $obj = $this->get('security.token_storage')->getToken()->getUser();
+        $idT = $obj->getId();
+        $adm = $this->getDoctrine()->getRepository('AppBundle:Administrador')->find($idT);
+
+        $form = $this->createForm('AppBundle\Form\AdministradorType', $adm);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('edit_administrador');
+        }
+
+        return $this->render('AppBundle:administrador:edit.html.twig', array(
+            'form' => $form->createView(),
+        ));
 
     }
 

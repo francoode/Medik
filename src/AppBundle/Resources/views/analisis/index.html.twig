@@ -8,37 +8,26 @@
     {{ form_start(form) }}
     <div class="row">
         <div class="col-md-2 col-md-offset-1">
-            {{ form_label(form.fechaInicio) }}
+            {{ form_label(form.fechaInicio,'Fecha Inicio Realizada') }}
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2" >
             {{ form_widget(form.fechaInicio) }}
         </div>
-        <div class="col-md-3">
-            {{ form_errors(form.fechaInicio) }}
-        </div>
-    </div>
 
-    <div class="row">
-        <div class="col-md-2 col-md-offset-1">
-            {{ form_label(form.fechaFin) }}
+        <div class="col-md-2">
+            {{ form_label(form.fechaFin,'Fecha Fin Realizada') }}
         </div>
-        <div class="col-md-3">
+        <div class="col-md-2" >
             {{ form_widget(form.fechaFin) }}
         </div>
-        <div class="col-md-3">
-            {{ form_errors(form.fechaFin) }}
+        <div class="col-md-1">
+            {{ form_widget(form.buscar) }}
         </div>
+
     </div>
 
     {{ form_row(form._token) }}
 
-
-    <br>
-    <div class="row">
-        <div class="col-md-1 col-md-offset-3">
-            {{ form_widget(form.buscar) }}
-        </div>
-    </div>
 
     {{ form_end(form, {'render_rest':false}) }}
     <br>
@@ -139,6 +128,7 @@
             $('.js-datepicker').datepicker({
                 format: 'yyyy-mm-dd'
             });
+            $('.js-datepicker').css('width','150px')
         } );
     </script>
 {% endblock %}

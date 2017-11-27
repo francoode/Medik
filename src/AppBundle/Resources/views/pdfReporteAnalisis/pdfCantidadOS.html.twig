@@ -32,7 +32,8 @@ Fecha Desde: {{ fi }} - Fecha Hasta: {{ ff }}
                 {{ c.cantidad }}
             </div>
             <div class="col-xs-2" style="text-align: center">
-                {{ ((c.cantidad * 100) // total.total) }} %
+                {% set r = ((c.cantidad * 100) / total.total)%}
+                {{ r | slice(0,4) }}%
             </div>
         </div>
 
