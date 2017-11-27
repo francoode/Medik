@@ -54,10 +54,28 @@ class GraficoController extends Controller
             $res['resultado'] = floatval($res['resultado']);
         }
 
+        $it = $em->getRepository('AppBundle:ItemTipoAnalisis')->find($idItem);
+        $its = $it->getValoresReferencia();
+
+        $pac = $em->getRepository('AppBundle:Paciente')->find($idPaciente);
+        $edad = $pac->getEdad();
+
+        $min = 0;
+        $max = 0;
+
+        foreach ($its as $s )
+        {
+            if($edad >= $s->getEdadMin() && $edad < $s->getEdadMax())
+            {
+
+                $min = $s->getValorMin();
+                $max = $s->getValorMax();
+            }
+        }
 
 
 
-       return new JsonResponse(['resultados' => $resultados]);
+       return new JsonResponse(['resultados' => $resultados, 'rMinimo' => $min, 'rMaximo' => $max]);
 
    }
 

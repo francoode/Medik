@@ -213,7 +213,7 @@ class AnalisisController extends Controller
 
 
             $this->getDoctrine()->getManager()->flush();
-            return $this->redirectToRoute('analisis_edit', array('id' => $analisi->getId()));
+            return $this->redirectToRoute('analisis_show', array('id' => $analisi->getId()));
         }
 
         $em = $this->getDoctrine()->getManager();

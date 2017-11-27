@@ -34,7 +34,7 @@
 
                 {% for vr in all.item.valoresReferencia %}
                  {% if vr.valorMax is not null  and vr.valorMin is not null and vr.edadMin is not null and vr.edadMax is not null%}
-                     {% if analisi.paciente.edad >= vr.edadMin and analisi.paciente.edad <= vr.edadMax %}
+                     {% if analisi.paciente.edad >= vr.edadMin and analisi.paciente.edad < vr.edadMax %}
                          {{ vr.valorMin }}{{ all.item.unidad }} - {{ vr.valorMax }}
                      {% endif %}
                  {% endif %}
