@@ -243,6 +243,31 @@ class DefaultController extends Controller
     }
 
 
+    /**
+     * @Route("/adm/edit/", name="edit_administrador")
+     */
+    public function editAdmAction(Request $request)
+    {
+        $obj = $this->get('security.token_storage')->getToken()->getUser();
+        $idT = $obj->getId();
+        $adm = $this->getDoctrine()->getRepository('AppBundle:Administrador')->find($idT);
+
+        $form = $this->createForm('AppBundle\Form\AdministradorType', $adm);
+        $form->handleRequest($request);
+
+        if ($form->isSubmitted() && $form->isValid()) {
+            $this->getDoctrine()->getManager()->flush();
+
+            return $this->redirectToRoute('edit_administrador');
+        }
+
+        return $this->render('AppBundle:administrador:edit.html.twig', array(
+            'form' => $form->createView(),
+        ));
+
+    }
+
+
 
 
 
