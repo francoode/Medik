@@ -61,24 +61,36 @@
                 
                 var ejeX = [];
                 var ejeY = [];
+                var rmin;
+                var rmax;
+
                 $.ajax({
                         url: urlJ,
                         type: 'GET',
                         dataType: 'json',
                         success: function (data) {
                             var result = data.resultados;
-
+                            rmin = data.rMinimo;
+                            rmax = data.rMaximo;
+                            console.log(rmin);
                             for(var i=0; i<result.length; i++)
                             {
                                 ejeX.push(result[i].resultado);
                                 ejeY.push(result[i].fechaEntrega)
                             }
 
-
                         },
                         async: false
                     }
                 );
+
+
+
+                var textoReferencia = "Valores Normales - ";
+                textoReferencia = textoReferencia.concat(rmin);
+                textoReferencia = textoReferencia.concat(" - ");
+                textoReferencia = textoReferencia.concat(rmax);
+
 
                 var myChart = Highcharts.chart('grafica', {
                     chart: {
@@ -94,10 +106,10 @@
                     yAxis: {
                         plotBands: [{
                             color: 'rgba(65, 134, 27, 0.4)',
-                            from: 3,
-                            to: 4,
+                            from: rmin,
+                            to: rmax,
                             label:{
-                                text: 'Valores Normales'
+                                text: textoReferencia
                             }
 
                         }],

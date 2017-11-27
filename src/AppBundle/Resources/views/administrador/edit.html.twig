@@ -1,44 +1,10 @@
 {% extends 'front.html.twig' %}
 
 {%  block body %}
+    <h2 class="text-info">Editar Administrador</h2>
 
     <div class="form">
         {{ form_start(form) }}
-
-
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(form.usuario, null, {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(form.usuario, {'attr' : {'class' : 'form-control col-10'}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(form.usuario) }}
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(form.password, null, {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(form.password, {'attr' : {'class' : 'form-control col-10'}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(form.password) }}
-                </div>
-            </div>
-        </div>
-
-        <br>
 
         <div class="row">
             <div class="form-group">
@@ -95,66 +61,42 @@
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
-                    {{ form_label(form.fechaNacimiento, null, {
+                    {{ form_label(form.usuario, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.fechaNacimiento, {'attr' : {'class' : ''}}) }}
+                    {{ form_widget(form.usuario, {'attr' : {'class' : 'form-control col-10'}}) }}
                 </div>
                 <div class="col-md-3">
-                    {{ form_errors(form.fechaNacimiento) }}
+                    {{ form_errors(form.usuario) }}
                 </div>
             </div>
         </div>
 
         <br>
 
+
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
-                    {{ form_label(form.obraSocial, null, {
+                    {{ form_label(form.password, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.obraSocial, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.password, {'attr' : {'class' : ''}}) }}
                 </div>
                 <div class="col-md-3">
-                    {{ form_errors(form.obraSocial) }}
+                    {{ form_errors(form.password) }}
                 </div>
             </div>
         </div>
 
         <br>
 
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(form.nroAfiliado, null, {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(form.nroAfiliado, {'attr' : {'class' : 'form-control col-10'}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(form.nroAfiliado) }}
-                </div>
-            </div>
-        </div>
 
 
 
 
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-4">
-                </div>
-                <div class="col-md-4">
-                    {{ form_widget(form.save, {'attr' : {'class' : 'btn btn-primary'}}) }}
-                </div>
-                <div class="col-md-8">
-                </div>
-            </div>
-        </div>
 
 
 
@@ -163,6 +105,4 @@
         {{ form_end(form) }}
     </div>
 
-
-
-{% endblock %}
+{% endblock body %}

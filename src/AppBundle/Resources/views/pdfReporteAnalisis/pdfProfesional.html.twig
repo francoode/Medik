@@ -38,7 +38,7 @@
             <b>Paciente</b>
         </div>
         <div class="col-xs-2">
-            {{ analisi.paciente }} {{ analisi.paciente.apellido }}
+            {{ analisi.paciente }}
         </div>
     </div>
 
@@ -106,18 +106,32 @@
     {% endfor %}
     </ul>
 
+</div>
 
-    <div style="PAGE-BREAK-AFTER: always;">
+<div style="PAGE-BREAK-AFTER: always;"></div>
+<br>
+<br>
         {% for a in analisi.tipoAnalisis %}
-            <div class="row">
-                <div class="col-xs-3 col-xs-offset-1">
 
+            <div style="border-style: solid">
+                <div class="row">
+                    <div class="col-xs-11 col-xs-offset-1">
+                        <b>Analisis: </b>{{ analisi.id }} - <b>Tipo Análisis: </b> {{ a }} -
+                        <b>Fecha Realizado:</b> {{ analisi.fechaCreado| date("d/m/Y") }}
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-xs-11 col-xs-offset-1">
+                       <b> Paciente: {{ analisi.paciente.nombre }} {{ analisi.paciente.apellido }} </b>
+                    </div>
                 </div>
             </div>
+            <br>
+            <br>
+
 
         {% endfor %}
-    </div>
 
 
 
-</div>
+
