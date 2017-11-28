@@ -3,6 +3,7 @@
 namespace AppBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Security\Core\User\UserInterface;
 
 /**
  * Paciente
@@ -10,7 +11,7 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="paciente")
  * @ORM\Entity(repositoryClass="AppBundle\Repository\PacienteRepository")
  */
-class Paciente
+class Paciente implements UserInterface
 {
     /**
      * @var int
@@ -96,6 +97,18 @@ class Paciente
      * @ORM\Column(name="edad", type="integer", nullable=true)
      */
     private $edad;
+
+    /**
+     * @var integer
+     * @ORM\Column(name="dni", type="integer", nullable=true)
+     */
+    private $dni;
+
+    /**
+     * @var string
+     * @ORM\Column(name="telefono", type="string", nullable=true)
+     */
+    private $telefono;
 
 
 
@@ -353,5 +366,55 @@ class Paciente
     public function getNroAfiliado()
     {
         return $this->nroAfiliado;
+    }
+
+    /**
+     * Set edad
+     *
+     * @param integer $edad
+     *
+     * @return Paciente
+     */
+    public function setEdad()
+    {
+        $dob = $this->getFechaNacimiento();
+        $now = new  \DateTime();
+        $diff = $now->diff($dob);
+        $diff = $diff->y;
+
+        $this->edad = $diff;
+        return $this;
+    }
+
+    function getRoles()
+    {
+        return array('ROLE_PACIENTE');
+    }
+
+    function getUsername()
+    {
+        return $this->getUsuario();
+    }
+
+
+    function eraseCredentials()
+    {
+       return null;
+    }
+
+    function getSalt()
+    {
+        return null;
+    }
+
+
+    /**
+     * Get edad
+     *
+     * @return integer
+     */
+    public function getEdad()
+    {
+        return $this->edad;
     }
 }

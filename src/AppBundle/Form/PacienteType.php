@@ -26,6 +26,8 @@ class PacienteType extends AbstractType
                 'class' => 'AppBundle:ObraSocial'
             ))
             ->add('nroAfiliado')
+            ->add('dni')
+            ->add('telefono')
 
         ->add('save','submit',array('label' => 'Guardar'));
     }

@@ -88,6 +88,23 @@ class PacienteController extends Controller
     }
 
     /**
+     * @Route("/paciente/s/{id}", name="paciente_show")
+     */
+    public function showAction(Paciente $pac)
+    {
+
+        if(!$pac)
+        {
+            throw $this->createNotFoundException('No se encontró el profesional');
+        }
+
+        $form = $this->createForm(new PacienteType(), $pac);
+
+        return $this->render('AppBundle:Paciente:show.html.twig', array('pac' => $pac,
+            'form' => $form->createView()));
+    }
+
+    /**
      * @Route("paciente/u/{id}", name="paciente_update")
      */
     public function updateAction($id, Request $request)
