@@ -110,7 +110,7 @@ class Paciente implements UserInterface
      */
     private $telefono;
 
-
+    private $nombreanddni;
 
     /**
      * Get id
@@ -464,5 +464,16 @@ class Paciente implements UserInterface
     public function getTelefono()
     {
         return $this->telefono;
+    }
+
+    public function nombreanddni()
+    {
+        $this->nombreanddni .= $this->getNombre();
+        $this->nombreanddni .= ' ';
+        $this->nombreanddni .= $this->getApellido();
+        $this->nombreanddni .= ' - ';
+        $this->nombreanddni .= $this->getDni();
+
+        return $this->nombreanddni;
     }
 }

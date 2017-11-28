@@ -34,7 +34,9 @@ class AnalisisType extends AbstractType
 
                 )))
             ->add('paciente', EntityType::class, array(
-                'class' => 'AppBundle:Paciente'))
+                'class' => 'AppBundle:Paciente',
+                'choice_label' => 'nombreanddni'
+            ))
             ->add('profesional', EntityType::class, array(
                 'class' => 'AppBundle:Profesional'
             ))
