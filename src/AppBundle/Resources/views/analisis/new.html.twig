@@ -115,6 +115,17 @@
         '    list-style: none;\n' +
         '"></li>').append($addTagLink);
 
+
+    $("form[name=appbundle_analisis").submit(function(e){
+        if(!$('#appbundle_analisis_tipoAnalisis_1').length)
+          {
+                alert('Debe elegir un Tipo de Análisis primero');
+                       e.preventDefault();
+          }
+
+    });
+
+
     jQuery(document).ready(function() {
         // Get the ul that holds the collection of tags
         var $collectionHolder = $('ul.tags');
