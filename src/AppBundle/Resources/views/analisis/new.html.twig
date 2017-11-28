@@ -126,7 +126,24 @@
     });
 
 
+
+
+
     jQuery(document).ready(function() {
+          var currentYear = (new Date).getFullYear();
+   var currentmonth = (new Date).getMonth();
+   var currentday = (new Date).getDay();
+
+   $('#appbundle_analisis_fechaEntrega_year option[value="'+currentYear+'"]').attr("selected", true);
+   $('#appbundle_analisis_fechaEntrega_month option[value="'+currentmonth+'"]').attr("selected", true);
+    $('#appbundle_analisis_fechaEntrega_day option[value="'+currentday+'"]').attr("selected", true);
+
+/*
+   $('#appbundle_analisis_fechaEntrega_month').value(11);
+   $('#appbundle_analisis_fechaEntrega_day').value(11);
+*/
+
+
         // Get the ul that holds the collection of tags
         var $collectionHolder = $('ul.tags');
 

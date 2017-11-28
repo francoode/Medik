@@ -9,6 +9,7 @@ use AppBundle\Entity\TipoAnalisis;
 use function Sodium\add;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -24,7 +25,7 @@ class AnalisisType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('fechaCreado')
-            ->add('fechaEntrega')
+            ->add('fechaEntrega', DateType::class)
             ->add('estado', ChoiceType::class, array(
                 'choices'  => array(
                     'Pendiente' => 'Pendiente',
