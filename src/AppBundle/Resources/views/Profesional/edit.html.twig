@@ -74,6 +74,23 @@
         </div>
 
         <br>
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.matricula, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.matricula, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.apellido) }}
+                </div>
+            </div>
+        </div>
+
+
+        <br>
 
 
         <div class="row">

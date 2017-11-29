@@ -38,8 +38,11 @@ class AnalisisType extends AbstractType
                 'choice_label' => 'nombreanddni'
             ))
             ->add('profesional', EntityType::class, array(
-                'class' => 'AppBundle:Profesional'
+                'class' => 'AppBundle:Profesional',
+                'choice_label' => 'nombreanddni'
             ))
+            ->add('medico')
+            ->add('matriculamedico')
             ->add('tipoAnalisis',CollectionType::class, array(
                     'entry_type'   => EntityType::class,
                     'allow_add'    => true,

@@ -34,6 +34,39 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.medico, 'Médico', {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.medico, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.medico) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.matriculamedico, 'Matrícula', {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.matriculamedico, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.matriculamedico) }}
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="row">
         <div class="form-group">
             <div class=" col-md-1">
