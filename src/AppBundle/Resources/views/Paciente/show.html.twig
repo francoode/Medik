@@ -1,10 +1,10 @@
 {% extends 'front.html.twig' %}
 
 {%  block body %}
-    <h2 class="text-info">Editar Profesional</h2>
 
     <div class="form">
         {{ form_start(form) }}
+
 
         <div class="row">
             <div class="form-group">
@@ -13,7 +13,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.usuario, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.usuario, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.usuario) }}
@@ -23,7 +23,6 @@
 
         <br>
 
-
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
@@ -31,7 +30,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.password, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.password, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.password) }}
@@ -48,7 +47,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.nombre, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.nombre, {'attr' : {'disabled':'disabled'}})}}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.nombre) }}
@@ -58,6 +57,7 @@
 
         <br>
 
+
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
@@ -65,65 +65,29 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.apellido, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.apellido, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.apellido) }}
                 </div>
             </div>
         </div>
-
         <br>
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
-                    {{ form_label(form.matricula, null, {
+                    {{ form_label(form.dni, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.matricula, {'attr' : {'class' : 'form-control col-10'}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(form.apellido) }}
-                </div>
-            </div>
-        </div>
-
-
-        <br>
-
-
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(form.fechaNacimiento, null, {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(form.fechaNacimiento, {'attr' : {'class' : ''}}) }}
-                </div>
-                <div class="col-md-3">
-                    {{ form_errors(form.fechaNacimiento) }}
-                </div>
-            </div>
-        </div>
-
-        <br>
-
-        <div class="row">
-            <div class="form-group">
-                <div class=" col-md-1">
-                    {{ form_label(form.dni, 'DNI', {
-                        'label_attr' : {'class' : 'control-label'}}) }}
-                </div>
-                <div class="col-md-8">
-                    {{ form_widget(form.dni, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.dni, {'attr' : {'disabled':'disabled'}})}}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.dni) }}
                 </div>
             </div>
         </div>
+
 
         <br>
 
@@ -134,7 +98,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.email, {'attr' : {'class' : 'form-control col-10'}}) }}
+                    {{ form_widget(form.email, {'attr' : {'disabled':'disabled'}}) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.email) }}
@@ -147,17 +111,69 @@
         <div class="row">
             <div class="form-group">
                 <div class=" col-md-1">
-                    {{ form_label(form.activo, null, {
+                    {{ form_label(form.fechaNacimiento, null, {
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.activo, {'attr' : {'class' : 'checkbox'}}) }}
+                    {{ form_widget(form.fechaNacimiento, {'attr' : {'disabled':'disabled'}})}}
                 </div>
                 <div class="col-md-3">
-                    {{ form_errors(form.activo) }}
+                    {{ form_errors(form.fechaNacimiento) }}
                 </div>
             </div>
         </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.obraSocial, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.obraSocial, {'attr' : {'disabled':'disabled'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.obraSocial) }}
+                </div>
+            </div>
+        </div>
+
+        <br>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.nroAfiliado, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.nroAfiliado, {'attr' : {'disabled':'disabled'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.nroAfiliado) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.telefono, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.telefono, {'attr' : {'disabled':'disabled'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.telefono) }}
+                </div>
+            </div>
+        </div>
+
+
+
 
         <div class="row">
             <div class="form-group">
@@ -179,4 +195,23 @@
     </div>
 
 
-{% endblock body %}
+
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+
+
+    <script type="text/javascript">
+        $(document).ready(function(){
+            $('#appbundle_paciente_fechaNacimiento_year').prop('disabled', true);
+            $('#appbundle_paciente_fechaNacimiento_month').prop('disabled', true);
+            $('#appbundle_paciente_fechaNacimiento_day').prop('disabled', true);
+            $('#appbundle_paciente_obraSocial').css('width','300px')
+
+
+
+        });
+    </script>
+{% endblock %}

@@ -76,6 +76,18 @@ class Analisis
      */
     private $comentario;
 
+    /**
+     * @var string
+     * @ORM\Column(name="medico", type="string", length=60, nullable=true)
+     */
+    private $medico;
+
+    /**
+     * @var string
+     * @ORM\Column(name="matriculamedico", type="string", length=60, nullable=true)
+     */
+    private $matriculamedico;
+
 
 
 
@@ -304,5 +316,53 @@ class Analisis
     public function getComentario()
     {
         return $this->comentario;
+    }
+
+    /**
+     * Set medico
+     *
+     * @param string $medico
+     *
+     * @return Analisis
+     */
+    public function setMedico($medico)
+    {
+        $this->medico = $medico;
+
+        return $this;
+    }
+
+    /**
+     * Get medico
+     *
+     * @return string
+     */
+    public function getMedico()
+    {
+        return $this->medico;
+    }
+
+    /**
+     * Set matriculamedico
+     *
+     * @param string $matriculamedico
+     *
+     * @return Analisis
+     */
+    public function setMatriculamedico($matriculamedico)
+    {
+        $this->matriculamedico = $matriculamedico;
+
+        return $this;
+    }
+
+    /**
+     * Get matriculamedico
+     *
+     * @return string
+     */
+    public function getMatriculamedico()
+    {
+        return $this->matriculamedico;
     }
 }

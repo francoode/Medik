@@ -66,15 +66,27 @@ class Analisis
 
     /**
      *
-     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="analisis", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="AppBundle\Entity\ResultadoAnalisis", mappedBy="analisis", cascade={"persist", "remove"})
      */
     private $item;
 
     /**
      * @var string
-     * @ORM\Column(name="comentario", type="string", length=200)
+     * @ORM\Column(name="comentario", type="string", length=200, nullable=true)
      */
     private $comentario;
+
+    /**
+     * @var string
+     * @ORM\Column(name="medico", type="string", length=60, nullable=true)
+     */
+    private $medico;
+
+    /**
+     * @var string
+     * @ORM\Column(name="matriculamedico", type="string", length=60, nullable=true)
+     */
+    private $matriculamedico;
 
 
 
@@ -280,5 +292,29 @@ class Analisis
     public function getItem()
     {
         return $this->item;
+    }
+
+    /**
+     * Set comentario
+     *
+     * @param string $comentario
+     *
+     * @return Analisis
+     */
+    public function setComentario($comentario)
+    {
+        $this->comentario = $comentario;
+
+        return $this;
+    }
+
+    /**
+     * Get comentario
+     *
+     * @return string
+     */
+    public function getComentario()
+    {
+        return $this->comentario;
     }
 }

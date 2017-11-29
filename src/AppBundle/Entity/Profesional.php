@@ -69,6 +69,14 @@ class Profesional implements UserInterface
     /**
      * @var string
      *
+     * @ORM\Column(name="matricula", type="string", length=40)
+     */
+    private $matricula;
+
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="password", type="string", length=255)
      */
     private $password;
@@ -95,7 +103,7 @@ class Profesional implements UserInterface
     private $actualizado;
 
     private $string;
-
+    private $nombreanddni;
 
     /**
      * Get id
@@ -363,5 +371,39 @@ class Profesional implements UserInterface
         $this->string .= " ";
         $this->string .= $this->getApellido();
         return $this->string;
+    }
+
+    /**
+     * Set matricula
+     *
+     * @param string $matricula
+     *
+     * @return Profesional
+     */
+    public function setMatricula($matricula)
+    {
+        $this->matricula = $matricula;
+
+        return $this;
+    }
+
+    /**
+     * Get matricula
+     *
+     * @return string
+     */
+    public function getMatricula()
+    {
+        return $this->matricula;
+    }
+    public function nombreanddni()
+    {
+        $this->nombreanddni .= $this->getNombre();
+        $this->nombreanddni .= ' ';
+        $this->nombreanddni .= $this->getApellido();
+        $this->nombreanddni .= ' - ';
+        $this->nombreanddni .= $this->getDni();
+
+        return $this->nombreanddni;
     }
 }

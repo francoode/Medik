@@ -98,7 +98,19 @@ class Paciente implements UserInterface
      */
     private $edad;
 
+    /**
+     * @var integer
+     * @ORM\Column(name="dni", type="integer", nullable=true)
+     */
+    private $dni;
 
+    /**
+     * @var string
+     * @ORM\Column(name="telefono", type="string", nullable=true)
+     */
+    private $telefono;
+
+    private $nombreanddni;
 
     /**
      * Get id
@@ -404,5 +416,64 @@ class Paciente implements UserInterface
     public function getEdad()
     {
         return $this->edad;
+    }
+
+    /**
+     * Set dni
+     *
+     * @param integer $dni
+     *
+     * @return Paciente
+     */
+    public function setDni($dni)
+    {
+        $this->dni = $dni;
+
+        return $this;
+    }
+
+    /**
+     * Get dni
+     *
+     * @return integer
+     */
+    public function getDni()
+    {
+        return $this->dni;
+    }
+
+    /**
+     * Set telefono
+     *
+     * @param string $telefono
+     *
+     * @return Paciente
+     */
+    public function setTelefono($telefono)
+    {
+        $this->telefono = $telefono;
+
+        return $this;
+    }
+
+    /**
+     * Get telefono
+     *
+     * @return string
+     */
+    public function getTelefono()
+    {
+        return $this->telefono;
+    }
+
+    public function nombreanddni()
+    {
+        $this->nombreanddni .= $this->getNombre();
+        $this->nombreanddni .= ' ';
+        $this->nombreanddni .= $this->getApellido();
+        $this->nombreanddni .= ' - ';
+        $this->nombreanddni .= $this->getDni();
+
+        return $this->nombreanddni;
     }
 }

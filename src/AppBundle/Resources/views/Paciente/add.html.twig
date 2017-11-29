@@ -72,6 +72,22 @@
                 </div>
             </div>
         </div>
+        <br>
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.dni, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.dni, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.dni) }}
+                </div>
+            </div>
+        </div>
+
 
         <br>
 
@@ -137,6 +153,21 @@
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.nroAfiliado) }}
+                </div>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="form-group">
+                <div class=" col-md-1">
+                    {{ form_label(form.telefono, null, {
+                        'label_attr' : {'class' : 'control-label'}}) }}
+                </div>
+                <div class="col-md-8">
+                    {{ form_widget(form.telefono, {'attr' : {'class' : 'form-control col-10'}}) }}
+                </div>
+                <div class="col-md-3">
+                    {{ form_errors(form.telefono) }}
                 </div>
             </div>
         </div>
