@@ -30,7 +30,7 @@
 
                 <td>
                     <a href="{{ path('tipoanalisis_edit', {'id':tipoAnalise.id}) }}"><i class="fa fa-pencil"></i> </a>
-                    <a href="{{ path('tipoanalisis_delete',{'id':tipoAnalise.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a onclick="return confirm('¿Está seguro que desea eliminar este tipo de análisis?')" href="{{ path('tipoanalisis_delete',{'id':tipoAnalise.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 
                 </td>
 
