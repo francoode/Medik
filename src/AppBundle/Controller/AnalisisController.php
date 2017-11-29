@@ -74,7 +74,8 @@ class AnalisisController extends Controller
 
         if($entityName == 'AppBundle\Entity\Paciente')
         {
-            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('paciente' => $idT));
+            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('paciente' => $idT,
+                'estado' => 'Realizado'));
         }
         elseif ($entityName == 'AppBundle\Entity\Profesional' )
         {

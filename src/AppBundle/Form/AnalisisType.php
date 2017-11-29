@@ -9,6 +9,7 @@ use AppBundle\Entity\TipoAnalisis;
 use function Sodium\add;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Form\Extension\Core\Type\CollectionType;
@@ -24,7 +25,7 @@ class AnalisisType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('fechaCreado')
-            ->add('fechaEntrega')
+            ->add('fechaEntrega', DateType::class)
             ->add('estado', ChoiceType::class, array(
                 'choices'  => array(
                     'Pendiente' => 'Pendiente',
@@ -33,10 +34,15 @@ class AnalisisType extends AbstractType
 
                 )))
             ->add('paciente', EntityType::class, array(
-                'class' => 'AppBundle:Paciente'))
-            ->add('profesional', EntityType::class, array(
-                'class' => 'AppBundle:Profesional'
+                'class' => 'AppBundle:Paciente',
+                'choice_label' => 'nombreanddni'
             ))
+            ->add('profesional', EntityType::class, array(
+                'class' => 'AppBundle:Profesional',
+                'choice_label' => 'nombreanddni'
+            ))
+            ->add('medico')
+            ->add('matriculamedico')
             ->add('tipoAnalisis',CollectionType::class, array(
                     'entry_type'   => EntityType::class,
                     'allow_add'    => true,

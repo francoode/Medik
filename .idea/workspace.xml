@@ -1,11 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BookmarkManager">
+    <bookmark url="file://$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php" line="108" />
+  </component>
   <component name="ChangeListManager">
     <list default="true" id="8282b36f-35fa-4aa3-bdd9-f4947430574f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCliente.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCliente.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfProfesional.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfProfesional.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/usuario/login.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/usuario/login.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Form/ProfesionalType.php" afterPath="$PROJECT_DIR$/src/AppBundle/Form/ProfesionalType.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/add.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/add.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/edit.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/edit.html.twig" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/new.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/new.html.twig" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -15,32 +21,34 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="pdfCliente.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCliente.html.twig">
+    <leaf>
+      <file leaf-file-name="Profesional.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="474">
-              <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+            <state relative-caret-position="488">
+              <caret line="404" column="44" lean-forward="false" selection-start-line="404" selection-start-column="38" selection-end-line="404" selection-end-column="44" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="pdfProfesional.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfProfesional.html.twig">
+      <file leaf-file-name="AnalisisType.php" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="901">
-              <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-              <folding />
+            <state relative-caret-position="340">
+              <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+              <folding>
+                <element signature="e#35#59#0#PHP" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="login.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/usuario/login.html.twig">
+      <file leaf-file-name="Paciente.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="374">
-              <caret line="43" column="128" lean-forward="false" selection-start-line="43" selection-start-column="128" selection-end-line="43" selection-end-column="128" />
+            <state relative-caret-position="6353">
+              <caret line="468" column="3" lean-forward="false" selection-start-line="468" selection-start-column="3" selection-end-line="477" selection-end-column="5" />
               <folding />
             </state>
           </provider>
@@ -97,17 +105,10 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ItemTipoAnalisisController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/index.html.twig" />
-        <option value="$PROJECT_DIR$/app/config/config.yml" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/ItemTipoAnalisis.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ItemTipoAnalisisType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/new.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/ResultadoAnalisis.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/PacienteType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/add.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ReporteType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCliente.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php" />
@@ -117,19 +118,11 @@
         <option value="$PROJECT_DIR$/app/Resources/vendor/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Administrador.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/show.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/edit.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/ProfesionalType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TipoAnalisisController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/headpdf.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PacienteController.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AnalisisController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GraficoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/graficos/graficos.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
@@ -140,7 +133,6 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCantidadTipo.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCantidadOS.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCantidadOS.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/edit.html.twig" />
         <option value="$PROJECT_DIR$/app/Resources/views/front.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/tipoanalisis/new.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/tipoanalisis/index.html.twig" />
@@ -148,6 +140,22 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCliente.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfProfesional.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/usuario/login.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/PacienteType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/add.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/PacienteController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/show.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/AnalisisController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/ProfesionalType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/add.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/edit.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/new.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php" />
       </list>
     </option>
   </component>
@@ -195,6 +203,12 @@
             <path>
               <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
               <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="config" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -202,6 +216,27 @@
               <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Controller" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Entity" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
@@ -217,6 +252,42 @@
               <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="analisis" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="graficos" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="itemtipoanalisis" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Paciente" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
@@ -226,6 +297,15 @@
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="pdfReporteAnalisis" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Profesional" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
@@ -257,7 +337,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Público/klorofil-free-dashboard-template-v2.0/template/page-login.html" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
-    <property name="SearchEverywhereHistoryKey" value="valores&#9;null&#9;null&#10;item&#9;null&#9;null&#10;analisis&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;admini&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Administrador.php&#10;Profe&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Profesional.php&#10;pro&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Form/ProfesionalType.php&#10;paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;obra&#9;null&#9;null&#10;Anali&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;analisi&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;Paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;obraSo&#9;null&#9;null&#10;Valoresref&#9;FILE&#9;file:///var/www/html/proyectof/src/AppBundle/Entity/ValoresReferencia.php" />
+    <property name="SearchEverywhereHistoryKey" value="analisi&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Controller/AnalisisController.php&#10;valores&#9;null&#9;null&#10;item&#9;null&#9;null&#10;analisis&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;admini&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Administrador.php&#10;Profe&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Profesional.php&#10;pro&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Form/ProfesionalType.php&#10;paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;obra&#9;null&#9;null&#10;Anali&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;Paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;obraSo&#9;null&#9;null&#10;Valoresref&#9;FILE&#9;file:///var/www/html/proyectof/src/AppBundle/Entity/ValoresReferencia.php" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -344,12 +424,14 @@
       <workItem from="1511714005100" duration="4945000" />
       <workItem from="1511728372844" duration="2704000" />
       <workItem from="1511745109021" duration="657000" />
-      <workItem from="1511777031415" duration="170000" />
+      <workItem from="1511777031415" duration="766000" />
+      <workItem from="1511903082593" duration="1066000" />
+      <workItem from="1511906442013" duration="7860000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="269598000" />
+    <option name="totallyTimeSpent" value="279120000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1366" height="732" extended-state="6" />
@@ -388,48 +470,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$USER_HOME$/Público/klorofil-free-dashboard-template-v2.0/template/page-login.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="204">
-          <caret line="54" column="35" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/css/main.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="233">
-          <caret line="175" column="14" lean-forward="false" selection-start-line="175" selection-start-column="14" selection-end-line="175" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/security.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="14" lean-forward="false" selection-start-line="9" selection-start-column="14" selection-end-line="9" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1833">
-          <caret line="1123" column="14" lean-forward="false" selection-start-line="1123" selection-start-column="14" selection-end-line="1123" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/Resources/vendor/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="265">
-          <caret line="1122" column="17" lean-forward="false" selection-start-line="1122" selection-start-column="17" selection-end-line="1122" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="29">
-          <caret line="155" column="31" lean-forward="false" selection-start-line="155" selection-start-column="31" selection-end-line="155" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="326">
@@ -444,24 +484,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="350" column="20" lean-forward="false" selection-start-line="350" selection-start-column="20" selection-end-line="350" selection-end-column="20" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Administrador.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="454">
           <caret line="55" column="61" lean-forward="false" selection-start-line="55" selection-start-column="61" selection-end-line="55" selection-end-column="61" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/show.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
         </state>
       </provider>
     </entry>
@@ -486,27 +512,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2579">
-          <caret line="167" column="14" lean-forward="false" selection-start-line="167" selection-start-column="14" selection-end-line="167" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PacienteType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProfesionalType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="19" column="28" lean-forward="false" selection-start-line="19" selection-start-column="28" selection-end-line="19" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/headpdf.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
@@ -514,31 +519,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/add.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="167" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PacienteController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="80" column="49" lean-forward="false" selection-start-line="80" selection-start-column="49" selection-end-line="80" selection-end-column="49" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1168">
-          <caret line="389" column="19" lean-forward="false" selection-start-line="389" selection-start-column="19" selection-end-line="389" selection-end-column="19" />
         </state>
       </provider>
     </entry>
@@ -563,27 +547,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="326">
-          <caret line="68" column="122" lean-forward="false" selection-start-line="68" selection-start-column="122" selection-end-line="68" selection-end-column="122" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="51">
-          <caret line="3" column="0" lean-forward="false" selection-start-line="3" selection-start-column="0" selection-end-line="162" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="442">
-          <caret line="61" column="50" lean-forward="false" selection-start-line="61" selection-start-column="50" selection-end-line="63" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TipoAnalisisController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
@@ -595,13 +558,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="68">
           <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AnalisisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="97">
-          <caret line="29" column="8" lean-forward="false" selection-start-line="29" selection-start-column="8" selection-end-line="30" selection-end-column="29" />
         </state>
       </provider>
     </entry>
@@ -619,24 +575,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-221">
-          <caret line="17" column="0" lean-forward="false" selection-start-line="17" selection-start-column="0" selection-end-line="17" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="275">
           <caret line="246" column="52" lean-forward="false" selection-start-line="246" selection-start-column="34" selection-end-line="246" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="50" column="57" lean-forward="false" selection-start-line="50" selection-start-column="45" selection-end-line="50" selection-end-column="57" />
         </state>
       </provider>
     </entry>
@@ -654,24 +596,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="403">
-          <caret line="130" column="47" lean-forward="false" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCantidadOS.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="241">
           <caret line="85" column="19" lean-forward="false" selection-start-line="85" selection-start-column="19" selection-end-line="85" selection-end-column="19" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="389">
-          <caret line="121" column="22" lean-forward="true" selection-start-line="121" selection-start-column="22" selection-end-line="121" selection-end-column="22" />
         </state>
       </provider>
     </entry>
@@ -686,7 +614,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="23" column="12" lean-forward="false" selection-start-line="23" selection-start-column="12" selection-end-line="23" selection-end-column="12" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -694,7 +621,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="2669">
           <caret line="157" column="116" lean-forward="false" selection-start-line="157" selection-start-column="116" selection-end-line="157" selection-end-column="116" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -702,7 +628,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="3" column="33" lean-forward="false" selection-start-line="3" selection-start-column="33" selection-end-line="3" selection-end-column="33" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -710,10 +635,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="17">
           <caret line="4" column="33" lean-forward="false" selection-start-line="4" selection-start-column="33" selection-end-line="4" selection-end-column="33" />
-          <folding>
-            <marker date="1511745194076" expanded="true" signature="1534:1546" ph="..." />
-            <marker date="1511745194076" expanded="true" signature="1706:1718" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -721,7 +642,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="51">
           <caret line="3" column="31" lean-forward="false" selection-start-line="3" selection-start-column="31" selection-end-line="3" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -729,31 +649,218 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCliente.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="474">
-          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfProfesional.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="901">
-          <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/usuario/login.html.twig">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="374">
+        <state relative-caret-position="323">
           <caret line="43" column="128" lean-forward="false" selection-start-line="43" selection-start-column="128" selection-end-line="43" selection-end-column="128" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfProfesional.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="53" column="21" lean-forward="false" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCliente.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="37" column="42" lean-forward="false" selection-start-line="37" selection-start-column="42" selection-end-line="37" selection-end-column="42" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/config/parameters.yml">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/PacienteType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="28" column="22" lean-forward="false" selection-start-line="28" selection-start-column="19" selection-end-line="28" selection-end-column="22" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-2827">
+          <caret line="4" column="4" lean-forward="false" selection-start-line="4" selection-start-column="4" selection-end-line="195" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="198" selection-end-column="14" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1195">
+          <caret line="48" column="68" lean-forward="false" selection-start-line="48" selection-start-column="68" selection-end-line="48" selection-end-column="68" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ProfesionalController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="250">
+          <caret line="97" column="3" lean-forward="false" selection-start-line="97" selection-start-column="3" selection-end-line="110" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/PacienteController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="114">
+          <caret line="100" column="46" lean-forward="false" selection-start-line="100" selection-start-column="46" selection-end-line="100" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="233">
+          <caret line="174" column="0" lean-forward="false" selection-start-line="174" selection-start-column="0" selection-end-line="187" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="130" column="47" lean-forward="false" selection-start-line="130" selection-start-column="47" selection-end-line="130" selection-end-column="47" />
+          <folding>
+            <marker date="1511745062602" expanded="true" signature="3287:3299" ph="..." />
+            <marker date="1511745062602" expanded="true" signature="3459:3471" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="408">
+          <caret line="54" column="98" lean-forward="false" selection-start-line="54" selection-start-column="98" selection-end-line="54" selection-end-column="98" />
+          <folding>
+            <marker date="1511910293069" expanded="true" signature="2486:2498" ph="..." />
+            <marker date="1511910293069" expanded="true" signature="2658:2670" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="238">
+          <caret line="54" column="94" lean-forward="false" selection-start-line="54" selection-start-column="85" selection-end-line="54" selection-end-column="94" />
+          <folding>
+            <marker date="1511745062602" expanded="true" signature="2145:2157" ph="..." />
+            <marker date="1511745062602" expanded="true" signature="2317:2329" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/show.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="210" column="64" lean-forward="false" selection-start-line="210" selection-start-column="64" selection-end-line="210" selection-end-column="64" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AnalisisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="425">
+          <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/add.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="131">
+          <caret line="75" column="14" lean-forward="false" selection-start-line="75" selection-start-column="14" selection-end-line="90" selection-end-column="20" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-561">
+          <caret line="75" column="12" lean-forward="false" selection-start-line="75" selection-start-column="12" selection-end-line="75" selection-end-column="12" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ProfesionalType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="22" column="28" lean-forward="false" selection-start-line="22" selection-start-column="28" selection-end-line="22" selection-end-column="28" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="428">
+          <caret line="86" column="40" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/new.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="97">
+          <caret line="40" column="50" lean-forward="false" selection-start-line="40" selection-start-column="50" selection-end-line="40" selection-end-column="50" />
+          <folding>
+            <marker date="1511914206424" expanded="true" signature="4615:4653" ph="..." />
+            <marker date="1511914206424" expanded="true" signature="6942:6984" ph="..." />
+            <marker date="1511914206424" expanded="true" signature="7228:7437" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="289">
+          <caret line="17" column="101" lean-forward="false" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="101" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6353">
+          <caret line="468" column="3" lean-forward="false" selection-start-line="468" selection-start-column="3" selection-end-line="477" selection-end-column="5" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="488">
+          <caret line="404" column="44" lean-forward="false" selection-start-line="404" selection-start-column="38" selection-end-line="404" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
+          <folding>
+            <element signature="e#35#59#0#PHP" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

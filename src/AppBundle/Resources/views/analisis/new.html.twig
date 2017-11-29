@@ -34,6 +34,39 @@
             </div>
         </div>
     </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.medico, 'Médico', {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.medico, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.medico) }}
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="form-group">
+            <div class=" col-md-1">
+                {{ form_label(form.matriculamedico, 'Matrícula', {
+                    'label_attr' : {'class' : 'control-label'}}) }}
+            </div>
+            <div class="col-md-8">
+                {{ form_widget(form.matriculamedico, {'attr' : {'class' : 'form-control col-10'}}) }}
+            </div>
+            <div class="col-md-3">
+                {{ form_errors(form.matriculamedico) }}
+            </div>
+        </div>
+    </div>
+
+
+
     <div class="row">
         <div class="form-group">
             <div class=" col-md-1">
@@ -115,7 +148,35 @@
         '    list-style: none;\n' +
         '"></li>').append($addTagLink);
 
+
+    $("form[name=appbundle_analisis").submit(function(e){
+        if(!$('#appbundle_analisis_tipoAnalisis_1').length)
+          {
+                alert('Debe elegir un Tipo de Análisis primero');
+                       e.preventDefault();
+          }
+
+    });
+
+
+
+
+
     jQuery(document).ready(function() {
+          var currentYear = (new Date).getFullYear();
+   var currentmonth = (new Date).getMonth();
+   var currentday = (new Date).getDay();
+
+   $('#appbundle_analisis_fechaEntrega_year option[value="'+currentYear+'"]').attr("selected", true);
+   $('#appbundle_analisis_fechaEntrega_month option[value="'+currentmonth+'"]').attr("selected", true);
+    $('#appbundle_analisis_fechaEntrega_day option[value="'+currentday+'"]').attr("selected", true);
+
+/*
+   $('#appbundle_analisis_fechaEntrega_month').value(11);
+   $('#appbundle_analisis_fechaEntrega_day').value(11);
+*/
+
+
         // Get the ul that holds the collection of tags
         var $collectionHolder = $('ul.tags');
 

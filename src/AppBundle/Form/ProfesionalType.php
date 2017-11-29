@@ -20,6 +20,7 @@ class ProfesionalType extends AbstractType
             ->add('password')
             ->add('nombre')
             ->add('apellido')
+            ->add('matricula')
             ->add('fechaNacimiento',BirthdayType::class)
             ->add('dni')
             ->add('email', 'email')
