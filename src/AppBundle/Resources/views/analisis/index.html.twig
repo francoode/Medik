@@ -74,7 +74,7 @@
                     {% endif %}
                     {% if is_granted('ROLE_ADMINISTRADOR') %}
                     <a href="{{ path('analisis_edit', {'id':analisess.id}) }}"><i class="fa fa-pencil"></i> </a>
-                    <a href="{{ path('analisis_delete',{'id':analisess.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a href="{{ path('analisis_delete',{'id':analisess.id}) }}" onclick="return confirm('¿Está seguro que desea eliminar este análisis?')"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     {% endif %}
                     <a href="{{ path('analisis_show',{'id':analisess.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 </td>

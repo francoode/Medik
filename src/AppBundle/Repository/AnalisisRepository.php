@@ -177,5 +177,78 @@ class AnalisisRepository extends EntityRepository
 
         return $query->getQuery()->getResult();
     }
+
+
+    public function getIntegral($fi, $ff)
+    {
+        $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a');
+        $query->addSelect('os');
+        $query->addSelect('pro');
+        $query->addSelect('p');
+        $query->addSelect('i');
+        $query->addSelect('it');
+        $query->from('AppBundle:Analisis','a');
+        $query->leftJoin('a.profesional','pro');
+        $query->leftJoin('a.paciente','p');
+        $query->leftJoin('p.obraSocial', 'os');
+        $query->leftJoin('a.item','i');
+        $query->leftJoin('i.item','it');
+        $query->where('a.fechaCreado >= :fi');
+        $query->andWhere('a.fechaCreado <= :ff');
+        $query->setParameter('fi',$fi);
+        $query->setParameter('ff',$ff);
+        $query->getQuery();
+        return $query->getQuery()->getResult();
+
+    }
+       /* $em = $this->getEntityManager();
+        $query = $em->createQueryBuilder();
+        $query->select('a');
+
+        if($paciente)
+        {
+            $query->addSelect('p');
+            if($os)
+            {
+                $query->addSelect('os');
+            }
+
+        }
+        if($profesional)
+        {
+            $query->addSelect('pro');
+
+        }
+        if($item)
+        {
+            $query->addSelect('i');
+            $query->addSelect('it');
+
+        }
+            $query->from('AppBundle:Analisis','a');
+        if($paciente)
+        {
+            $query->leftJoin('a.paciente','p');
+            if($os)
+            {
+                $query->leftJoin('p.obraSocial', 'os');
+            }
+        }
+        if($profesional)
+        {
+            $query->leftJoin('a.profesional','pro');
+        }
+        if($item)
+        {
+            $query->leftJoin('a.item','i');
+            $query->leftJoin('i.item','it');
+        }
+
+        $query->getQuery();
+        return $query->getQuery()->getResult();*/
+
+
 }
 
