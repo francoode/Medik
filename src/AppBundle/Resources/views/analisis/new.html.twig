@@ -163,9 +163,15 @@
 
 
     jQuery(document).ready(function() {
-          var currentYear = (new Date).getFullYear();
-   var currentmonth = (new Date).getMonth();
-   var currentday = (new Date).getDay();
+
+        var d = new Date();
+         console.log(d);
+
+   var currentYear = (new Date).getFullYear();
+   var currentmonth = (new Date).getMonth()+1;
+   var currentday = (new Date).getDate();
+
+   console.log(currentmonth);
 
    $('#appbundle_analisis_fechaEntrega_year option[value="'+currentYear+'"]').attr("selected", true);
    $('#appbundle_analisis_fechaEntrega_month option[value="'+currentmonth+'"]').attr("selected", true);
