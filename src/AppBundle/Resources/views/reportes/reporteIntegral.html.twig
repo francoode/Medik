@@ -51,7 +51,9 @@
 
 
     {% if entidades is defined %}
-        <a href="javascript:window.print()">imprimir!</a>
+        <button class="btn btn-default btn-sm" id="imprimir">Imprimir</button>
+        <br>
+        <br>
     </div>
     <div>
         <table id="example" class="table" style="width: 90%;">
@@ -127,6 +129,20 @@
     {{ parent() }}
 
     <script>
+        function printData()
+        {
+            var divToPrint=document.getElementById("example");
+            newWin= window.open("");
+            newWin.document.write(divToPrint.outerHTML);
+            newWin.print();
+            newWin.close();
+        }
+
+        $('#imprimir').on('click',function(){
+            printData();
+        });
+
+
         $(document).ready(function() {
             $('.js-datepicker').datepicker({
                 format: 'yyyy-mm-dd'
