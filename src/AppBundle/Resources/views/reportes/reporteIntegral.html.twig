@@ -1,8 +1,13 @@
 {% extends 'front.html.twig' %}
 
+{% block head %}
+    {{ parent() }}
+<link rel="stylesheet" media="print" type="text/css" href="{{ asset('app/Resources/css/imprimir.css') }}">
+    {% endblock %}
 
 {% block body %}
 <div class="container-fluid">
+    <div id="noprint1">
     <h3> Cantidad Tipo Análisis Realizados</h3>
     <br>
     {{ form_start(form) }}
@@ -44,8 +49,10 @@
     <br>
     <hr>
 
-    {% if entidades is defined %}
 
+    {% if entidades is defined %}
+        <a href="javascript:window.print()">imprimir!</a>
+    </div>
     <div>
         <table id="example" class="table" style="width: 90%;">
             <thead>
