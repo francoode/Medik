@@ -52,10 +52,10 @@
             <tr>
                 <th>Id Análisis</th>
                 <th>Paciente</th>
-                <th>DNI</th>
+                <th>DNI Paciente</th>
                 <th>Obra Social</th>
                 <th>Profesional</th>
-                <th>DNI</th>
+                <th>DNI Profesional</th>
                 <th>Fecha Realizado</th>
                 <th>Fecha Entregado</th>
                 <th>Tipo Análisis</th>
@@ -63,24 +63,12 @@
                 <th>Resultado</th>
             </tr>
             </thead>
-            <tfoot>
-                <th>Id Análisis</th>
-                <th>Paciente</th>
-                <th>DNI</th>
-                <th>Obra Social</th>
-                <th>Profesional</th>
-                <th>DNI</th>
-                <th>Fecha Realizado</th>
-                <th>Fecha Entregado</th>
-                <th>Tipo Análisis</th>
-                <th>Item</th>
-                <th>Resultado</th>
-            </tfoot>
             <tbody>
+
 
             {%  for e in entidades %}
                 {% for i in e.item %}
-                <tr>
+                 <tr>
                     <td>{{ e.id }}</td>
                     <td>{{ e.paciente.nombre }} {{ e.paciente.apellido }}</td>
                     <td>{{ e.paciente.dni }}</td>
@@ -144,17 +132,17 @@
 
         $(document).ready(function() {
             // Setup - add a text input to each footer cell
-            $('#example tfoot th').each( function () {
+            $('#example thead th').each( function () {
                 var title = $(this).text();
 
 
                 if(title != 'Acciones')
                 {
-                    $(this).html( '<input type="text" placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                    $(this).html( '<input type="text" placeholder=" '+title+'" style="width:120px;"/>' );
                 }
                 else
                 {
-                    $(this).html( '<input type="hidden"  placeholder="Buscar '+title+'" style="width:120px;"/>' );
+                    $(this).html( '<input type="hidden"  placeholder=" '+title+'" style="width:120px;"/>' );
                 }
 
 
@@ -167,7 +155,7 @@
             table.columns().every( function () {
                 var that = this;
 
-                $( 'input', this.footer() ).on( 'keyup change', function () {
+                $( 'input', this.header() ).on( 'keyup change', function () {
                     if ( that.search() !== this.value ) {
                         that
                             .search( this.value )
