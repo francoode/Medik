@@ -5,80 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="8282b36f-35fa-4aa3-bdd9-f4947430574f" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/apple-icon.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/apple-icon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/favicon.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/favicon.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/login-bg.jpg" afterPath="$PROJECT_DIR$/web/app/Resources/img/login-bg.jpg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/logo-dark.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/logo-dark.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/profile-bg.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/profile-bg.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/user-medium.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/user-medium.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/user.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/user.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/user1.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/user1.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/user2.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/user2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/user3.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/user3.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/user4.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/user4.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/img/user5.png" afterPath="$PROJECT_DIR$/web/app/Resources/img/user5.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/FontAwesome.otf" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/FontAwesome.otf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.eot" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.ttf" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff2" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.woff2" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.eot" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.eot" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.ttf" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.ttf" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff2" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.woff2" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Form/FiltroIntegralType.php" />
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteIntegral.html.twig" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Resources/views/tipoanalisis/index.html.twig" afterPath="$PROJECT_DIR$/src/AppBundle/Resources/views/tipoanalisis/index.html.twig" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/web/app/Resources/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/scripts/klorofil-common.js" afterPath="$PROJECT_DIR$/web/app/Resources/scripts/klorofil-common.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap-theme.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap-theme.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap-theme.min.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap-theme.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/fonts/glyphicons-halflings-regular.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/js/bootstrap.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/js/bootstrap.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/js/bootstrap.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/js/bootstrap.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/js/npm.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/js/npm.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist-custom.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist-custom.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist-custom.css.map" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist-custom.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist.min.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/css/chartist.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/js/chartist.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/js/chartist.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/js/chartist.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/js/chartist.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/map/chartist.css.map" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/map/chartist.css.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/map/chartist.min.js.map" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/map/chartist.min.js.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/scss/chartist.scss" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/chartist/scss/chartist.scss" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/css/font-awesome.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/css/font-awesome.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/css/font-awesome.min.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/css/font-awesome.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.svg" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/font-awesome/fonts/fontawesome-webfont.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery-slimscroll/jquery.slimscroll.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery-slimscroll/jquery.slimscroll.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery-slimscroll/jquery.slimscroll.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery-slimscroll/jquery.slimscroll.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/angular.easypiechart.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/angular.easypiechart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/angular.easypiechart.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/angular.easypiechart.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/easypiechart.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/easypiechart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/easypiechart.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/easypiechart.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/jquery.easypiechart.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/jquery.easypiechart.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery.easy-pie-chart/jquery.easypiechart.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery/jquery.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery/jquery.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery/jquery.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery/jquery.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/jquery/jquery.min.map" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/jquery/jquery.min.map" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.svg" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/fonts/Linearicons-Free.svg" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/style.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/linearicons/style.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.min.css" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.min.js" afterPath="$PROJECT_DIR$/web/app/Resources/vendor/toastr/toastr.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -89,38 +21,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="edit.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/edit.html.twig">
+      <file leaf-file-name="ReportesController.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-459">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="522">
+              <caret line="158" column="11" lean-forward="false" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
+              <folding>
+                <element signature="e#40#78#0#PHP" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="reporteIntegral.html.twig" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteIntegral.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="75">
+              <caret line="150" column="39" lean-forward="true" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
+              <folding>
+                <marker date="1512007158768" expanded="true" signature="3655:3667" ph="..." />
+                <marker date="1512007158768" expanded="true" signature="3827:3839" ph="..." />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Analisis.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="819">
+              <caret line="86" column="40" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="40" />
               <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="33" column="89" lean-forward="false" selection-start-line="33" selection-start-column="89" selection-end-line="33" selection-end-column="89" />
-              <folding>
-                <marker date="1511982983995" expanded="true" signature="1669:1681" ph="..." />
-                <marker date="1511982983995" expanded="true" signature="1841:1853" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="414">
-              <caret line="76" column="150" lean-forward="false" selection-start-line="76" selection-start-column="150" selection-end-line="76" selection-end-column="150" />
-              <folding>
-                <marker date="1511982990747" expanded="true" signature="3362:3374" ph="..." />
-                <marker date="1511982990747" expanded="true" signature="3534:3546" ph="..." />
-              </folding>
             </state>
           </provider>
         </entry>
@@ -128,8 +59,8 @@
       <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="391">
-              <caret line="53" column="101" lean-forward="false" selection-start-line="53" selection-start-column="101" selection-end-line="53" selection-end-column="101" />
+            <state relative-caret-position="442">
+              <caret line="108" column="12" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="108" selection-end-column="12" />
               <folding>
                 <marker date="1511982999447" expanded="true" signature="2561:2573" ph="..." />
                 <marker date="1511982999447" expanded="true" signature="2733:2745" ph="..." />
@@ -138,27 +69,34 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig">
+      <file leaf-file-name="reporteCantidadTipo.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCantidadTipo.html.twig">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="53" column="96" lean-forward="false" selection-start-line="53" selection-start-column="96" selection-end-line="53" selection-end-column="96" />
-              <folding>
-                <marker date="1511983013439" expanded="true" signature="2223:2235" ph="..." />
-                <marker date="1511983013439" expanded="true" signature="2395:2407" ph="..." />
-              </folding>
+            <state relative-caret-position="216">
+              <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="114" selection-end-column="26" />
+              <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html.twig" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/tipoanalisis/index.html.twig">
+      <file leaf-file-name="AnalisisRepository.php" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="442">
-              <caret line="32" column="101" lean-forward="false" selection-start-line="32" selection-start-column="101" selection-end-line="32" selection-end-column="101" />
+            <state relative-caret-position="437">
+              <caret line="196" column="40" lean-forward="false" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="list.html.twig" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="510">
+              <caret line="60" column="12" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="60" selection-end-column="12" />
               <folding>
-                <marker date="1511983028419" expanded="true" signature="1617:1629" ph="..." />
-                <marker date="1511983028419" expanded="true" signature="1789:1801" ph="..." />
+                <marker date="1511983013439" expanded="true" signature="2223:2235" ph="..." />
+                <marker date="1511983013439" expanded="true" signature="2395:2407" ph="..." />
               </folding>
             </state>
           </provider>
@@ -168,7 +106,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>AppBundle\Entity\TipoAnalisis</find>
       <find>tipoAnalisi</find>
       <find>create</find>
       <find>paddin</find>
@@ -198,6 +135,7 @@
       <find>app.</find>
       <find>resultGraficos</find>
       <find>valoresRe</find>
+      <find>tfoot</find>
     </findStrings>
     <replaceStrings>
       <replace />
@@ -215,25 +153,20 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/ItemTipoAnalisisType.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/new.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/ResultadoAnalisis.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/ReporteType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCliente.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php" />
         <option value="$PROJECT_DIR$/app/Resources/css/main.css" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/UsuarioController.php" />
         <option value="$PROJECT_DIR$/app/config/security.yml" />
         <option value="$PROJECT_DIR$/app/Resources/vendor/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/web/app/Resources/vendor/bootstrap/css/bootstrap.css" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Administrador.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/show.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/TipoAnalisisController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/headpdf.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Controller/GraficoController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/graficos/graficos.html.twig" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/administrador/edit.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Form/AdministradorType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCantidadTipo.html.twig" />
@@ -260,12 +193,17 @@
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/new.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php" />
-        <option value="$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig" />
         <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/tipoanalisis/index.html.twig" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Form/FiltroIntegralType.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php" />
+        <option value="$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteIntegral.html.twig" />
       </list>
     </option>
   </component>
@@ -298,6 +236,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
       <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
@@ -316,20 +255,6 @@
               <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="js" type="2a2b976b:PhpTreeStructureProvider$1" />
-            </path>
-            <path>
-              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
-              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="app" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
-              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
@@ -362,6 +287,13 @@
               <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Form" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Repository" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
               <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
@@ -448,6 +380,15 @@
               <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="reportes" type="2a2b976b:PhpTreeStructureProvider$1" />
+            </path>
+            <path>
+              <item name="ProyectoFinal" type="b2602c69:ProjectViewProjectNode" />
+              <item name="ProyectoFinal" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="src" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="AppBundle" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="Resources" type="2a2b976b:PhpTreeStructureProvider$1" />
+              <item name="views" type="2a2b976b:PhpTreeStructureProvider$1" />
               <item name="tipoanalisis" type="2a2b976b:PhpTreeStructureProvider$1" />
             </path>
             <path>
@@ -463,14 +404,13 @@
           <select />
         </subPane>
       </pane>
-      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$USER_HOME$/Público/klorofil-free-dashboard-template-v2.0/template/page-login.html" />
     <property name="settings.editor.selected.configurable" value="reference.settings.ide.settings.spelling" />
-    <property name="SearchEverywhereHistoryKey" value="analisi&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Controller/AnalisisController.php&#10;valores&#9;null&#9;null&#10;item&#9;null&#9;null&#10;analisis&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;admini&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Administrador.php&#10;Profe&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Profesional.php&#10;pro&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Form/ProfesionalType.php&#10;paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;obra&#9;null&#9;null&#10;Anali&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;Paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;obraSo&#9;null&#9;null&#10;Valoresref&#9;FILE&#9;file:///var/www/html/proyectof/src/AppBundle/Entity/ValoresReferencia.php" />
+    <property name="SearchEverywhereHistoryKey" value="analisis&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;Paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;paciente&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Paciente.php&#10;resultad&#9;null&#9;null&#10;analisi&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Controller/AnalisisController.php&#10;valores&#9;null&#9;null&#10;item&#9;null&#9;null&#10;admini&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Administrador.php&#10;Profe&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Profesional.php&#10;pro&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Form/ProfesionalType.php&#10;obra&#9;null&#9;null&#10;Anali&#9;FILE&#9;file:///var/www/html/ProyectoFinal/src/AppBundle/Entity/Analisis.php&#10;obraSo&#9;null&#9;null&#10;Valoresref&#9;FILE&#9;file:///var/www/html/proyectof/src/AppBundle/Entity/ValoresReferencia.php" />
     <property name="nodejs_interpreter_path" value="/usr/bin/node" />
   </component>
   <component name="RecentsManager">
@@ -560,12 +500,13 @@
       <workItem from="1511777031415" duration="766000" />
       <workItem from="1511903082593" duration="1066000" />
       <workItem from="1511906442013" duration="7860000" />
-      <workItem from="1511982791534" duration="238000" />
+      <workItem from="1511982791534" duration="838000" />
+      <workItem from="1512001800371" duration="5505000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="279360000" />
+    <option name="totallyTimeSpent" value="285465000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="10" y="20" width="1366" height="732" extended-state="6" />
@@ -604,73 +545,10 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCliente.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="113" column="51" lean-forward="false" selection-start-line="113" selection-start-column="51" selection-end-line="113" selection-end-column="51" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ReporteType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="267">
-          <caret line="34" column="32" lean-forward="false" selection-start-line="34" selection-start-column="32" selection-end-line="34" selection-end-column="55" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/j.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="369">
-          <caret line="37" column="46" lean-forward="false" selection-start-line="37" selection-start-column="46" selection-end-line="37" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/headpdf.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="119">
-          <caret line="7" column="93" lean-forward="false" selection-start-line="7" selection-start-column="93" selection-end-line="7" selection-end-column="93" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/app/config/routing.yml">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/ItemTipoAnalisis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="384">
-          <caret line="192" column="40" lean-forward="false" selection-start-line="192" selection-start-column="20" selection-end-line="192" selection-end-column="40" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/ValoresReferencia.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="318">
-          <caret line="187" column="31" lean-forward="false" selection-start-line="187" selection-start-column="20" selection-end-line="187" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/GraficoController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="75" column="0" lean-forward="true" selection-start-line="75" selection-start-column="0" selection-end-line="75" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/TipoAnalisisController.php">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="391">
           <caret line="93" column="8" lean-forward="false" selection-start-line="93" selection-start-column="8" selection-end-line="97" selection-end-column="11" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AdministradorType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="68">
-          <caret line="4" column="0" lean-forward="false" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
         </state>
       </provider>
     </entry>
@@ -688,24 +566,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="275">
-          <caret line="246" column="52" lean-forward="false" selection-start-line="246" selection-start-column="34" selection-end-line="246" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/pdfReporteAnalisis/pdfCantidadTipo.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="386">
           <caret line="29" column="15" lean-forward="false" selection-start-line="29" selection-start-column="15" selection-end-line="30" selection-end-column="38" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCantidadTipo.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="84" column="32" lean-forward="true" selection-start-line="84" selection-start-column="32" selection-end-line="85" selection-end-column="55" />
         </state>
       </provider>
     </entry>
@@ -838,14 +702,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AnalisisController.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="425">
-          <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/add.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="131">
@@ -868,14 +724,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="428">
-          <caret line="86" column="40" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="40" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/new.html.twig">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="97">
@@ -887,33 +735,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="289">
           <caret line="17" column="101" lean-forward="false" selection-start-line="17" selection-start-column="95" selection-end-line="17" selection-end-column="101" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6353">
-          <caret line="468" column="3" lean-forward="false" selection-start-line="468" selection-start-column="3" selection-end-line="477" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="488">
-          <caret line="404" column="44" lean-forward="false" selection-start-line="404" selection-start-column="38" selection-end-line="404" selection-end-column="44" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="340">
-          <caret line="41" column="48" lean-forward="false" selection-start-line="41" selection-start-column="48" selection-end-line="41" selection-end-column="48" />
-          <folding>
-            <element signature="e#35#59#0#PHP" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -929,59 +750,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="271" column="0" lean-forward="false" selection-start-line="271" selection-start-column="0" selection-end-line="271" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/edit.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-459">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="33" column="89" lean-forward="false" selection-start-line="33" selection-start-column="89" selection-end-line="33" selection-end-column="89" />
-          <folding>
-            <marker date="1511982983995" expanded="true" signature="1669:1681" ph="..." />
-            <marker date="1511982983995" expanded="true" signature="1841:1853" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="414">
-          <caret line="76" column="150" lean-forward="false" selection-start-line="76" selection-start-column="150" selection-end-line="76" selection-end-column="150" />
-          <folding>
-            <marker date="1511982990747" expanded="true" signature="3362:3374" ph="..." />
-            <marker date="1511982990747" expanded="true" signature="3534:3546" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="53" column="101" lean-forward="false" selection-start-line="53" selection-start-column="101" selection-end-line="53" selection-end-column="101" />
-          <folding>
-            <marker date="1511982999447" expanded="true" signature="2561:2573" ph="..." />
-            <marker date="1511982999447" expanded="true" signature="2733:2745" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="53" column="96" lean-forward="false" selection-start-line="53" selection-start-column="96" selection-end-line="53" selection-end-column="96" />
-          <folding>
-            <marker date="1511983013439" expanded="true" signature="2223:2235" ph="..." />
-            <marker date="1511983013439" expanded="true" signature="2395:2407" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -992,6 +760,199 @@
           <folding>
             <marker date="1511983028419" expanded="true" signature="1617:1629" ph="..." />
             <marker date="1511983028419" expanded="true" signature="1789:1801" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/analisis/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="76" column="150" lean-forward="false" selection-start-line="76" selection-start-column="150" selection-end-line="76" selection-end-column="150" />
+          <folding>
+            <marker date="1511982990747" expanded="true" signature="3362:3374" ph="..." />
+            <marker date="1511982990747" expanded="true" signature="3534:3546" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="17">
+          <caret line="33" column="89" lean-forward="false" selection-start-line="33" selection-start-column="89" selection-end-line="33" selection-end-column="89" />
+          <folding>
+            <marker date="1511982983995" expanded="true" signature="1669:1681" ph="..." />
+            <marker date="1511982983995" expanded="true" signature="1841:1853" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/itemtipoanalisis/edit.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/AnalisisController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="986">
+          <caret line="77" column="38" lean-forward="false" selection-start-line="77" selection-start-column="38" selection-end-line="77" selection-end-column="38" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Profesional.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6812">
+          <caret line="404" column="44" lean-forward="false" selection-start-line="404" selection-start-column="38" selection-end-line="404" selection-end-column="44" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/ObraSocial.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AnalisisType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="564">
+          <caret line="45" column="61" lean-forward="true" selection-start-line="45" selection-start-column="61" selection-end-line="45" selection-end-column="61" />
+          <folding>
+            <element signature="e#35#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/AdministradorType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="85">
+          <caret line="5" column="4" lean-forward="true" selection-start-line="5" selection-start-column="4" selection-end-line="5" selection-end-column="4" />
+          <folding>
+            <element signature="e#35#91#0#PHP" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/DefaultController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="641">
+          <caret line="269" column="0" lean-forward="false" selection-start-line="269" selection-start-column="0" selection-end-line="269" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ReporteType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="340">
+          <caret line="38" column="12" lean-forward="true" selection-start-line="38" selection-start-column="12" selection-end-line="40" selection-end-column="15" />
+          <folding>
+            <element signature="e#35#59#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/ResultadoAnalisis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="12" column="6" lean-forward="false" selection-start-line="12" selection-start-column="6" selection-end-line="12" selection-end-column="6" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/ItemTipoAnalisisType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-153">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Form/FiltroIntegralType.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="352">
+          <caret line="25" column="35" lean-forward="false" selection-start-line="25" selection-start-column="35" selection-end-line="25" selection-end-column="35" />
+          <folding>
+            <element signature="e#35#84#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Repository/AnalisisRepository.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="196" column="40" lean-forward="false" selection-start-line="196" selection-start-column="40" selection-end-line="196" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Profesional/list.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="510">
+          <caret line="60" column="12" lean-forward="false" selection-start-line="7" selection-start-column="3" selection-end-line="60" selection-end-column="12" />
+          <folding>
+            <marker date="1511983013439" expanded="true" signature="2223:2235" ph="..." />
+            <marker date="1511983013439" expanded="true" signature="2395:2407" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Paciente.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="6480">
+          <caret line="450" column="7" lean-forward="true" selection-start-line="450" selection-start-column="7" selection-end-line="450" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Entity/Analisis.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="819">
+          <caret line="86" column="40" lean-forward="false" selection-start-line="86" selection-start-column="25" selection-end-line="86" selection-end-column="40" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Controller/ReportesController.php">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="522">
+          <caret line="158" column="11" lean-forward="false" selection-start-line="158" selection-start-column="11" selection-end-line="158" selection-end-column="11" />
+          <folding>
+            <element signature="e#40#78#0#PHP" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteCantidadTipo.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="99" column="0" lean-forward="false" selection-start-line="99" selection-start-column="0" selection-end-line="114" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/Paciente/index.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="442">
+          <caret line="108" column="12" lean-forward="false" selection-start-line="73" selection-start-column="8" selection-end-line="108" selection-end-column="12" />
+          <folding>
+            <marker date="1511982999447" expanded="true" signature="2561:2573" ph="..." />
+            <marker date="1511982999447" expanded="true" signature="2733:2745" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/AppBundle/Resources/views/reportes/reporteIntegral.html.twig">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="75">
+          <caret line="150" column="39" lean-forward="true" selection-start-line="150" selection-start-column="39" selection-end-line="150" selection-end-column="39" />
+          <folding>
+            <marker date="1512007158768" expanded="true" signature="3655:3667" ph="..." />
+            <marker date="1512007158768" expanded="true" signature="3827:3839" ph="..." />
           </folding>
         </state>
       </provider>
