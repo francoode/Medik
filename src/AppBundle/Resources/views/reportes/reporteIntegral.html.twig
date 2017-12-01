@@ -10,50 +10,90 @@
     <div id="noprint1">
     <h3> Cantidad Tipo Análisis Realizados</h3>
     <br>
-    {{ form_start(form) }}
-    <div class="row">
-        <div class="col-md-2 col-md-offset-1">
-            {{ form_label(form.fechaInicio) }}
-        </div>
-        <div class="col-md-3">
-            {{ form_widget(form.fechaInicio) }}
-        </div>
-        <div class="col-md-3">
-            {{ form_errors(form.fechaInicio) }}
-        </div>
-    </div>
+        {{ form_start(form) }}
+        <div class="row">
+            <div class="col-md-2">
+                {{ form_label(form.fechaInicio,'Fecha Inicio Realizada') }}
+            </div>
+            <div class="col-md-2" >
+                {{ form_widget(form.fechaInicio) }}
+            </div>
 
-    <div class="row">
-        <div class="col-md-2 col-md-offset-1">
-            {{ form_label(form.fechaFin) }}
-        </div>
-        <div class="col-md-3">
-            {{ form_widget(form.fechaFin) }}
-        </div>
-        <div class="col-md-3">
-            {{ form_errors(form.fechaFin) }}
-        </div>
-    </div>
+            <div class="col-md-2">
+                {{ form_label(form.fechaFin,'Fecha Fin Realizada') }}
+            </div>
+            <div class="col-md-2" >
+                {{ form_widget(form.fechaFin) }}
+            </div>
+            <div class="col-md-1">
+                {{ form_widget(form.buscar) }}
+            </div>
 
-    {{ form_row(form._token) }}
+        </div>
+
+        {{ form_row(form._token) }}
 
 
-    <br>
-    <div class="row">
-        <div class="col-md-1 col-md-offset-3">
-            {{ form_widget(form.buscar, {'attr': {'class':'btn btn-default btn-xs'}}) }}
-        </div>
-    </div>
-
-    {{ form_end(form, {'render_rest':false}) }}
-    <br>
-    <hr>
+        {{ form_end(form, {'render_rest':false}) }}
+        <br>
+        <hr>
 
 
     {% if entidades is defined %}
+
+     {#   <a class="toggle-vis" data-column="0"> <input type="checkbox" class="form-check-input"></a> #}
+
+
+
+
+        <table border="0" cellspacing="5" cellpadding="5">
+            <tbody><tr>
+                <td>Mínimo Valor Resultado:</td>
+                <td><input type="text" id="min" name="min"></td>
+                <td>&nbsp Máximo Valor Resultado:</td>
+                <td><input type="text" id="max" name="max"></td>
+            </tr>
+            <tr>
+
+
+            </tr>
+            </tbody></table>
+        <br>
+
+        {# Filtros y boton imprimir#}
+        <div class="row">
+            <div class="col-md-1">
         <button class="btn btn-default btn-sm" id="imprimir">Imprimir</button>
+            </div>
+            <div class="col-md-7">
+        <div class="btn-group">
+            <button type="button" class="btn btn-default btn-sm dropdown-toggle"
+                    data-toggle="dropdown">
+                Columnas <span class="caret"></span>
+            </button>
+
+            <ul class="dropdown-menu" role="menu">
+                <form>
+                    <label> Id Análisis  <input type="checkbox" class="toogle-vis form-check-input" data-column="0" checked></label><br>
+                    <label> Paciente <input type="checkbox" class="toogle-vis form-check-input" data-column="1" checked></label><br>
+                    <label> DNI Paciente  <input type="checkbox" class="toogle-vis form-check-input" data-column="2" checked></label><br>
+                    <label> Obra Social  <input type="checkbox" class="toogle-vis form-check-input" data-column="3" checked></label><br>
+                    <label> Profesional <input type="checkbox" class="toogle-vis form-check-input" data-column="4" checked></label><br>
+                    <label> DNI Profesional <input type="checkbox" class="toogle-vis form-check-input" data-column="5" checked></label><br>
+                    <label> Fecha Realizado  <input type="checkbox" class="toogle-vis form-check-input" data-column="6" checked></label><br>
+                    <label> Tipo Análisis  <input type="checkbox" class="toogle-vis form-check-input" data-column="7" checked></label><br>
+                    <label> Item <input type="checkbox" class="toogle-vis form-check-input" data-column="8" checked></label><br>
+                    <label> Resultado <input type="checkbox" class="toogle-vis form-check-input" data-column="9" checked></label><br>
+
+                </form>
+            </ul>
+        </div>
+            </div>
+        </div>
+        {# Filtros y boton imprimir#}
         <br>
         <br>
+
     </div>
     <div>
         <table id="example" class="table" style="width: 90%;">
@@ -100,28 +140,6 @@
 
 
     {% endif %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 </div>
 {% endblock %}
 
@@ -129,6 +147,24 @@
     {{ parent() }}
 
     <script>
+        $.fn.dataTable.ext.search.push(
+            function( settings, data, dataIndex ) {
+                var min = parseInt( $('#min').val(), 10 );
+                var max = parseInt( $('#max').val(), 10 );
+                var age = parseFloat( data[10] ) || 0; // use data for the age column
+
+                if ( ( isNaN( min ) && isNaN( max ) ) ||
+                    ( isNaN( min ) && age <= max ) ||
+                    ( min <= age   && isNaN( max ) ) ||
+                    ( min <= age   && age <= max ) )
+                {
+                    return true;
+                }
+                return false;
+            }
+        );
+
+
         function printData()
         {
             var divToPrint=document.getElementById("example");
@@ -172,7 +208,24 @@
             } );
 
             // DataTable
-            var table = $('#example').DataTable();
+            var table = $('#example').DataTable(
+                {
+                    "lengthMenu": [[10,25,50,-1],[10,25,50,"Todos"]]
+                }
+            );
+
+            $('input[type=checkbox].toogle-vis').click(function (e) {
+                // Get the column API object
+                var column = table.column( $(this).attr('data-column') );
+
+                // Toggle the visibility
+                column.visible( ! column.visible() );
+            } );
+
+
+
+
+
 
             // Apply the search
             table.columns().every( function () {
@@ -188,6 +241,14 @@
             } );
 
             $('#example_filter').hide();
+
+
+
+            // Event listener to the two range filtering inputs to redraw on input
+            $('#min, #max').keyup( function() {
+                table.draw();
+            } );
+
         } );
     </script>
 {% endblock javascripts %}
