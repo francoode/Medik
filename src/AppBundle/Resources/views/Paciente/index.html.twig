@@ -51,7 +51,7 @@
                         <td>{{ pa.obraSocial |slice(0,20) }}</td>
                         <td>
                             <a href="{{ path('paciente_edit', {'id':pa.id}) }}"><i class="fa fa-pencil"></i> </a>
-                            <a href="{{ path('paciente_delete',{'id':pa.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                            <a onclick="return confirm('¿Está seguro que desea eliminar este paciente?')" href="{{ path('paciente_delete',{'id':pa.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             <a href="{{ path('paciente_show',{'id':pa.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                         </td>
 

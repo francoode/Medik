@@ -31,7 +31,7 @@
                 <td>{{ itemTipoAnalisi.nombre }}</td>
                 <td>
                     <a href="{{ path('itemtipoanalisis_edit', {'id':itemTipoAnalisi.id}) }}"><i class="fa fa-pencil"></i> </a>
-                    <a href="{{ path('itemtipoanalisis_delete',{'id':itemTipoAnalisi.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a onclick="return confirm('¿Está seguro que desea eliminar este item?')" href="{{ path('itemtipoanalisis_delete',{'id':itemTipoAnalisi.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
 
                 </td>
 

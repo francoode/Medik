@@ -2,6 +2,7 @@
 
 namespace AppBundle\Controller;
 
+use AppBundle\Form\FiltroIntegralType;
 use AppBundle\Form\ReporteType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
@@ -90,7 +91,7 @@ class ReportesController extends Controller
 
 
         $form = $this->createForm(new ReporteType(), array(
-            'action' => $this->generateUrl('cantidadTipo'),
+            'action' => $this->generateUrl('cantidadOS'),
             'method' => 'POST'
         ));
 
@@ -123,5 +124,41 @@ class ReportesController extends Controller
         ));
     }
 
+    /**
+     * @Route("/integral", name="reporteIntegral")
+     */
+    public function reporteIntegralController(Request $request)
+    {
+        $form = $this->createForm(new ReporteType(), array(
+            'action' => $this->generateUrl('cantidadOS'),
+            'method' => 'POST'
+        ));
+
+        $form->handleRequest($request);
+
+
+        if($form->isValid() && $form->isSubmitted())
+        {
+
+            $data = $form->getData();
+            $fi = $data['fechaInicio'];
+            $ff = $data['fechaFin'];
+
+            $entidades = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getIntegral($fi, $ff);
+
+
+            return $this->render('AppBundle:reportes:reporteIntegral.html.twig', array(
+                'form' => $form->createView(),
+               'entidades' => $entidades
+
+            ));
+        }
+
+        return $this->render('AppBundle:reportes:reporteIntegral.html.twig', array(
+            'form' => $form->createView()
+        ));
+
+
+    }
 
 }

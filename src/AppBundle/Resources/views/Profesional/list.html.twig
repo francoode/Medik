@@ -51,7 +51,7 @@
 
                 <td>
                     <a href="{{ path('profesional_edit', {'id':pro.id}) }}"><i class="fa fa-pencil"></i> </a>
-                    <a href="{{ path('profesional_delete',{'id':pro.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                    <a onclick="return confirm('¿Está seguro que desea eliminar este profesional?')" href="{{ path('profesional_delete',{'id':pro.id}) }}"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                     <a href="{{ path('profesional_show',{'id':pro.id}) }}"><i class="fa fa-eye" aria-hidden="true"></i></a>
                 </td>
 

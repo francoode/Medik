@@ -26,12 +26,24 @@ class GraficoController extends Controller
      */
     public function graficosAction()
     {
+        $em = $this->getDoctrine()->getManager();
 
-        $formItem = $this->createFormBuilder()
-            ->add('item', EntityType::class,array(
+        $formItem = $this->createFormBuilder();
+        $formItem->add('item', EntityType::class,array(
                 'class' => 'AppBundle:ItemTipoAnalisis'
-            ))
-            ->getForm();
+            ));
+
+        $obj = $this->get('security.token_storage')->getToken()->getUser();
+        $entityName = $em->getMetadataFactory()->getMetadataFor(get_class($obj))->getName();
+        if($entityName == 'AppBundle\Entity\Administrador')
+            {
+            $formItem->add('paciente', EntityType::class, array(
+                'class' => 'AppBundle:Paciente',
+                'choice_label' => 'nombreanddni'
+            ));
+                }
+        $formItem = $formItem->getForm();
+
 
         return $this->render('AppBundle:graficos:graficos.html.twig', array(
             'form' => $formItem->createView(),

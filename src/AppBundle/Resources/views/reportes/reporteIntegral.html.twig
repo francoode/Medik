@@ -1,0 +1,193 @@
+{% extends 'front.html.twig' %}
+
+{% block head %}
+    {{ parent() }}
+<link rel="stylesheet" media="print" type="text/css" href="{{ asset('app/Resources/css/imprimir.css') }}">
+    {% endblock %}
+
+{% block body %}
+<div class="container-fluid">
+    <div id="noprint1">
+    <h3> Cantidad Tipo Análisis Realizados</h3>
+    <br>
+    {{ form_start(form) }}
+    <div class="row">
+        <div class="col-md-2 col-md-offset-1">
+            {{ form_label(form.fechaInicio) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_widget(form.fechaInicio) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_errors(form.fechaInicio) }}
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-2 col-md-offset-1">
+            {{ form_label(form.fechaFin) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_widget(form.fechaFin) }}
+        </div>
+        <div class="col-md-3">
+            {{ form_errors(form.fechaFin) }}
+        </div>
+    </div>
+
+    {{ form_row(form._token) }}
+
+
+    <br>
+    <div class="row">
+        <div class="col-md-1 col-md-offset-3">
+            {{ form_widget(form.buscar, {'attr': {'class':'btn btn-default btn-xs'}}) }}
+        </div>
+    </div>
+
+    {{ form_end(form, {'render_rest':false}) }}
+    <br>
+    <hr>
+
+
+    {% if entidades is defined %}
+        <button class="btn btn-default btn-sm" id="imprimir">Imprimir</button>
+        <br>
+        <br>
+    </div>
+    <div>
+        <table id="example" class="table" style="width: 90%;">
+            <thead>
+            <tr>
+                <th>Id Análisis</th>
+                <th>Paciente</th>
+                <th>DNI Paciente</th>
+                <th>Obra Social</th>
+                <th>Profesional</th>
+                <th>DNI Profesional</th>
+                <th>Fecha Realizado</th>
+                <th>Fecha Entregado</th>
+                <th>Tipo Análisis</th>
+                <th>Item</th>
+                <th>Resultado</th>
+            </tr>
+            </thead>
+            <tbody>
+
+
+            {%  for e in entidades %}
+                {% for i in e.item %}
+                 <tr>
+                    <td>{{ e.id }}</td>
+                    <td>{{ e.paciente.nombre }} {{ e.paciente.apellido }}</td>
+                    <td>{{ e.paciente.dni }}</td>
+                    <td>{{ e.paciente.obraSocial|slice(0,30) }}</td>
+                    <td>{{ e.profesional.nombre }} {{ e.profesional.apellido }}</td>
+                    <td>{{ e.profesional.dni }}</td>
+                    <td>{{ e.fechaCreado|date("d/m/Y") }}</td>
+                    <td>{{ e.fechaEntrega|date("d/m/Y") }}</td>
+                    <td>{{ i.item.tipoAnalisis }}</td>
+                    <td>{{ i.item.nombre }}</td>
+                    <td>{{ i.resultado }}</td>
+
+                </tr>
+
+                    {% endfor %}
+            {% endfor %}
+            </tbody>
+        </table>
+    </div>
+
+
+    {% endif %}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+</div>
+{% endblock %}
+
+{% block javascripts %}
+    {{ parent() }}
+
+    <script>
+        function printData()
+        {
+            var divToPrint=document.getElementById("example");
+            newWin= window.open("");
+            newWin.document.write(divToPrint.outerHTML);
+            newWin.print();
+            newWin.close();
+        }
+
+        $('#imprimir').on('click',function(){
+            printData();
+        });
+
+
+        $(document).ready(function() {
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+
+            $('hr').css('border-top', '1px solid #8c8b8b')
+
+        });
+
+
+        $(document).ready(function() {
+            // Setup - add a text input to each footer cell
+            $('#example thead th').each( function () {
+                var title = $(this).text();
+
+
+                if(title != 'Acciones')
+                {
+                    $(this).html( '<input type="text" placeholder=" '+title+'" style="width:120px;"/>' );
+                }
+                else
+                {
+                    $(this).html( '<input type="hidden"  placeholder=" '+title+'" style="width:120px;"/>' );
+                }
+
+
+            } );
+
+            // DataTable
+            var table = $('#example').DataTable();
+
+            // Apply the search
+            table.columns().every( function () {
+                var that = this;
+
+                $( 'input', this.header() ).on( 'keyup change', function () {
+                    if ( that.search() !== this.value ) {
+                        that
+                            .search( this.value )
+                            .draw();
+                    }
+                } );
+            } );
+
+            $('#example_filter').hide();
+        } );
+    </script>
+{% endblock javascripts %}

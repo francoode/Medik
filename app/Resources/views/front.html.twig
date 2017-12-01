@@ -11,6 +11,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
     <!-- VENDOR CSS -->
+{% block head %}
     <link rel="stylesheet" href="{{ asset('app/Resources/vendor/bootstrap/css/bootstrap.min.css') }}">
     <link rel="stylesheet" href="{{ asset('app/Resources/vendor/font-awesome/css/font-awesome.min.css') }}">
     <link rel="stylesheet" href="{{ asset('app/Resources/vendor/linearicons/style.css') }}">
@@ -24,8 +25,14 @@
     <!-- GOOGLE FONTS -->
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,600,700" rel="stylesheet">
     <!-- ICONS -->
+<<<<<<< HEAD
     <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('app/Resources/img/logo.png') }}">
     <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('app/Resources/img/logo.png') }}">
+=======
+    <link rel="apple-touch-icon" sizes="76x76" href="{{ asset('app/Resources/img/apple-icon.png') }}">
+    <link rel="icon" type="image/png" sizes="96x96" href="{{ asset('app/Resources/img/favicon.png') }}">
+    {% endblock %}
+>>>>>>> 938fd40da94f918f106d55e36caaa71f10904e02
 
 </head>
 
@@ -164,6 +171,7 @@
                                 <ul class="nav">
                                     <li><a href="{{ path('cantidadTipo') }}" class="">Reporte Tipo Análisis</a></li>
                                     <li><a href="{{ path('cantidadOS') }}" class="">Reporte OS</a></li>
+                                    <li><a href="{{ path('reporteIntegral') }}" class="">Reporte Integral</a></li>
                                 </ul>
                             </div>
                         </li>
