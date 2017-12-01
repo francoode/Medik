@@ -78,12 +78,14 @@
                     <label> Paciente <input type="checkbox" class="toogle-vis form-check-input" data-column="1" checked></label><br>
                     <label> DNI Paciente  <input type="checkbox" class="toogle-vis form-check-input" data-column="2" checked></label><br>
                     <label> Obra Social  <input type="checkbox" class="toogle-vis form-check-input" data-column="3" checked></label><br>
-                    <label> Profesional <input type="checkbox" class="toogle-vis form-check-input" data-column="4" checked></label><br>
-                    <label> DNI Profesional <input type="checkbox" class="toogle-vis form-check-input" data-column="5" checked></label><br>
-                    <label> Fecha Realizado  <input type="checkbox" class="toogle-vis form-check-input" data-column="6" checked></label><br>
-                    <label> Tipo Análisis  <input type="checkbox" class="toogle-vis form-check-input" data-column="7" checked></label><br>
-                    <label> Item <input type="checkbox" class="toogle-vis form-check-input" data-column="8" checked></label><br>
-                    <label> Resultado <input type="checkbox" class="toogle-vis form-check-input" data-column="9" checked></label><br>
+                    <label> Email Paciente  <input type="checkbox" class="toogle-vis form-check-input" data-column="4" checked></label><br>
+                    <label> Télefono Paciente  <input type="checkbox" class="toogle-vis form-check-input" data-column="5" checked></label><br>
+                    <label> Profesional <input type="checkbox" class="toogle-vis form-check-input" data-column="6" checked></label><br>
+                    <label> DNI Profesional <input type="checkbox" class="toogle-vis form-check-input" data-column="7" checked></label><br>
+                    <label> Fecha Realizado  <input type="checkbox" class="toogle-vis form-check-input" data-column="8" checked></label><br>
+                    <label> Tipo Análisis  <input type="checkbox" class="toogle-vis form-check-input" data-column="9" checked></label><br>
+                    <label> Item <input type="checkbox" class="toogle-vis form-check-input" data-column="10" checked></label><br>
+                    <label> Resultado <input type="checkbox" class="toogle-vis form-check-input" data-column="11" checked></label><br>
 
                 </form>
             </ul>
@@ -103,6 +105,8 @@
                 <th>Paciente</th>
                 <th>DNI Paciente</th>
                 <th>Obra Social</th>
+                <th>Email</th>
+                <th>Teléfono</th>
                 <th>Profesional</th>
                 <th>DNI Profesional</th>
                 <th>Fecha Realizado</th>
@@ -122,6 +126,8 @@
                     <td>{{ e.paciente.nombre }} {{ e.paciente.apellido }}</td>
                     <td>{{ e.paciente.dni }}</td>
                     <td>{{ e.paciente.obraSocial|slice(0,30) }}</td>
+                     <td>{{ e.paciente.email }}</td>
+                     <td>{{ e.paciente.telefono }}</td>
                     <td>{{ e.profesional.nombre }} {{ e.profesional.apellido }}</td>
                     <td>{{ e.profesional.dni }}</td>
                     <td>{{ e.fechaCreado|date("d/m/Y") }}</td>
