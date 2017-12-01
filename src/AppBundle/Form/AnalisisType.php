@@ -25,7 +25,11 @@ class AnalisisType extends AbstractType
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
         $builder->add('fechaCreado')
-            ->add('fechaEntrega', DateType::class)
+            ->add('fechaEntrega', DateType::class, array(
+                'widget' => 'single_text',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker'],
+            ))
             ->add('estado', ChoiceType::class, array(
                 'choices'  => array(
                     'Pendiente' => 'Pendiente',

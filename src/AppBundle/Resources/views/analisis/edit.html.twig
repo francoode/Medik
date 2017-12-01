@@ -64,7 +64,7 @@
                     'label_attr' : {'class' : 'control-label'}}) }}
             </div>
             <div class="col-md-7">
-                {{ form_widget(edit_form.fechaEntrega, {'attr' : {'class' : ''}}) }}
+                {{ form_widget(edit_form.fechaEntrega) }}
             </div>
             <div class="col-md-3">
                 {{ form_errors(edit_form.fechaEntrega) }}
@@ -159,6 +159,11 @@
     <script>
 
     $(document).ready(function(){
+
+        $('.js-datepicker').datepicker({
+            format: 'yyyy-mm-dd'
+        });
+
 
         var usedNames = {};
         $(".sec > option").each(function () {
