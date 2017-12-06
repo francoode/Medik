@@ -166,6 +166,11 @@
                                 </ul>
                             </div>
                         </li>
+
+                        <li>
+                            <a href="{{ asset('app/Resources/pdf/manual.pdf')  }}" target="_blank"><i class="fa fa-file-pdf-o"></i> <span>Manual Usuario</span> </a>
+
+                        </li>
                     {% endif %}
 
                     {% if is_granted('ROLE_PROFESIONAL')  %}
@@ -188,6 +193,10 @@
 
                                 </ul>
                             </div>
+                        </li>
+                        <li>
+                            <a href="{{ asset('app/Resources/pdf/manual.pdf')  }}" target="_blank"><i class="fa fa-file-pdf-o"></i> <span>Manual Usuario</span> </a>
+
                         </li>
 
                     {% endif %}
@@ -213,6 +222,11 @@
                         <a href="{{ path('graficos') }}" ><i class="fa fa-bar-chart"></i> <span>Gráficos</span> </a>
 
                     </li>
+
+                        <li>
+                            <a href="{{ asset('app/Resources/pdf/manual.pdf')  }}" target="_blank"><i class="fa fa-file-pdf-o"></i> <span>Manual Usuario</span> </a>
+
+                        </li>
 
                    {% endif %}
 
