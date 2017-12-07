@@ -83,14 +83,18 @@ class ItemTipoAnalisisController extends Controller
      */
     public function editAction(Request $request, ItemTipoAnalisis $itemTipoAnalisi)
     {
+
         $deleteForm = $this->createDeleteForm($itemTipoAnalisi);
         $editForm = $this->createForm('AppBundle\Form\ItemTipoAnalisisType', $itemTipoAnalisi);
         $editForm->handleRequest($request);
 
+
+
         if ($editForm->isSubmitted() && $editForm->isValid()) {
+
             $this->getDoctrine()->getManager()->flush();
 
-            return $this->redirectToRoute('itemtipoanalisis_edit', array('id' => $itemTipoAnalisi->getId()));
+            return $this->redirectToRoute('itemtipoanalisis_index');
         }
 
         return $this->render('AppBundle:itemtipoanalisis:edit.html.twig', array(
@@ -101,21 +105,15 @@ class ItemTipoAnalisisController extends Controller
     }
 
     /**
-     * Deletes a itemTipoAnalisi entity.
+     * @Route("/{id}/delete", name="itemtipoanalisis_delete")
      *
-     * @Route("/{id}", name="itemtipoanalisis_delete")
-     * @Method("DELETE")
      */
-    public function deleteAction(Request $request, ItemTipoAnalisis $itemTipoAnalisi)
-    {
-        $form = $this->createDeleteForm($itemTipoAnalisi);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($itemTipoAnalisi);
-            $em->flush();
-        }
+    public function deleteAction(ItemTipoAnalisis $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($id);
+        $em->flush();
 
         return $this->redirectToRoute('itemtipoanalisis_index');
     }
