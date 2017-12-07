@@ -100,7 +100,7 @@
                         'label_attr' : {'class' : 'control-label'}}) }}
                 </div>
                 <div class="col-md-8">
-                    {{ form_widget(form.fechaNacimiento, {'attr' : {'class' : ''}}) }}
+                    {{ form_widget(form.fechaNacimiento) }}
                 </div>
                 <div class="col-md-3">
                     {{ form_errors(form.fechaNacimiento) }}
@@ -180,3 +180,17 @@
 
 
 {% endblock body %}
+{% block javascripts %}
+    {{ parent() }}
+    <script>
+        $(document).ready(function() {
+            $('.js-datepicker').datepicker({
+                format: 'yyyy-mm-dd'
+            });
+
+            $('hr').css('border-top', '1px solid #8c8b8b')
+
+            $('.js-example-basic-single').select2();
+        });
+    </script>
+{% endblock javascripts %}

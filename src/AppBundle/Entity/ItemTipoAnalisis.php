@@ -25,8 +25,8 @@ class ItemTipoAnalisis
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis", inversedBy = "itemTipoAnalisis" )
-     * @ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis", inversedBy = "itemTipoAnalisis")
+     * @ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $tipoAnalisis;
 
@@ -46,7 +46,7 @@ class ItemTipoAnalisis
     private $unidad;
 
     /**
-     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="itemTipoAnalisis", cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="ValoresReferencia", mappedBy="itemTipoAnalisis", cascade={"persist","remove"})
      */
     private $valoresReferencia;
 

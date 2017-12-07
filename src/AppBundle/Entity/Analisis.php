@@ -58,8 +58,8 @@ class Analisis
     /**
      * @ORM\ManyToMany(targetEntity="TipoAnalisis")
      * @ORM\JoinTable(name="analisis_tipoanalisis",
-     *          joinColumns={@ORM\JoinColumn(name="analisis_id", referencedColumnName="id")},
-     *          inverseJoinColumns={@ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")}
+     *          joinColumns={@ORM\JoinColumn(name="analisis_id", referencedColumnName="id", onDelete="SET NULL")},
+     *          inverseJoinColumns={@ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id", onDelete="SET NULL")}
      *          )
      */
     private $tipoAnalisis;
