@@ -6,7 +6,8 @@ use Symfony\Component\Form\AbstractType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
-use Symfony\Component\Form\Extension\Core\Type\BirthdayType;
+
+use Symfony\Component\Form\Extension\Core\Type\DateType;
 
 class ProfesionalType extends AbstractType
 {
@@ -21,7 +22,11 @@ class ProfesionalType extends AbstractType
             ->add('nombre')
             ->add('apellido')
             ->add('matricula')
-            ->add('fechaNacimiento',BirthdayType::class)
+            ->add('fechaNacimiento',DateType::class, array(
+                'widget' => 'single_text',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker'],
+            ))
             ->add('dni')
             ->add('email', 'email')
             ->add('activo','checkbox')

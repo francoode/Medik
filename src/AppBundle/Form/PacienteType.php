@@ -8,6 +8,8 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 
+use Symfony\Component\Form\Extension\Core\Type\DateType;
+
 
 class PacienteType extends AbstractType
 {
@@ -21,7 +23,11 @@ class PacienteType extends AbstractType
             ->add('nombre')
             ->add('apellido')
             ->add('email')
-            ->add('fechaNacimiento', BirthdayType::class)
+            ->add('fechaNacimiento',DateType::class, array(
+                'widget' => 'single_text',
+                'html5' => false,
+                'attr' => ['class' => 'js-datepicker'],
+            ))
             ->add('obraSocial', EntityType::class, array(
                 'class' => 'AppBundle:ObraSocial'
             ))
