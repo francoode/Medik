@@ -98,25 +98,24 @@ class TipoAnalisisController extends Controller
         ));
     }
 
-    /**
-     * Deletes a tipoAnalisi entity.
-     *
-     * @Route("/{id}", name="tipoanalisis_delete")
-     * @Method("DELETE")
-     */
-    public function deleteAction(Request $request, TipoAnalisis $tipoAnalisi)
-    {
-        $form = $this->createDeleteForm($tipoAnalisi);
-        $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-            $em = $this->getDoctrine()->getManager();
-            $em->remove($tipoAnalisi);
-            $em->flush();
-        }
+
+    /**
+     * @Route("/delete/{id}", name="tipoanalisis_delete")
+     *
+     */
+
+    public function deleteAction(TipoAnalisis $id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $em->remove($id);
+        $em->flush();
 
         return $this->redirectToRoute('tipoanalisis_index');
     }
+
+
+
 
     /**
      * Creates a form to delete a tipoAnalisi entity.

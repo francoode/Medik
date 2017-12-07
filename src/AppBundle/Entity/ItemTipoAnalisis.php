@@ -25,8 +25,8 @@ class ItemTipoAnalisis
 
     /**
      *
-     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis", inversedBy = "itemTipoAnalisis" )
-     * @ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")
+     * @ORM\ManyToOne(targetEntity="AppBundle\Entity\TipoAnalisis", inversedBy = "itemTipoAnalisis")
+     * @ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id", onDelete="SET NULL")
      */
     private $tipoAnalisis;
 
