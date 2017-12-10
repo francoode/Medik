@@ -28,7 +28,9 @@ class AnalisisRepository extends EntityRepository
             ->leftJoin('ra.item','it')
             ->where('it.id = :idItem')
             ->andWhere('a.paciente = :idPaciente')
+            ->andWhere('a.estado = :realizado')
             ->orderBy('a.fechaEntrega')
+            ->setParameter('realizado','Realizado')
             ->setParameter('idPaciente',$idPaciente)
             ->setParameter('idItem',$idItem)
             ->getQuery();
@@ -68,6 +70,7 @@ class AnalisisRepository extends EntityRepository
             ->andWhere('a.fechaCreado >= :fi')
             ->setParameter('fi',$fi)
             ->setParameter('ff',$ff)
+            ->orderBy('cantidad', 'DESC')
             ->getQuery();
 
         return $query->getQuery()->getResult();
@@ -103,6 +106,7 @@ class AnalisisRepository extends EntityRepository
             ->setParameter('fi',$fi)
             ->setParameter('ff',$ff)
             ->groupBy('p.obraSocial')
+            ->orderBy('cantidad','DESC')
             ->getQuery();
 
         return $query->getQuery()->getResult();
@@ -135,7 +139,7 @@ class AnalisisRepository extends EntityRepository
             ->where('a.fechaCreado >= :fi')
             ->andWhere('a.fechaCreado <= :ff')
             ->andWhere('a.profesional = :prof')
-            ->andWhere('a.estado = :pendiente or a.estado = :enejecucion')
+            ->andWhere('a.estado = :pendiente or a.estado = :enejecucion'   )
             ->setParameter('pendiente', 'Pendiente')
             ->setParameter('enejecucion','En Ejecución')
             ->setParameter('prof', $prof)
@@ -156,6 +160,8 @@ class AnalisisRepository extends EntityRepository
             ->where('a.fechaCreado >= :fi')
             ->andWhere('a.fechaCreado <= :ff')
             ->andWhere('a.paciente = :pac')
+            ->andWhere('a.estado = :realizado')
+            ->setParameter('realizado', 'Realizado')
             ->setParameter('pac', $pac)
             ->setParameter('fi',$fi)
             ->setParameter('ff',$ff)
