@@ -44,7 +44,7 @@ class DefaultController extends Controller
             )
         );
 
-        $boot = $this->renderView('AppBundle:pdfReporteAnalisis:bootpdf.html.twig');
+        $boot = $this->renderView('AppBundle:pdfReporteAnalisis:piePaciente.html.twig');
 
         $nombrePdf = 'A-';
          $nombrePdf .= $analisi->getId();
