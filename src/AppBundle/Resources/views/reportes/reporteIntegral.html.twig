@@ -122,7 +122,7 @@
             {%  for e in entidades %}
                 {% for i in e.item %}
                  <tr>
-                    <td>{{ e.id }}</td>
+                    <td><a href="{{ path('analisis_edit', {'id':e.id}) }}">{{ e.id }}</i> </a></td>
                     <td>{{ e.paciente.nombre }} {{ e.paciente.apellido }}</td>
                     <td>{{ e.paciente.dni }}</td>
                     <td>{{ e.paciente.obraSocial|slice(0,30) }}</td>

@@ -59,7 +59,7 @@ class Analisis
      * @ORM\ManyToMany(targetEntity="TipoAnalisis")
      * @ORM\JoinTable(name="analisis_tipoanalisis",
      *          joinColumns={@ORM\JoinColumn(name="analisis_id", referencedColumnName="id", onDelete="SET NULL")},
-     *          inverseJoinColumns={@ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id", onDelete="SET NULL")}
+     *          inverseJoinColumns={@ORM\JoinColumn(name="tipoanalisis_id", referencedColumnName="id")}
      *          )
      */
     private $tipoAnalisis;
@@ -95,7 +95,7 @@ class Analisis
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -104,7 +104,7 @@ class Analisis
 
 
 
-  
+
     /**
      * Set fechaEntrega
      *
@@ -144,7 +144,7 @@ class Analisis
     /**
      * Get estado
      *
-     * @return string 
+     * @return string
      */
     public function getEstado()
     {
@@ -190,7 +190,7 @@ class Analisis
     /**
      * Get paciente
      *
-     * @return \AppBundle\Entity\Paciente 
+     * @return \AppBundle\Entity\Paciente
      */
     public function getPaciente()
     {
@@ -213,7 +213,7 @@ class Analisis
     /**
      * Get profesional
      *
-     * @return \AppBundle\Entity\Paciente 
+     * @return \AppBundle\Entity\Paciente
      */
     public function getProfesional()
     {
@@ -253,7 +253,7 @@ class Analisis
     /**
      * Get tipoAnalisis
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getTipoAnalisis()
     {
@@ -287,7 +287,7 @@ class Analisis
     /**
      * Get item
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getItem()
     {

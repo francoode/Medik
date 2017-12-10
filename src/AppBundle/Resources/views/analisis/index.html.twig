@@ -40,7 +40,7 @@
             <th>Id</th>
             <th>Nombre Paciente</th>
             <th>Nombre Profesional</th>
-            <th>Fecha Inicio</th>
+            <th>Fecha Realizado</th>
             <th>Fecha Entregado</th>
             <th>Estado</th>
             <th>Acciones</th>
@@ -52,7 +52,7 @@
             <th>Id</th>
             <th>Nombre Paciente</th>
             <th>Nombre Profesional</th>
-            <th>Fecha Inicio</th>
+            <th>Fecha Realizado</th>
             <th>Fecha Entregado</th>
             <th>Estado</th>
             <th>Acciones</th>
@@ -126,7 +126,8 @@
             $('#example_filter').hide();
 
             $('.js-datepicker').datepicker({
-                format: 'yyyy-mm-dd'
+                format: 'yyyy-mm-dd',
+                language: 'es'
             });
             $('.js-datepicker').css('width','150px')
         } );

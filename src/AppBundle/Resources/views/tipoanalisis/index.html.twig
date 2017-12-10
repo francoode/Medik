@@ -3,6 +3,13 @@
 
 {% block body %}
     <h2 class="text-info">Listado Tipo Análisis</h2>
+    {%if app.session is defined %}
+    {% for m in app.session.flashBag.get('error')%}
+      <div class="alert alert-danger">
+      {{ m }}
+      </div>
+    {% endfor %}
+    {% endif %}
 
     <table id="example" class="table table-striped" style="width: 90%" >
         <thead>
@@ -84,5 +91,3 @@
     </script>
 
 {% endblock %}
-
-

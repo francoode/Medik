@@ -135,6 +135,9 @@ class AnalisisRepository extends EntityRepository
             ->where('a.fechaCreado >= :fi')
             ->andWhere('a.fechaCreado <= :ff')
             ->andWhere('a.profesional = :prof')
+            ->andWhere('a.estado = :pendiente or a.estado = :enejecucion')
+            ->setParameter('pendiente', 'Pendiente')
+            ->setParameter('enejecucion','En Ejecución')
             ->setParameter('prof', $prof)
             ->setParameter('fi',$fi)
             ->setParameter('ff',$ff)
@@ -251,4 +254,3 @@ class AnalisisRepository extends EntityRepository
 
 
 }
-

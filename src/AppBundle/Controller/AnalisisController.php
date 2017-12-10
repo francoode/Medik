@@ -57,10 +57,6 @@ class AnalisisController extends Controller
                 $analisis = $this->getDoctrine()->getRepository('AppBundle:Analisis')->getAnalisisbydate($fi, $ff);
             }
 
-
-
-          
-
             return $this->render('AppBundle:analisis:index.html.twig', array(
                 'form' => $form->createView(),
                 'analises' => $analisis
@@ -79,7 +75,9 @@ class AnalisisController extends Controller
         }
         elseif ($entityName == 'AppBundle\Entity\Profesional' )
         {
-            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('profesional' => $idT));
+            $analises = $em->getRepository('AppBundle:Analisis')->findBy(array('profesional' => $idT,
+            'estado' => array('Pendiente','En Ejecución')
+          ));
         }
         else{
             $analises = $em->getRepository('AppBundle:Analisis')->findAll();
@@ -120,7 +118,7 @@ class AnalisisController extends Controller
 
             foreach ($collTipoAnalisis as $col)
             {
-                
+
                 $itemsCol = $em->getRepository('AppBundle:ItemTipoAnalisis')->findBy(array(
                     'tipoAnalisis' => $col));
 
@@ -145,7 +143,7 @@ class AnalisisController extends Controller
 
             $analisi->addItem($resultadoAnalisis);
 
-            
+
 
             }
 

@@ -6,6 +6,7 @@ use AppBundle\Entity\TipoAnalisis;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;use Symfony\Component\HttpFoundation\Request;
+use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 
 /**
  * Tipoanalisi controller.
@@ -107,11 +108,21 @@ class TipoAnalisisController extends Controller
 
     public function deleteAction(TipoAnalisis $id)
     {
-        $em = $this->getDoctrine()->getManager();
-        $em->remove($id);
-        $em->flush();
 
-        return $this->redirectToRoute('tipoanalisis_index');
+        $em = $this->getDoctrine()->getManager();
+
+        try{
+          $em->remove($id);
+          $em->flush();
+          return $this->redirectToRoute('tipoanalisis_index');
+        }catch(\Doctrine\DBAL\DBALException $e)
+        {
+          $this->get('session')->getFlashBag()->add('error', 'Este Tipo de análisis tiene análisis asociados. Debe eliminarlos primero.');
+            return $this->redirectToRoute('tipoanalisis_index');
+        }
+
+
+
     }
 
 
